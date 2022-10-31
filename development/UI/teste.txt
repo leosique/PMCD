@@ -1,0 +1,1 @@
+Iniciando a configuração de pastas do projeto
