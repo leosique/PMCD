@@ -4,11 +4,15 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginExternoComponent } from './login-externo/login-externo.component';
+import { GeneralTopBarComponent } from './general-top-bar/general-top-bar.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginExternoComponent
+    LoginExternoComponent,
+    GeneralTopBarComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,

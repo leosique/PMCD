@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./base_styles/reset.css";
+@import "./base_styles/colors.css";
+@import "./base_styles/fonts.css";
+
+* {
+    font-family: 'boschsans';
+}
+
+.no-sort::after { display: none!important; }
+.no-sort::before { display: none!important; }
+.no-sort { pointer-events: none!important; cursor: default!important; }
+
+.dataTables_filter {
+    display: none;
+}

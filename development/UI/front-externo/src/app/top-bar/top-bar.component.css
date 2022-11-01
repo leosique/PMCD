@@ -1,0 +1,27 @@
+nav {
+    margin-bottom: 7em;
+    height: 5.625em;
+    padding: 1.5em;
+  }
+  .princ::before {
+    content: " ";
+    background-image: url(../../assets/img/Bosch-Supergraphic.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 6px;
+  }
+  .navbar-brand {
+    width: 181px;
+  }
+  .nav-link {
+    font-size: large;
+  }
+  
+  @media (max-width: 991px) {
+    nav {
+      height: auto;
+    }
+  }
+  
