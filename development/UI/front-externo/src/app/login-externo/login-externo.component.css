@@ -7,49 +7,39 @@
     
 }
 
-body{
+.principal{
   display: flex;
-  height: 50vh;
   justify-content: center;
-  align-items: center;
-  padding: 10px;
+  width: 100%;
 }
 
-.align{
-    display: grid;
-    place-items: center;
-    height: 100%;
-  }
+
   .card {
-    margin: auto auto;
-    grid-gap: 1em;
-    padding: 0em 1em;
-    display: grid;
-    width: 30em;
-    height: 35em;
-    background-color: var(--Bosch-White);
-  
-    box-shadow: 0.09rem 0.1rem 0.9rem -0.09rem var(--Bosch-Gray-50);
-  
-    grid-template-columns: auto;
-    grid-template-rows: 23% 50%;
-    grid-template-areas:
-        "title"
-        "form"
-        "login";
+
+    width: 35%;
+    height: 25em;
+    background-color: white;
+    box-shadow: 0.09rem 0.1rem 0.9rem -0.09rem var(--Bosch-Gray-70);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em 0 2em 0;
   }
-  
-  .Title {
-    justify-self: center;
-    align-self: center;
-    grid-area: title;
+
+
+@media (max-width: 1520px)
+{
+  .card{
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 100%;
   }
+}
+
   
   .Title h1{ font-size: 3em;}
   
   .form {
-    grid-area: form;
-    margin-top: 2em;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -75,7 +65,7 @@ body{
     width: 100%;
     gap: .5em;
     pointer-events: auto;
-    border-bottom: .15em solid #C1C7CC;
+    border-bottom: .15em solid var(--Bosch-Gray-70)
   }
   
   .form_box img{
@@ -100,27 +90,37 @@ body{
     font-size: 1.3em;
   }
   
-  .button-login {
-    grid-area: login;
-    align-self: center;
-    justify-self: center;
-    border:none;
-    background-color: var(--Bosch-Blue);
-    color:var(--Bosch-White);
-    cursor: pointer;
-    font-size: 1em;
-    padding: 0.8em 2em;
-    text-decoration: none;
-    width: 50%;
-    font-size: 1.2em;
-    border-radius: 5px;
-  } 
-  
-  .button-login:hover,
-  .button-login:focus{
-    background-color: var(--Bosch-Blue-Ligth);
+
+.button-login {
+  grid-area: login;
+  align-self: center;
+  justify-self: center;
+  border:none;
+  background-color: var(--Bosch-Blue);
+  color:var(--Bosch-White);
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0.8em 2em;
+  text-decoration: none;
+  width: 30%;
+  font-size: 1.2em;
+  border-radius: 5px;
+} 
+.button-login:hover,
+.button-login:focus{
+  background-color: var(--Bosch-Blue-Ligth);
+}
+
+.button-login:active{
+  background-color: var(--Bosch-Blue-Ligth);
+}
+@media (max-width: 700px)
+{
+  .button-login{
+    width: 60%;
   }
-  
-  .button-login:active{
-    background-color: var(--Bosch-Blue-Ligth);
-  }
+
+}
+
+
+

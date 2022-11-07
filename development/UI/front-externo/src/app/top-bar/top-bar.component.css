@@ -1,27 +1,81 @@
 nav {
-    margin-bottom: 7em;
-    height: 5.625em;
-    padding: 1.5em;
-  }
-  .princ::before {
-    content: " ";
-    background-image: url(../../assets/img/Bosch-Supergraphic.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  margin-bottom: 2.5em;
+  height: 6.625em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+.princ::before {
+  content: " ";
+  background-image: url(../../assets/img/Bosch-Supergraphic.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 6px;
+}
+.navbar-brand img {
+  width: 181px;
+  justify-self: start;
+}
+.navbar-brand {
     width: 100%;
-    height: 6px;
+}
+.nav-link {
+  font-size: large;
+}
+.nav-item a {
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.vr{
+    margin-top: 10px;
+    height: 25px;
+}
+#navbarNav{
+  justify-content: space-between;
+}
+
+.hover-link a:focus{
+  border-bottom: 2px  solid #2d7db5;
+ display: inline-block;
+ padding-bottom: 10px; 
+ color : #2d7db5;
+ transition: 0.5s;
+ transform: scale(1.08);
+
+}
+.nav-icons svg:hover{
+  fill : #2d7db5;
+  transform: scale(1.2);
+}
+.nav-icons svg{
+  fill: #71767c;  
+  width: 26;
+  height: 26;
+  transition: 0.5s;
+}
+@media (max-width: 991px) {
+  nav {
+    height: auto;
+    display: flex;
+    flex-direction: row;
   }
-  .navbar-brand {
-    width: 181px;
+  .navbar-brand{
+      width: 50%;
   }
-  .nav-link {
-    font-size: large;
+  .nav-icons{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
   }
-  
-  @media (max-width: 991px) {
-    nav {
-      height: auto;
-    }
+  .hover-link a:focus{
+      border-bottom: none;
   }
-  
+  .nav-icons svg:hover{
+      fill : #2d7db5;
+      width: 26;
+      height: 26;
+  }
+}

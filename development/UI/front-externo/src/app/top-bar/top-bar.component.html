@@ -1,29 +1,76 @@
 <div class="d-flex flex-column princ">
-    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+  <nav class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="navbar-brand">
       <a class="navbar-brand" href="#">
-        <img class="js-o-header__logo o-header__logo"
+        <img
+          class="js-o-header__logo o-header__logo"
           src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoiYm9zY2hcL2FjY291bnRzXC9hNVwvNDAwMDA5OFwvcHJvamVjdHNcLzIyOVwvYXNzZXRzXC9hOVwvMTE0MDQzXC9lMTdkMTYxMDllMmI4MzcxMmE2NDJkZjhmOTgwY2NiZi0xNTkwNzQ1NzQzLnN2ZyJ9:bosch:go5sTttIAnG7SvhMqpNGNxpChFJmAs5_1HKnvRkzbvs?width={width}&amp;rect=0,0,160,36&amp;reference_width=160"
-          alt="Bosch Benefits" data-test-id="logo" />
+          alt="Bosch Benefits"
+          data-test-id="logo"
+        />
       </a>
-  
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    </div>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div *ngIf="authTokenOwner != null" class="container-fluid"> -->
       <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div>
+          <ul class="navbar-nav hover-link">
             <li class="nav-item">
-              <a class="nav-link">Benefícios</a>
+              <a class="nav-link" >Eventos</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" >Retirada de Terceiros</a>
+            <li class="nav-item hover-link">
+              <a class="nav-link">Estações</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">Sair</a>
+              
+            <li class="nav-item hover-link">
+               <a class="nav-link">Gráfico de entregas</a>
             </li>
+            <li class="nav-item hover-link">
+              <a class="nav-link" >Beneficiários</a>
+           </li>
           </ul>
         </div>
+        <div>
+            <ul class="navbar-nav nav-icons">
+               <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 192 192"><path d="M96 18.343l-64 64V176h128V82.343l-64-64zM80 168v-48h32v48H80zm72 0h-32v-56H72v56H40V85.657l56-56 56 56V168z"/></svg>
+                </a>
+              </li>
+              <div class="vr"></div>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 192 192"><path d="M109.3 101.4C122.6 96.1 132 83.2 132 68c0-19.9-16.1-36-36-36S60 48.1 60 68c0 15.2 9.4 28.1 22.7 33.4-27 5.9-46.7 29.5-46.7 58.6h8c0-29.2 22.8-52 52-52s52 22.8 52 52h8c0-29.1-19.7-52.7-46.7-58.6zM68 68c0-15.4 12.6-28 28-28s28 12.6 28 28-12.6 28-28 28-28-12.6-28-28z"/></svg>
+                </a>
+              </li>
+              <div class="vr"></div> 
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/']"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 192 192"><path d="M173.657 96l-30.828 30.829-5.658-5.658L158.343 100H88v-8h70.343l-21.172-21.171 5.658-5.658L173.657 96zM120 168H40V24h80v40h8V16H32v160h96v-48h-8v40z"/></svg>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
       </div>
-    </nav>
-  </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
