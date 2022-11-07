@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginExternoComponent } from './login-externo/login-externo.component';
 import { GeneralTopBarComponent } from './general-top-bar/general-top-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ListaFretesComponent } from './lista-fretes/lista-fretes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginExternoComponent,
     GeneralTopBarComponent,
-    TopBarComponent
+    TopBarComponent,
+    ListaFretesComponent
   ],
   imports: [
     BrowserModule,

@@ -20,5 +20,6 @@ export class LoginExternoComponent implements OnInit {
     var inp = document.querySelector('#'+idTag);
     inp?.setAttribute('style', 'border-bottom: .15em solid #C1C7CC;');
   }
+  
 
 }
