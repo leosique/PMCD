@@ -33,7 +33,7 @@ public partial class EntregaEntregador
         }
     }
 
-    public static EntregaEntregador FindById(int Id)
+    public static EntregaEntregador BuscarPorId(int Id)
     {
         using(var context = new Context())
         {
@@ -43,7 +43,7 @@ public partial class EntregaEntregador
         }
     }
 
-    public void Update()
+    public void Editar()
     {
         using(var context = new Context())
         {

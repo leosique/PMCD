@@ -39,7 +39,7 @@ public partial class ResponsavelBosch
         }
     }
 
-    public static ResponsavelBosch FindById(int Id)
+    public static ResponsavelBosch BuscarPorId(int Id)
     {
         using(var context = new Context())
         {
@@ -49,7 +49,7 @@ public partial class ResponsavelBosch
         }
     }
 
-    public void Update()
+    public void Editar()
     {
         using(var context = new Context())
         {

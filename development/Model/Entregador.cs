@@ -38,7 +38,7 @@ public partial class Entregador
         }
     }
 
-    public static Entregador FindById(int Id)
+    public static Entregador BuscarPorId(int Id)
     {
         using(var context = new Context())
         {
@@ -48,7 +48,7 @@ public partial class Entregador
         }
     }
 
-    public void Update()
+    public void Editar()
     {
         using(var context = new Context())
         {

@@ -27,8 +27,8 @@ public class EntregaController : ControllerBase
 
     //* ------------------------------------------------ Buscar por id
     [HttpGet]
-    [Route("find/{id}")]
-    public Entrega FindById(int id)
+    [Route("Buscar/{id}")]
+    public Entrega BuscarPorId(int id)
     {  
         var entrega = Model.Entrega.BuscarPorId(id);
         return entrega;
@@ -36,7 +36,7 @@ public class EntregaController : ControllerBase
 
     //* ------------------------------------------------ Criar
     [HttpPost]
-    [Route("salvar")]
+    [Route("Salvar")]
     public string Salvar([FromBody] Entrega entrega)
     {  
         entrega.Salvar();
@@ -45,7 +45,7 @@ public class EntregaController : ControllerBase
 
     //* ------------------------------------------------ Editar
     [HttpPut]
-    [Route("editar")]
+    [Route("Editar")]
     public string Editar([FromBody] Entrega entrega)
     {  
         entrega.Editar();
