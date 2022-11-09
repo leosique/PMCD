@@ -46,7 +46,7 @@ public partial class Entrega
         }
     }
 
-    public static Entrega FindById(int Id)
+    public static Entrega BuscarPorId(int Id)
     {
         using(var context = new Context())
         {
@@ -56,7 +56,7 @@ public partial class Entrega
         }
     }
 
-    public void Update()
+    public void Editar()
     {
         using(var context = new Context())
         {
