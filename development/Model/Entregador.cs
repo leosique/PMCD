@@ -5,17 +5,19 @@ namespace Model;
 
 public partial class Entregador
 {
-    public Entregador()
-    {
-        ListaEntregasEntregadores = new HashSet<EntregaEntregador>();
-    }
-
     public int Id { get; set; }
     public string Nome { get; set; }
     public string Documento { get; set; }
     public string DataNascimento { get; set; }
 
-    public virtual ICollection<EntregaEntregador> ListaEntregasEntregadores { get; set; }
+
+
+    public virtual List<EntregaEntregador> EntregaEntregadorList { get; set; }
+
+    public Entregador()
+    {
+        EntregaEntregadorList = new List<EntregaEntregador>();
+    }
 
 
     public void Salvar()

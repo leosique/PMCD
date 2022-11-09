@@ -9,7 +9,12 @@ public partial class Transponder
     public int Id { get; set; }
     public string Codigo { get; set; }
 
+    public virtual List<Entrega> EntregaList { get; set; }
 
+    public Transponder()
+    {
+        EntregaList = new List<Entrega>();
+    }
 
 
     public void Salvar()

@@ -5,18 +5,18 @@ namespace Model;
 
 public partial class Transportadora
 {
-    public Transportadora()
-    {
-        EntregasFeitas = new HashSet<Entrega>();
-    }
 
     public int Id { get; set; }
     public string Nome { get; set; }
     public string Cnpj { get; set; }
 
 
-    public virtual ICollection<Entrega> EntregasFeitas { get; set; }
+    public virtual List<Entrega> EntregaList { get; set; }
 
+    public Transportadora()
+    {
+        EntregaList = new List<Entrega>();
+    }
 
     public void Salvar()
     {

@@ -5,10 +5,7 @@ namespace Model;
 
 public partial class ResponsavelBosch
 {
-    public ResponsavelBosch()
-    {
-        EntregasFeitas = new HashSet<Entrega>();
-    }
+   
 
     public int Id { get; set; }
     public string Nome { get; set; }
@@ -16,7 +13,12 @@ public partial class ResponsavelBosch
     public string Edv { get; set; }
 
 
-    public virtual ICollection<Entrega> EntregasFeitas { get; set; }
+    public virtual List<Entrega> EntregaList { get; set; }
+
+    public ResponsavelBosch()
+    {
+        EntregaList = new List<Entrega>();
+    }
 
 
     public void Salvar()

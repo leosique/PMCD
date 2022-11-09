@@ -66,14 +66,16 @@ public partial class Context : DbContext
             entity.Property(e => e.PesoEntrada);
             entity.Property(e => e.PesoSaida);
 
-            entity.HasOne(d => d.Transponder);
+            entity.HasOne(d => d.Transponder)
+                .WithMany(p => p.EntregaList)
+                .HasForeignKey(d => d.IdTransponder);
 
             entity.HasOne(d => d.Transportadora)
-                .WithMany(p => p.EntregasFeitas)
+                .WithMany(p => p.EntregaList)
                 .HasForeignKey(d => d.IdTransportadora);
 
             entity.HasOne(d => d.ResponsavelBosch)
-                .WithMany(p => p.EntregasFeitas)
+                .WithMany(p => p.EntregaList)
                 .HasForeignKey(d => d.IdResponsavelBosch);
         });
 
@@ -83,11 +85,11 @@ public partial class Context : DbContext
             entity.HasKey(e => e.Id);
 
             entity.HasOne(d => d.Entrega)
-                .WithMany(p => p.ListaEntregasEntregadores)
+                .WithMany(p => p.EntregaEntregadorList)
                 .HasForeignKey(d => d.IdEntrega);
 
             entity.HasOne(d => d.Entregador)
-                .WithMany(p => p.ListaEntregasEntregadores)
+                .WithMany(p => p.EntregaEntregadorList)
                 .HasForeignKey(d => d.IdEntregador);
         });
     }

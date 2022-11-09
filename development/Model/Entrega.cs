@@ -6,11 +6,6 @@ namespace Model;
 
 public partial class Entrega
 {
-    public Entrega()
-    {
-        ListaEntregasEntregadores = new HashSet<EntregaEntregador>();
-    }
-
     public int Id { get; set; }
     public string PlacaCarro { get; set; }
     public CodigoInterno CodigoInterno { get; set; }
@@ -23,7 +18,14 @@ public partial class Entrega
     public Transponder Transponder {get; set; }
     public Transportadora Transportadora {get; set; }
     public ResponsavelBosch ResponsavelBosch {get; set; }
-    public virtual ICollection<EntregaEntregador> ListaEntregasEntregadores { get; set; }
+    
+
+    public virtual List<EntregaEntregador> EntregaEntregadorList { get; set; }
+
+    public Entrega()
+    {
+        EntregaEntregadorList = new List<EntregaEntregador>();
+    }
 
 
     public void Salvar()
@@ -48,7 +50,7 @@ public partial class Entrega
     {
         using(var context = new Context())
         {
-            var entrega = context.Entregas.Include(t => t.Transponder).FirstOrDefault(e => e.Id == Id);
+            var entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
 
             return entrega;
         }
