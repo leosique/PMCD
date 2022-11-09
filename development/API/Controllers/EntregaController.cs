@@ -16,11 +16,11 @@ using DTO;
 namespace Controllers;
 
 [Route("[controller]")]
-public class exemploController : ControllerBase
+public class EntregaController : ControllerBase
 {
     public IConfiguration _configuration; //add
 
-    public exemploController(IConfiguration config)
+    public EntregaController(IConfiguration config)
     { //add
         _configuration = config;
     }
