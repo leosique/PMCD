@@ -55,6 +55,7 @@ public partial class Context : DbContext
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Nome);
             entity.Property(e => e.Cnpj);
+            entity.Property(e => e.Senha);
         });
 
         modelBuilder.Entity<Entrega>(entity =>
