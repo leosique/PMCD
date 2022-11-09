@@ -28,7 +28,7 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Buscar por id
     [HttpGet]
     [Route("Buscar/{id}")]
-    public Entrega BuscarPorId(int id)
+    public Object BuscarPorId(int id)
     {  
         var entrega = Model.Entrega.BuscarPorId(id);
         return entrega;
@@ -52,6 +52,42 @@ public class EntregaController : ControllerBase
         return "Entrega editada com sucesso";
     }
 
+    //* ------------------------------------------------ Editar Placa
+    [HttpPut]
+    [Route("Editar/Placa")]
+    public string EditarPlaca([FromBody] Entrega entrega)
+    {  
+        entrega.EditarPlaca();
+        return "Placa editada com sucesso";
+    }
+
+    //* ------------------------------------------------ Editar Peso Entrada
+    [HttpPut]
+    [Route("Editar/PesoEntrada")]
+    public string EditarPesoEntrada([FromBody] Entrega entrega)
+    {  
+        entrega.EditarPesoEntrada();
+        return "Peso Entrada editada com sucesso";
+    }
+
+    //* ------------------------------------------------ Editar Peso Saida
+    [HttpPut]
+    [Route("Editar/PesoSaida")]
+    public string EditarPesoSaida([FromBody] Entrega entrega)
+    {  
+        entrega.EditarPesoSaida();
+        return "Peso Saida editada com sucesso";
+    }
+
+    //* ------------------------------------------------ Editar Transponder
+    [HttpPut]
+    [Route("Editar/Transponder")]
+    public string EditarTransponder([FromBody] Entrega entrega)
+    {  
+        entrega.EditarTransponder();
+        return "Transponder editada com sucesso";
+    }
+
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar")]
@@ -60,6 +96,8 @@ public class EntregaController : ControllerBase
         entrega.Deletar();
         return "Entrega deletada com sucesso";
     }
+
+    
 
     
 }
