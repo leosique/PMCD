@@ -52,5 +52,14 @@ public class EntregaController : ControllerBase
         return "Entrega editada com sucesso";
     }
 
+    //* ------------------------------------------------ Deletar
+    [HttpDelete]
+    [Route("Deletar")]
+    public string Deletar([FromBody] Entrega entrega)
+    {  
+        entrega.Deletar();
+        return "Entrega deletada com sucesso";
+    }
+
     
 }
