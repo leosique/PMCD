@@ -1,0 +1,24 @@
+<app-top-bar></app-top-bar>
+<div class="principal">
+    <div class="card">
+        <form action="" class="form">
+            <div class="form_item">
+                <label for="" >Usuário</label>
+                <div id="div_1" class="form_box">
+                    <img src="../../assets/icons/user.svg" id="img_div_1" alt="">
+                    <input type="text" id="usuario" placeholder="Digite seu usuário" (click)="mudarCorAzul('div_1')" (blur)="mudarCorCinza('div_1')">
+                </div>
+            </div>
+    
+            <div class="form_item">
+                <label for="">Senha</label>
+                <div id="div_2" class="form_box">
+                    <img src="../../assets/icons/key-fill.svg" id="img_div_2" alt="">
+                    <input type="password" id="senha" placeholder="Digite sua senha" (click)="mudarCorAzul('div_2')" (blur)="mudarCorCinza('div_2')">
+                </div>
+            </div>
+        </form>
+    
+        <button class="button-login" role="button" >ENTRAR</button>
+    </div>
+</div>
