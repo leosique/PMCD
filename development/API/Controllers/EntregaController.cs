@@ -95,9 +95,5 @@ public class EntregaController : ControllerBase
     {  
         entrega.Deletar();
         return "Entrega deletada com sucesso";
-    }
-
-    
-
-    
+    }    
 }
