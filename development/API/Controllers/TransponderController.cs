@@ -16,11 +16,11 @@ using DTO;
 namespace Controllers;
 
 [Route("[controller]")]
-public class ResponsavelBoschController : ControllerBase
+public class TransponderController : ControllerBase
 {
     public IConfiguration _configuration; //add
 
-    public ResponsavelBoschController(IConfiguration config)
+    public TransponderController(IConfiguration config)
     { //add
         _configuration = config;
     }
@@ -30,43 +30,43 @@ public class ResponsavelBoschController : ControllerBase
     [Route("Buscar/{id}")]
     public Object BuscarPorId(int id)
     {  
-        var rp = Model.ResponsavelBosch.BuscarPorId(id);
-        return rp;
+        var trans = Model.Transponder.BuscarPorId(id);
+        return trans;
     }
 
-    //* ------------------------------------------------ Buscar por EDV
+    //* ------------------------------------------------ Buscar por Codigo
     [HttpGet]
-    [Route("BuscarEDV/{edv}")]
-    public Object BuscarPorId(string edv)
+    [Route("BuscarCodigo/{edv}")]
+    public Object BuscarPorCodigo(string codigo)
     {  
-        var rp = Model.ResponsavelBosch.BuscarPorEdv(edv);
-        return rp;
+        var trans = Model.Transponder.BuscarPorCodigo(codigo);
+        return trans;
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] ResponsavelBosch rp)
+    public string Salvar([FromBody] Transponder trans)
     {  
-        rp.Salvar();
-        return "Responsavel Bosch cadastrado com sucesso";
+        trans.Salvar();
+        return "Transponder cadastrado com sucesso";
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] ResponsavelBosch rp)
+    public string Editar([FromBody] Transponder trans)
     {  
-        rp.Editar();
-        return "Responsavel Bosch editado com sucesso";
+        trans.Editar();
+        return "Transponder editado com sucesso";
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar")]
-    public string Deletar([FromBody] ResponsavelBosch rp)
+    public string Deletar([FromBody] Transponder trans)
     {  
-        rp.Deletar();
-        return "Responsavel Bosch deletado com sucesso";
+        trans.Deletar();
+        return "Transponder deletado com sucesso";
     }
 }

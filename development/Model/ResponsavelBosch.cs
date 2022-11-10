@@ -34,6 +34,14 @@ public partial class ResponsavelBosch
     {
         using(var context = new Context())
         {
+            var entrega = context.Entregas.Where(e => e.IdResponsavelBosch == this.Id).ToList();
+
+            if (entrega != null){
+                foreach(Entrega x in entrega){
+                    x.IdResponsavelBosch = null;
+                }
+            }
+
             context.Remove(this);
             context.SaveChanges();
         }
