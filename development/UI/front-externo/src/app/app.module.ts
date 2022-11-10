@@ -7,6 +7,7 @@ import { LoginExternoComponent } from './login-externo/login-externo.component';
 import { GeneralTopBarComponent } from './general-top-bar/general-top-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ListaFretesComponent } from './lista-fretes/lista-fretes.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,15 @@ import { ListaFretesComponent } from './lista-fretes/lista-fretes.component';
     LoginExternoComponent,
     GeneralTopBarComponent,
     TopBarComponent,
-    ListaFretesComponent
+    ListaFretesComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: LoginExternoComponent},
+      {path: '', component: CadastroComponent},
     ])
     
   ],
