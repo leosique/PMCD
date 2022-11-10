@@ -28,7 +28,7 @@ public class TransponderController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public Object BuscarPorId(int id)
+    public Transponder BuscarPorId(int id)
     {  
         var trans = Model.Transponder.BuscarPorId(id);
         return trans;
@@ -37,7 +37,7 @@ public class TransponderController : ControllerBase
     //* ------------------------------------------------ Buscar por Codigo
     [HttpGet]
     [Route("BuscarCodigo/{codigo}")]
-    public Object BuscarPorCodigo(string codigo)
+    public Transponder BuscarPorCodigo(string codigo)
     {  
         var trans = Model.Transponder.BuscarPorCodigo(codigo);
         return trans;

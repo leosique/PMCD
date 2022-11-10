@@ -16,11 +16,11 @@ using DTO;
 namespace Controllers;
 
 [Route("[controller]")]
-public class TransportadoraController : ControllerBase
+public class EntregaEntregadorController : ControllerBase
 {
     public IConfiguration _configuration; //add
 
-    public TransportadoraController(IConfiguration config)
+    public EntregaEntregadorController(IConfiguration config)
     { //add
         _configuration = config;
     }
@@ -28,45 +28,36 @@ public class TransportadoraController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public Object BuscarPorId(int id)
+    public EntregaEntregador BuscarPorId(int id)
     {  
-        var trans = Model.Transportadora.BuscarPorId(id);
-        return trans;
-    }
-
-    //* ------------------------------------------------ Buscar por CPNJ
-    [HttpGet]
-    [Route("BuscarCNPJ/{cpnj}")]
-    public Transportadora BuscarPorId(string cnpj)
-    {  
-        var trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
-        return trans;
+        var entregaEntregador = Model.entregaEntregador.BuscarPorId(id);
+        return entregaEntregador;
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] Transportadora trans)
+    public string Salvar([FromBody] EntregaEntregador entregaEntregador)
     {  
-        trans.Salvar();
-        return "Transportadora cadastrada com sucesso";
+        entregaEntregador.Salvar();
+        return "Entrega Entregador cadastrada com sucesso";
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] Transportadora trans)
+    public string Editar([FromBody] EntregaEntregador entregaEntregador)
     {  
-        trans.Editar();
-        return "Transportadora editada com sucesso";
+        entregaEntregador.Editar();
+        return "Entrega Entregador editada com sucesso";
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar")]
-    public string Deletar([FromBody] Transportadora trans)
+    public string Deletar([FromBody] EntregaEntregador entregaEntregador)
     {  
-        trans.Deletar();
-        return "Transportadora deletada com sucesso";
+        entregaEntregador.Deletar();
+        return "Entrega Entregador deletada com sucesso";
     }
 }

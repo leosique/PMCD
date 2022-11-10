@@ -28,7 +28,7 @@ public class ResponsavelBoschController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public Object BuscarPorId(int id)
+    public ResponsavelBosch BuscarPorId(int id)
     {  
         var rp = Model.ResponsavelBosch.BuscarPorId(id);
         return rp;
@@ -37,7 +37,7 @@ public class ResponsavelBoschController : ControllerBase
     //* ------------------------------------------------ Buscar por EDV
     [HttpGet]
     [Route("BuscarEDV/{edv}")]
-    public Object BuscarPorId(string edv)
+    public ResponsavelBosch BuscarPorId(string edv)
     {  
         var rp = Model.ResponsavelBosch.BuscarPorEdv(edv);
         return rp;
