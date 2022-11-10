@@ -49,6 +49,16 @@ public partial class ResponsavelBosch
         }
     }
 
+    public static ResponsavelBosch BuscarPorEdv(string Edv)
+    {
+        using(var context = new Context())
+        {
+            var responsavelBosch = context.ResponsaveisBosch.FirstOrDefault(e => e.Edv == Edv);
+
+            return responsavelBosch;
+        }
+    }
+
     public void Editar()
     {
         using(var context = new Context())
