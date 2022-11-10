@@ -1,1 +1,98 @@
-<p>entradas-pendentes works!</p>
+<app-top-bar></app-top-bar>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h4>Entradas Pendentes</h4>
+            <div class="ShowCount">
+                <label for="showSelector">Pendentes por página:</label>
+                <input name="showSelector" id="showSelector" type="number" value="1"/>
+            </div> 
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-row bd-highlight justify-content-between mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                            <img src="../../assets/icons/barcode.svg" class="img-input" alt="" srcset="">
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Código Nota Fiscal" id="ipPesquisa"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                            <img src="../../assets/icons/address-consumer-data.svg"  class="img-input" alt="" srcset="">
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Motorista" id="descPesquisa"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                            <img src="../../assets/icons/car-licence-plate.svg"  class="img-input" alt="" srcset="">
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Placa Veículo" id="descPesquisa"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+
+            <table id="datatable" class="table  table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" class="no-sort">Código Nota Fiscal</th>
+                        <th scope="col">Motorista</th>
+                        <th scope="col" class="hidden">Placa Veículo</th>
+                        <th scope="col" >Vizualizar</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <ng-container >
+                            <ng-container >
+
+                        <td>5014512565</td>
+                        <td >Allan Kley</td>
+                        <td >BRA20E19</td>
+                        <td>
+                            <div class="actions">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Inactive"  >
+                                    <img src="../../assets/icons/clipboard-list.svg" class="img-input" alt="" srcset="">
+                                </a>
+                            </div>
+                        </td>
+                    </ng-container>
+                    </ng-container>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="registros">
+                 Mostrando de 1 até 1 de
+                1 registros 
+                <div class="pageControl">
+
+                    <div class="buttons">
+                        <div  id="AntBtn" class="pageButtons">
+                        <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
+                        </div>
+            
+                        <div>
+                        <a class="btn btn-primary pages" >
+                            1
+                        </a>
+                        </div>
+                        
+                        <div  id="ProxBtn" class="pageButtons" >
+                        <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   
