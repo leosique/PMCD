@@ -16,11 +16,11 @@ using DTO;
 namespace Controllers;
 
 [Route("[controller]")]
-public class TransponderController : ControllerBase
+public class TransportadoraController : ControllerBase
 {
     public IConfiguration _configuration; //add
 
-    public TransponderController(IConfiguration config)
+    public TransportadoraController(IConfiguration config)
     { //add
         _configuration = config;
     }
@@ -30,16 +30,16 @@ public class TransponderController : ControllerBase
     [Route("Buscar/{id}")]
     public Object BuscarPorId(int id)
     {  
-        var trans = Model.Transponder.BuscarPorId(id);
+        var trans = Model.Transportadora.BuscarPorId(id);
         return trans;
     }
 
-    //* ------------------------------------------------ Buscar por Codigo
+    //* ------------------------------------------------ Buscar por CPNJ
     [HttpGet]
-    [Route("BuscarCodigo/{codigo}")]
-    public Object BuscarPorCodigo(string codigo)
+    [Route("BuscarCNPJ/{cpnj}")]
+    public Object BuscarPorId(string cnpj)
     {  
-        var trans = Model.Transponder.BuscarPorCodigo(codigo);
+        var trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
         return trans;
     }
 
@@ -49,7 +49,7 @@ public class TransponderController : ControllerBase
     public string Salvar([FromBody] Transponder trans)
     {  
         trans.Salvar();
-        return "Transponder cadastrado com sucesso";
+        return "Transportadora cadastrada com sucesso";
     }
 
     //* ------------------------------------------------ Editar
@@ -58,7 +58,7 @@ public class TransponderController : ControllerBase
     public string Editar([FromBody] Transponder trans)
     {  
         trans.Editar();
-        return "Transponder editado com sucesso";
+        return "Transportadora editada com sucesso";
     }
 
     //* ------------------------------------------------ Deletar
@@ -67,6 +67,6 @@ public class TransponderController : ControllerBase
     public string Deletar([FromBody] Transponder trans)
     {  
         trans.Deletar();
-        return "Transponder deletado com sucesso";
+        return "Transportadora deletada com sucesso";
     }
 }
