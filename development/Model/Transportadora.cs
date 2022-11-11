@@ -32,6 +32,14 @@ public partial class Transportadora
     {
         using(var context = new Context())
         {
+            var entrega = context.Entregas.Where(e => e.IdTransportadora == this.Id).ToList();
+
+            if (entrega != null){
+                foreach(Entrega x in entrega){
+                    x.IdTransportadora = null;
+                }
+            }
+
             context.Remove(this);
             context.SaveChanges();
         }
@@ -47,6 +55,16 @@ public partial class Transportadora
         }
     }
 
+    public static Transportadora BuscarPorCNPJ(string cnpj)
+    {
+        using(var context = new Context())
+        {
+            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == cnpj);
+
+            return transportadora;
+        }
+    }
+
     public void Editar()
     {
         using(var context = new Context())
@@ -55,7 +73,6 @@ public partial class Transportadora
 
             transportadora.Nome = this.Nome;
             transportadora.Cnpj = this.Cnpj;
-
 
             context.SaveChanges();
         }

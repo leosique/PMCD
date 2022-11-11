@@ -61,11 +61,14 @@ public partial class Context : DbContext
         modelBuilder.Entity<Entrega>(entity =>
         {
             entity.ToTable("Entrega");
+            
             entity.HasKey(e => e.Id);
             entity.Property(e => e.PlacaCarro);
             entity.Property(e => e.CodigoInterno);
             entity.Property(e => e.PesoEntrada);
             entity.Property(e => e.PesoSaida);
+            entity.Property(e => e.DataEntrega);
+            entity.Property(e => e.Liberado);
 
             entity.HasOne(d => d.Transponder)
                 .WithMany(p => p.EntregaList)

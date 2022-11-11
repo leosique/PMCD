@@ -33,6 +33,14 @@ public partial class Entregador
     {
         using(var context = new Context())
         {
+             var entregaEntregador = context.EntregasEntregadores.Where(e => e.IdEntregador == this.Id).ToList();
+
+            if (entregaEntregador != null){
+                foreach(EntregaEntregador x in entregaEntregador){
+                    context.Remove(x);
+                }
+            }
+
             context.Remove(this);
             context.SaveChanges();
         }
