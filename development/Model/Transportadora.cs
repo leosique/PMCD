@@ -73,6 +73,7 @@ public partial class Transportadora
 
             transportadora.Nome = this.Nome;
             transportadora.Cnpj = this.Cnpj;
+            transportadora.Senha = this.Senha;
 
             context.SaveChanges();
         }

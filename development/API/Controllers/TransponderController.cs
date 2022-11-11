@@ -63,9 +63,10 @@ public class TransponderController : ControllerBase
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
-    [Route("Deletar")]
-    public string Deletar([FromBody] Transponder trans)
+    [Route("Deletar/{id}")]
+    public string Deletar(int id)
     {  
+        Transponder trans = Model.Transponder.BuscarPorId(id);
         trans.Deletar();
         return "Transponder deletado com sucesso";
     }

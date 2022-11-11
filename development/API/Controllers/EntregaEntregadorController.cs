@@ -30,7 +30,7 @@ public class EntregaEntregadorController : ControllerBase
     [Route("Buscar/{id}")]
     public EntregaEntregador BuscarPorId(int id)
     {  
-        var entregaEntregador = Model.entregaEntregador.BuscarPorId(id);
+        var entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
         return entregaEntregador;
     }
 
@@ -54,9 +54,10 @@ public class EntregaEntregadorController : ControllerBase
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
-    [Route("Deletar")]
-    public string Deletar([FromBody] EntregaEntregador entregaEntregador)
+    [Route("Deletar/{id}")]
+    public string Deletar(int id)
     {  
+        EntregaEntregador entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
         entregaEntregador.Deletar();
         return "Entrega Entregador deletada com sucesso";
     }

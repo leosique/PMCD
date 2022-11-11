@@ -87,6 +87,7 @@ public partial class Context : DbContext
         {
             entity.ToTable("EntregaEntregador");
             entity.HasKey(e => e.Id);
+            entity.Property(e => e.Motorista);
 
             entity.HasOne(d => d.Entrega)
                 .WithMany(p => p.EntregaEntregadorList)

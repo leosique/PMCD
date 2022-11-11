@@ -50,6 +50,7 @@ public partial class Entregador
     {
         using(var context = new Context())
         {
+          
             var entregador = context.Entregadores.FirstOrDefault(e => e.Id == Id);
 
             return entregador;

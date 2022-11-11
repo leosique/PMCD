@@ -28,36 +28,58 @@ public class EntregadorController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public Entregador BuscarPorId(int id)
+    public object BuscarPorId(int id)
     {  
-        var entregador = Model.Entregador.BuscarPorId(id);
-        return entregador;
+        try{
+            var entregador = Model.Entregador.BuscarPorId(id);
+
+            return new{
+                Nome = entregador.Nome,
+                Documento = entregador.Documento,
+                DataNascimento = entregador.DataNascimento
+            };
+        }catch{
+            return new{
+                Erro = "Entregador não encontrado"
+            };
+        }
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] Entregador entregador)
+    public object Salvar([FromBody] Entregador entregador)
     {  
         entregador.Salvar();
-        return "Entregador cadastrado com sucesso";
+
+        return new{
+            Resposta = "Entregador cadastrado com sucesso"
+        };
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] Entregador entregador)
+    public object Editar([FromBody] Entregador entregador)
     {  
+        
         entregador.Editar();
-        return "Entregador editado com sucesso";
+
+        return new{
+            Resposta = "Entregador editado com sucesso"
+        };
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
-    [Route("Deletar")]
-    public string Deletar([FromBody] Entregador entregador)
+    [Route("Deletar/{id}")]
+    public object Deletar(int id)
     {  
+        Entregador entregador = Model.Entregador.BuscarPorId(id);
         entregador.Deletar();
-        return "Entregador deletado com sucesso";
+
+        return new{
+            Resposta = "Entregador deletado com sucesso"
+        };
     }
 }

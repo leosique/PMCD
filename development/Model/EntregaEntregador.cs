@@ -9,6 +9,7 @@ public partial class EntregaEntregador
     public int Id { get; set; }
     public int IdEntrega {get; set; }
     public int IdEntregador {get; set; }
+    public bool Motorista {get; set;}
 
     public Entrega Entrega {get; set; }
     public Entregador Entregador {get; set; }
@@ -51,6 +52,7 @@ public partial class EntregaEntregador
 
             entregaEntregador.Entrega = this.Entrega;
             entregaEntregador.Entregador = this.Entregador;
+            entregaEntregador.Motorista = this.Motorista;
             
 
             context.SaveChanges();

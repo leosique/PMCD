@@ -43,6 +43,15 @@ public class ResponsavelBoschController : ControllerBase
         return rp;
     }
 
+    //* ------------------------------------------------ Buscar por Documento
+    [HttpGet]
+    [Route("BuscarDoc/{doc}")]
+    public ResponsavelBosch BuscarPorDoc(string doc)
+    {  
+        var rp = Model.ResponsavelBosch.BuscarPorDoc(doc);
+        return rp;
+    }
+
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
@@ -63,9 +72,10 @@ public class ResponsavelBoschController : ControllerBase
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
-    [Route("Deletar")]
-    public string Deletar([FromBody] ResponsavelBosch rp)
+    [Route("Deletar/{id}")]
+    public string Deletar(int id)
     {  
+        ResponsavelBosch rp = Model.ResponsavelBosch.BuscarPorId(id);
         rp.Deletar();
         return "Responsavel Bosch deletado com sucesso";
     }

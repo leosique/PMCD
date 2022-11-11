@@ -63,9 +63,10 @@ public class TransportadoraController : ControllerBase
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
-    [Route("Deletar")]
-    public string Deletar([FromBody] Transportadora trans)
+    [Route("Deletar/{id}")]
+    public string Deletar(int id)
     {  
+        Transportadora trans = Model.Transportadora.BuscarPorId(id);
         trans.Deletar();
         return "Transportadora deletada com sucesso";
     }

@@ -67,6 +67,16 @@ public partial class ResponsavelBosch
         }
     }
 
+    public static ResponsavelBosch BuscarPorDoc(string Doc)
+    {
+        using(var context = new Context())
+        {
+            var responsavelBosch = context.ResponsaveisBosch.FirstOrDefault(e => e.Documento == Doc);
+
+            return responsavelBosch;
+        }
+    }
+
     public void Editar()
     {
         using(var context = new Context())
