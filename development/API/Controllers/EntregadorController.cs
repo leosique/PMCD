@@ -48,26 +48,40 @@ public class EntregadorController : ControllerBase
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public object Salvar([FromBody] Entregador entregador)
+    public object Salvar([FromBody] EntregadorDTO entregadorDTO)
     {  
-        entregador.Salvar();
+        try{
+            Entregador entregador = new Entregador(entregadorDTO);
+            entregador.Salvar();
 
-        return new{
-            Resposta = "Entregador cadastrado com sucesso"
-        };
+            return new{
+                Resposta = "Entregador cadastrado com sucesso"
+            };
+        }catch{
+            return new{
+                Erro = "Erro ao cadastrar entregador"
+            };
+        }
+        
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public object Editar([FromBody] Entregador entregador)
+    public object Editar([FromBody] EntregadorDTO entregadorDTO)
     {  
-        
-        entregador.Editar();
+        try{
+            Entregador entregador = new Entregador(entregadorDTO);
+            entregador.Editar();
 
-        return new{
-            Resposta = "Entregador editado com sucesso"
-        };
+            return new{
+                Resposta = "Entregador editado com sucesso"
+            };
+        }catch{
+            return new{
+                Erro = "Erro ao editar entregador"
+            };
+        }
     }
 
     //* ------------------------------------------------ Deletar
@@ -75,11 +89,28 @@ public class EntregadorController : ControllerBase
     [Route("Deletar/{id}")]
     public object Deletar(int id)
     {  
-        Entregador entregador = Model.Entregador.BuscarPorId(id);
-        entregador.Deletar();
+        Entregador entregador = new Entregador();
 
-        return new{
-            Resposta = "Entregador deletado com sucesso"
-        };
+        try{
+            entregador = Model.Entregador.BuscarPorId(id);
+        }catch{
+            return new{
+                Erro = "Entregador não encontrado"
+            };
+        }
+
+        try{
+            
+            entregador.Deletar();
+
+            return new{
+                Resposta = "Entregador deletado com sucesso"
+            };
+        }catch{
+            return new{
+                Erro = "Erro ao deletar entregador"
+            };
+        }
+        
     }
 }

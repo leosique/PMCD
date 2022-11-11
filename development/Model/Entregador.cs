@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using DTO;
 namespace Model;
 
 public partial class Entregador
@@ -16,6 +16,14 @@ public partial class Entregador
 
     public Entregador()
     {
+        EntregaEntregadorList = new List<EntregaEntregador>();
+    }
+
+    public Entregador(EntregadorDTO entregadorDTO)
+    {
+        Nome = entregadorDTO.Nome;
+        Documento = entregadorDTO.Documento;
+        DataNascimento = entregadorDTO.DataNascimento;
         EntregaEntregadorList = new List<EntregaEntregador>();
     }
 
