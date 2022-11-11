@@ -6,3 +6,29 @@
 * {
     font-family: 'boschsans';
 }
+
+.btn-primary{
+    background-color: #3b83b6;
+}
+.btn-primary:hover{
+    background-color: #2d7db5;
+}
+.inativo img{
+    width:100%; 
+    height:8em; 
+    margin-bottom: 1em;
+    opacity: 0.8;
+}
+
+
+.inativo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.inativo button{
+    font-size: large;
+}

@@ -7,6 +7,7 @@ import { GeneralTopBarComponent } from './general-top-bar/general-top-bar.compon
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginSegurancaComponent } from './login-seguranca/login-seguranca.component';
 import { EntradasPendentesComponent } from './entradas-pendentes/entradas-pendentes.component';
+import { EntradasAprovadasComponent } from './entradas-aprovadas/entradas-aprovadas.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EntradasPendentesComponent } from './entradas-pendentes/entradas-penden
     GeneralTopBarComponent,
     TopBarComponent,
     LoginSegurancaComponent,
-    EntradasPendentesComponent
+    EntradasPendentesComponent,
+    EntradasAprovadasComponent
   ],
   imports: [
     BrowserModule,
