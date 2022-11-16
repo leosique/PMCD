@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using DTO;
 namespace Model;
 
 public partial class Transponder
@@ -14,6 +14,11 @@ public partial class Transponder
     public Transponder()
     {
         EntregaList = new List<Entrega>();
+    }
+
+    public Transponder(TransponderDTO transponderDTO){
+        this.Id = transponderDTO.Id;
+        this.Codigo = transponderDTO.Codigo;
     }
 
 

@@ -28,46 +28,89 @@ public class TransponderController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public Transponder BuscarPorId(int id)
+    public Object BuscarPorId(int id)
     {  
-        var trans = Model.Transponder.BuscarPorId(id);
-        return trans;
+        try{
+            var trans = Model.Transponder.BuscarPorId(id);
+            return new{
+                Codigo = trans.Codigo
+            };
+        }catch{
+            return new{
+                Resposta = "Transponder não encontrado"
+            };
+        }
     }
 
     //* ------------------------------------------------ Buscar por Codigo
     [HttpGet]
     [Route("BuscarCodigo/{codigo}")]
-    public Transponder BuscarPorCodigo(string codigo)
+    public Object BuscarPorCodigo(string codigo)
     {  
-        var trans = Model.Transponder.BuscarPorCodigo(codigo);
-        return trans;
+        try{
+            var trans = Model.Transponder.BuscarPorCodigo(codigo);
+            return new{
+                Id = trans.Id
+            };
+        }catch{
+            return new{
+                Resposta = "Transponder não encontrado"
+            };
+        }
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] Transponder trans)
+    public Object Salvar([FromBody] TransponderDTO transDTO)
     {  
-        trans.Salvar();
-        return "Transponder cadastrado com sucesso";
+        try{
+            Transponder trans = new Transponder(transDTO);
+            trans.Salvar();
+            return new{
+                Resposta = "Transponder cadastrado com sucesso",
+                Id = trans.Id
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao cadastrar transponder"
+            };
+        }
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] Transponder trans)
+    public Object Editar([FromBody] TransponderDTO transDTO)
     {  
-        trans.Editar();
-        return "Transponder editado com sucesso";
+       try{
+            Transponder trans = new Transponder(transDTO);
+            trans.Editar();
+            return new{
+                Resposta = "Transponder editado com sucesso",
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar transponder"
+            };
+        }
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
-    public string Deletar(int id)
+    public Object Deletar(int id)
     {  
-        Transponder trans = Model.Transponder.BuscarPorId(id);
-        trans.Deletar();
-        return "Transponder deletado com sucesso";
+        try{
+            Transponder trans = Model.Transponder.BuscarPorId(id);
+            trans.Deletar();
+            return new{
+                Resposta = "Transponder deletado com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao deletar transponder"
+            };
+        }
     }
 }
