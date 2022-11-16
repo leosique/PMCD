@@ -41,7 +41,7 @@ public class EntregaEntregadorController : ControllerBase
             };
         }catch{
             return new{
-                Resposta = "EntregaEntregador não encontrado"
+                Resposta = "Entrega-Entregador não encontrado"
             };
         }
         
@@ -57,12 +57,12 @@ public class EntregaEntregadorController : ControllerBase
             EntregaEntregador entregaEntregador = new Model.EntregaEntregador(entregaEntregadorDTO);
             entregaEntregador.Salvar();
             return new{
-                Resposta = "EntregaEntregador cadastrada com sucesso",
+                Resposta = "Entrega-Entregador cadastrada com sucesso",
                 Id = entregaEntregador.Id
             };
         }catch{
             return new{
-                Resposta = "Erro ao cadastrar entregaEntregador"
+                Resposta = "Erro ao cadastrar entrega-Entregador"
             };
         }
         
@@ -77,11 +77,11 @@ public class EntregaEntregadorController : ControllerBase
             EntregaEntregador entregaEntregador = new EntregaEntregador(entregaEntregadorDTO);
             entregaEntregador.Editar();
             return new{
-                Resposta = "EntregaEntregador editada com sucesso"
+                Resposta = "Entrega-Entregador editada com sucesso"
             };
         }catch{
             return new{
-                Resposta = "Erro ao editar entregaEntregador"
+                Resposta = "Erro ao editar entrega-Entregador"
             };
         }
         
@@ -96,11 +96,11 @@ public class EntregaEntregadorController : ControllerBase
             EntregaEntregador entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
             entregaEntregador.Deletar();
             return new{
-                Resposta = "EntregaEntregador deletada com sucesso"
+                Resposta = "Entrega-Entregador deletada com sucesso"
             };
         }catch{
             return new{
-                Resposta = "Erro ao deletar entregaEntregador"
+                Resposta = "Erro ao deletar entrega-Entregador"
             };
         }
         

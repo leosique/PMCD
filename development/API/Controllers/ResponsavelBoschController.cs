@@ -28,55 +28,118 @@ public class ResponsavelBoschController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public ResponsavelBosch BuscarPorId(int id)
+    public Object BuscarPorId(int id)
     {  
-        var rp = Model.ResponsavelBosch.BuscarPorId(id);
-        return rp;
+        try{
+            ResponsavelBosch rp = Model.ResponsavelBosch.BuscarPorId(id);
+
+            return new{
+                Id = rp.Id,
+                Nome = rp.Nome,
+                Documento = rp.Documento,
+                Edv = rp.Edv
+            };
+        }catch{
+            return new{
+                Resposta = "ResponsavelBosch não encontrado"
+            };
+        }
     }
 
     //* ------------------------------------------------ Buscar por EDV
     [HttpGet]
     [Route("BuscarEDV/{edv}")]
-    public ResponsavelBosch BuscarPorId(string edv)
+    public Object BuscarPorEdv(string edv)
     {  
-        var rp = Model.ResponsavelBosch.BuscarPorEdv(edv);
-        return rp;
+        try{
+            ResponsavelBosch rp = Model.ResponsavelBosch.BuscarPorEdv(edv);
+
+            return new{
+                Id = rp.Id,
+                Nome = rp.Nome,
+                Documento = rp.Documento,
+                Edv = rp.Edv
+            };
+        }catch{
+            return new{
+                Resposta = "ResponsavelBosch não encontrado"
+            };
+        }
     }
 
     //* ------------------------------------------------ Buscar por Documento
     [HttpGet]
     [Route("BuscarDoc/{doc}")]
-    public ResponsavelBosch BuscarPorDoc(string doc)
+    public Object BuscarPorDoc(string doc)
     {  
-        var rp = Model.ResponsavelBosch.BuscarPorDoc(doc);
-        return rp;
+        try{
+            ResponsavelBosch rp = Model.ResponsavelBosch.BuscarPorDoc(doc);
+
+            return new{
+                Id = rp.Id,
+                Nome = rp.Nome,
+                Documento = rp.Documento,
+                Edv = rp.Edv
+            };
+        }catch{
+            return new{
+                Resposta = "Responsavel Bosch não encontrado"
+            };
+        }
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] ResponsavelBosch rp)
+    public Object Salvar([FromBody] ResponsavelBoschDTO rpDTO)
     {  
-        rp.Salvar();
-        return "Responsavel Bosch cadastrado com sucesso";
+        try{
+            ResponsavelBosch rp = new ResponsavelBosch(rpDTO);
+            rp.Salvar();
+            return new{
+                Resposta = "Responsavel Bosch cadastrado com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao cadastrar Responsavel Bosch"
+            };
+        }
+        
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] ResponsavelBosch rp)
+    public Object Editar([FromBody] ResponsavelBoschDTO rpDTO)
     {  
-        rp.Editar();
-        return "Responsavel Bosch editado com sucesso";
+        try{
+            ResponsavelBosch rp = new ResponsavelBosch(rpDTO);
+            rp.Editar();
+            return new{
+                Resposta = "Responsavel Bosch editado com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar Respondavel Bosch"
+            };
+        }
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
-    public string Deletar(int id)
+    public Object Deletar(int id)
     {  
-        ResponsavelBosch rp = Model.ResponsavelBosch.BuscarPorId(id);
-        rp.Deletar();
-        return "Responsavel Bosch deletado com sucesso";
+        try{
+            ResponsavelBosch rp = Model.ResponsavelBosch.BuscarPorId(id);
+            rp.Deletar();
+            return new{
+                Resposta = "Responsavel Bosch deletado com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao deletar responsavel Bosch"
+            };
+        }
     }
 }

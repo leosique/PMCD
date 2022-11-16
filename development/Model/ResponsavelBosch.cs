@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DTO;
 
 namespace Model;
 
@@ -20,6 +21,12 @@ public partial class ResponsavelBosch
         EntregaList = new List<Entrega>();
     }
 
+    public ResponsavelBosch(ResponsavelBoschDTO rpDTO){
+        this.Id = rpDTO.Id;
+        this.Nome = rpDTO.Nome;
+        this.Documento = rpDTO.Documento;
+        this.Edv = rpDTO.Edv;
+    }
 
     public void Salvar()
     {
