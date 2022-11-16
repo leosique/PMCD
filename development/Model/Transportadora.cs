@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DTO;
 
 namespace Model;
 
@@ -17,6 +18,13 @@ public partial class Transportadora
     public Transportadora()
     {
         EntregaList = new List<Entrega>();
+    }
+
+    public Transportadora(TransportadoraDTO transDTO){
+        this.Id = transDTO.Id;
+        this.Nome = transDTO.Nome;
+        this.Cnpj = transDTO.Cnpj;
+        this.Senha = transDTO.Senha;
     }
 
     public void Salvar()

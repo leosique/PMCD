@@ -30,44 +30,94 @@ public class TransportadoraController : ControllerBase
     [Route("Buscar/{id}")]
     public Object BuscarPorId(int id)
     {  
-        var trans = Model.Transportadora.BuscarPorId(id);
-        return trans;
+        try{
+            Transportadora trans = Model.Transportadora.BuscarPorId(id);
+            return new{
+                Id = trans.Id,
+                Nome = trans.Nome,
+                Cnpj = trans.Cnpj,
+                Senha = trans.Senha
+            };
+        }catch{
+            return new{
+                Resposta = "Transportadora não encontrada"
+            };
+        }
     }
 
     //* ------------------------------------------------ Buscar por CPNJ
     [HttpGet]
     [Route("BuscarCNPJ/{cpnj}")]
-    public Transportadora BuscarPorId(string cnpj)
+    public Object BuscarPorId(string cnpj)
     {  
-        var trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
-        return trans;
+        try{
+            Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
+            return new{
+                Id = trans.Id,
+                Nome = trans.Nome,
+                Cnpj = trans.Cnpj,
+                Senha = trans.Senha
+            };
+        }catch{
+            return new{
+                Resposta = "Transportadora não encontrada"
+            };
+        }
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] Transportadora trans)
+    public Object Salvar([FromBody] TransportadoraDTO transDTO)
     {  
-        trans.Salvar();
-        return "Transportadora cadastrada com sucesso";
+        try{
+            Transportadora trans = new Transportadora(transDTO);
+            trans.Salvar();
+            return new{
+                Resposta = "Transportadora cadastrada com sucesso",
+                Id = trans.Id
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao cadastrar transportadora"
+            };
+        }
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] Transportadora trans)
+    public Object Editar([FromBody] TransportadoraDTO transDTO)
     {  
-        trans.Editar();
-        return "Transportadora editada com sucesso";
+        try{
+            Transportadora trans = new Transportadora(transDTO);
+            trans.Editar();
+            return new{
+                Resposta = "Transportadora editada com sucesso",
+                Id = trans.Id
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar transportadora"
+            };
+        }
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
-    public string Deletar(int id)
+    public Object Deletar(int id)
     {  
-        Transportadora trans = Model.Transportadora.BuscarPorId(id);
-        trans.Deletar();
-        return "Transportadora deletada com sucesso";
+        try{
+            Transportadora trans = Model.Transportadora.BuscarPorId(id);
+            trans.Deletar();
+            return new{
+                Resposta = "Transportadora deletada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao deletar transportadora"
+            };
+        }
     }
 }
