@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DTO;
 
 namespace Model;
 
@@ -14,7 +15,12 @@ public partial class EntregaEntregador
     public Entrega Entrega {get; set; }
     public Entregador Entregador {get; set; }
 
-
+    public EntregaEntregador(EntregaEntregadorDTO entregaEntregadorDTO){
+        this.Id = entregaEntregadorDTO.Id;
+        this.IdEntrega = entregaEntregadorDTO.IdEntrega;
+        this.IdEntregador = entregaEntregadorDTO.IdEntregador;
+        this.Motorista = entregaEntregadorDTO.Motorista;
+    }
 
     public void Salvar()
     {

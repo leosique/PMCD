@@ -28,37 +28,81 @@ public class EntregaEntregadorController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
-    public EntregaEntregador BuscarPorId(int id)
+    public Object BuscarPorId(int id)
     {  
-        var entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
-        return entregaEntregador;
+        try{
+            EntregaEntregador entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
+
+            return new{
+                Id = entregaEntregador.Id,
+                IdEntrega = entregaEntregador.IdEntrega,
+                IdEntregador = entregaEntregador.IdEntregador,
+                Motorista = entregaEntregador.Motorista
+            };
+        }catch{
+            return new{
+                Resposta = "EntregaEntregador não encontrado"
+            };
+        }
+        
+  
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] EntregaEntregador entregaEntregador)
+    public Object Salvar([FromBody] EntregaEntregadorDTO entregaEntregadorDTO)
     {  
-        entregaEntregador.Salvar();
-        return "Entrega Entregador cadastrada com sucesso";
+        try{
+            EntregaEntregador entregaEntregador = new Model.EntregaEntregador(entregaEntregadorDTO);
+            entregaEntregador.Salvar();
+            return new{
+                Resposta = "EntregaEntregador cadastrada com sucesso",
+                Id = entregaEntregador.Id
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao cadastrar entregaEntregador"
+            };
+        }
+        
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] EntregaEntregador entregaEntregador)
+    public Object Editar([FromBody] EntregaEntregadorDTO entregaEntregadorDTO)
     {  
-        entregaEntregador.Editar();
-        return "Entrega Entregador editada com sucesso";
+        try{
+            EntregaEntregador entregaEntregador = new EntregaEntregador(entregaEntregadorDTO);
+            entregaEntregador.Editar();
+            return new{
+                Resposta = "EntregaEntregador editada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar entregaEntregador"
+            };
+        }
+        
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
-    public string Deletar(int id)
+    public Object Deletar(int id)
     {  
-        EntregaEntregador entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
-        entregaEntregador.Deletar();
-        return "Entrega Entregador deletada com sucesso";
+        try{
+            EntregaEntregador entregaEntregador = Model.EntregaEntregador.BuscarPorId(id);
+            entregaEntregador.Deletar();
+            return new{
+                Resposta = "EntregaEntregador deletada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao deletar entregaEntregador"
+            };
+        }
+        
     }
 }

@@ -31,7 +31,7 @@ public class EntregadorController : ControllerBase
     public object BuscarPorId(int id)
     {  
         try{
-            var entregador = Model.Entregador.BuscarPorId(id);
+            Entregador entregador = Model.Entregador.BuscarPorId(id);
 
             return new{
                 Nome = entregador.Nome,
