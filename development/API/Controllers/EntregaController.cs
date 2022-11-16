@@ -30,70 +30,155 @@ public class EntregaController : ControllerBase
     [Route("Buscar/{id}")]
     public Object BuscarPorId(int id)
     {  
-        var entrega = Model.Entrega.BuscarPorId(id);
-        return entrega;
+        try{
+            
+            Entrega entrega = Model.Entrega.BuscarPorId(id);
+
+            return new{
+                PlacaCarro = entrega.PlacaCarro,
+                CodigoInterno = ((CodigoInterno)entrega.CodigoInterno).ToString(),
+                PesoEntrada = entrega.PesoEntrada,
+                PesoSaida = entrega.PesoSaida,
+                DataEntrega = entrega.DataEntrega,
+                Liberado = entrega.Liberado,
+                IdTransponder = entrega.IdTransponder,
+                IdTransportadora = entrega.IdTransportadora,
+                IdResponsavelBosch = entrega.IdResponsavelBosch,
+            };
+        }catch{
+            return new{
+                Resposta = "Entrega não encontrada"
+            };
+        }
+        
     }
 
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
-    public string Salvar([FromBody] Entrega entrega)
+    public Object Salvar([FromBody] EntregaDTO entregaDTO)
     {  
-        entrega.Salvar();
-        return "Entrega cadastrada com sucesso";
+        try{
+            Entrega entrega = new Model.Entrega(entregaDTO);
+            entrega.Salvar();
+            return new{
+                Resposta = "Entrega cadastrada com sucesso",
+                Id = entrega.Id
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao cadastrar entrega"
+            };
+        }   
     }
 
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    public string Editar([FromBody] Entrega entrega)
+    public Object Editar([FromBody] EntregaDTO entregaDTO)
     {  
-        entrega.Editar();
-        return "Entrega editada com sucesso";
+        try{
+            Entrega entrega = new Model.Entrega(entregaDTO);
+            entrega.Editar();
+            return new{
+                Resposta = "Entrega editada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar entrega"
+            };
+        }
     }
 
     //* ------------------------------------------------ Editar Placa
     [HttpPut]
     [Route("Editar/Placa")]
-    public string EditarPlaca([FromBody] Entrega entrega)
+    public Object EditarPlaca([FromBody] EntregaDTO entregaDTO)
     {  
-        entrega.EditarPlaca();
-        return "Placa editada com sucesso";
+        try{
+            Entrega entrega = new Model.Entrega(entregaDTO);
+            entrega.EditarPlaca();
+            return new{
+                Resposta = "Placa editada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar placa"
+            };
+        }
     }
 
     //* ------------------------------------------------ Editar Peso Entrada
     [HttpPut]
     [Route("Editar/PesoEntrada")]
-    public string EditarPesoEntrada([FromBody] Entrega entrega)
+    public Object EditarPesoEntrada([FromBody] EntregaDTO entregaDTO)
     {  
-        entrega.EditarPesoEntrada();
-        return "Peso Entrada editada com sucesso";
+        try{
+            Entrega entrega = new Model.Entrega(entregaDTO);
+            entrega.EditarPesoEntrada();
+            return new{
+                Resposta = "Peso de entrada editada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar peso de entrada"
+            };
+        }
+        
     }
 
     //* ------------------------------------------------ Editar Peso Saida
     [HttpPut]
     [Route("Editar/PesoSaida")]
-    public string EditarPesoSaida([FromBody] Entrega entrega)
+    public Object EditarPesoSaida([FromBody] EntregaDTO entregaDTO)
     {  
-        entrega.EditarPesoSaida();
-        return "Peso Saida editada com sucesso";
+        try{
+            Entrega entrega = new Model.Entrega(entregaDTO);
+            entrega.EditarPesoSaida();
+            return new{
+                Resposta = "Peso de saída editada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar peso de saída"
+            };
+        }
     }
 
     //* ------------------------------------------------ Editar Transponder
     [HttpPut]
     [Route("Editar/Transponder")]
-    public string EditarTransponder([FromBody] Entrega entrega)
+    public Object EditarTransponder([FromBody] EntregaDTO entregaDTO)
     {  
-        entrega.EditarTransponder();
-        return "Transponder editada com sucesso";
+        try{
+            Entrega entrega = new Model.Entrega(entregaDTO);
+            entrega.EditarTransponder();
+            return new{
+                Resposta = "Transponder editada com sucesso"
+            };
+        }catch{
+            return new{
+                Resposta = "Erro ao editar transponder"
+            };
+        }
     }
 
     //* ------------------------------------------------ Deletar
     [HttpDelete]
-    [Route("Deletar")]
-    public string Deletar([FromBody] Entrega entrega)
+    [Route("Deletar/{id}")]
+    public Object Deletar(int id)
     {  
-        entrega.Deletar();
-        return "Entrega deletada com sucesso";
+        try{
+            Entrega entrega = Model.Entrega.BuscarPorId(id);
+            entrega.Deletar();
+            return new{
+                Resposta = "Entrega deletada com sucesso"
+                };
+        }catch{
+            return new{
+                Resposta = "Erro ao deletar entrega"
+            };
+        }
+        
     }    
 }

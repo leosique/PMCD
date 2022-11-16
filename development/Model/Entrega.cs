@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-
+using DTO;
 namespace Model;
 
 public partial class Entrega
@@ -29,6 +29,18 @@ public partial class Entrega
         EntregaEntregadorList = new List<EntregaEntregador>();
     }
 
+    public Entrega(EntregaDTO entregaDTO){
+        this.Id = entregaDTO.Id;
+        this.PlacaCarro = entregaDTO.PlacaCarro;
+        this.CodigoInterno = (CodigoInterno) entregaDTO.CodigoInterno;
+        this.PesoEntrada = entregaDTO.PesoEntrada;
+        this.PesoSaida = entregaDTO.PesoSaida;
+        this.DataEntrega = entregaDTO.DataEntrega;
+        this.Liberado = entregaDTO.Liberado;
+        this.IdTransponder = entregaDTO.IdTransponder;
+        this.IdTransportadora = entregaDTO.IdTransportadora;
+        this.IdResponsavelBosch = entregaDTO.IdResponsavelBosch;
+    }
 
     public void Salvar()
     {
@@ -56,23 +68,13 @@ public partial class Entrega
         }
     }
 
-    public static Object BuscarPorId(int Id)
+    public static Entrega BuscarPorId(int Id)
     {
         using(var context = new Context())
         {
-            var entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
+            Entrega entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
 
-            return new{
-                PlacaCarro = entrega.PlacaCarro,
-                CodigoInterno = ((CodigoInterno)entrega.CodigoInterno).ToString(),
-                PesoEntrada = entrega.PesoEntrada,
-                PesoSaida = entrega.PesoSaida,
-                DataEntrega = entrega.DataEntrega,
-                Liberado = entrega.Liberado,
-                IdTransponder = entrega.IdTransponder,
-                IdTransportadora = entrega.IdTransportadora,
-                IdResponsavelBosch = entrega.IdResponsavelBosch,
-            };
+            return entrega;
         }
     }
 
