@@ -55,7 +55,8 @@ public class EntregadorController : ControllerBase
             entregador.Salvar();
 
             return new{
-                Resposta = "Entregador cadastrado com sucesso"
+                Resposta = "Entregador cadastrado com sucesso",
+                Id = entregador.Id
             };
         }catch{
             return new{
@@ -69,11 +70,12 @@ public class EntregadorController : ControllerBase
     [HttpPut]
     [Route("Editar")]
     public object Editar([FromBody] EntregadorDTO entregadorDTO)
-    {  
+    {
         try{
             Entregador entregador = new Entregador(entregadorDTO);
+            
             entregador.Editar();
-
+         
             return new{
                 Resposta = "Entregador editado com sucesso"
             };
@@ -89,18 +91,9 @@ public class EntregadorController : ControllerBase
     [Route("Deletar/{id}")]
     public object Deletar(int id)
     {  
-        Entregador entregador = new Entregador();
-
         try{
-            entregador = Model.Entregador.BuscarPorId(id);
-        }catch{
-            return new{
-                Erro = "Entregador não encontrado"
-            };
-        }
+            Entregador entregador = Model.Entregador.BuscarPorId(id);
 
-        try{
-            
             entregador.Deletar();
 
             return new{

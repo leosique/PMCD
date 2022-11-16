@@ -7,8 +7,9 @@ namespace DTO;
 
 public class EntregadorDTO
 {
-    public int id {get; set; }
+    public int Id {get; set; }
     public string Nome {get; set; }
     public string Documento {get; set; }
     public string DataNascimento {get; set; }
+
 }

@@ -21,10 +21,11 @@ public partial class Entregador
 
     public Entregador(EntregadorDTO entregadorDTO)
     {
-        Nome = entregadorDTO.Nome;
-        Documento = entregadorDTO.Documento;
-        DataNascimento = entregadorDTO.DataNascimento;
-        EntregaEntregadorList = new List<EntregaEntregador>();
+        this.Id = entregadorDTO.Id;
+        this.Nome = entregadorDTO.Nome;
+        this.Documento = entregadorDTO.Documento;
+        this.DataNascimento = entregadorDTO.DataNascimento;
+        this.EntregaEntregadorList = new List<EntregaEntregador>();
     }
 
 
@@ -69,12 +70,16 @@ public partial class Entregador
     {
         using(var context = new Context())
         {
-            var entregador = context.Entregadores.FirstOrDefault(e => e.Id == this.Id);
+            Entregador entregador = context.Entregadores.FirstOrDefault(e => e.Id == this.Id);
+            Console.WriteLine(this.Id);
+            Console.WriteLine(entregador.Nome);
+            
 
             entregador.Nome = this.Nome;
             entregador.Documento = this.Documento;
             entregador.DataNascimento = this.DataNascimento;
 
+            
             context.SaveChanges();
         }
     }
