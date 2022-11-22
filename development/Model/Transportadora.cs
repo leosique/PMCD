@@ -57,8 +57,9 @@ public partial class Transportadora
     {
         using(var context = new Context())
         {
+            Console.WriteLine(Id);
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Id == Id);
-
+            Console.WriteLine(transportadora.Cnpj);
             return transportadora;
         }
     }
@@ -84,6 +85,16 @@ public partial class Transportadora
             transportadora.Senha = this.Senha;
 
             context.SaveChanges();
+        }
+    }
+
+    public static Transportadora Login(TransLoginDTO transloginDTO)
+    {
+        using(var context = new Context())
+        {
+            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Nome == transloginDTO.Nome);
+
+            return transportadora;
         }
     }
 }

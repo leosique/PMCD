@@ -39,9 +39,10 @@ public class EntregaEntregadorController : ControllerBase
                 IdEntregador = entregaEntregador.IdEntregador,
                 Motorista = entregaEntregador.Motorista
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Entrega-Entregador não encontrado"
+                Resposta = "Entrega-Entregador não encontrado",
+                Erro = e.Message
             };
         }
         
@@ -60,9 +61,10 @@ public class EntregaEntregadorController : ControllerBase
                 Resposta = "Entrega-Entregador cadastrada com sucesso",
                 Id = entregaEntregador.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao cadastrar entrega-Entregador"
+                Resposta = "Erro ao cadastrar entrega-Entregador",
+                Erro = e.Message
             };
         }
         
@@ -79,9 +81,10 @@ public class EntregaEntregadorController : ControllerBase
             return new{
                 Resposta = "Entrega-Entregador editada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar entrega-Entregador"
+                Resposta = "Erro ao editar entrega-Entregador",
+                Erro = e.Message
             };
         }
         
@@ -98,9 +101,10 @@ public class EntregaEntregadorController : ControllerBase
             return new{
                 Resposta = "Entrega-Entregador deletada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao deletar entrega-Entregador"
+                Resposta = "Erro ao deletar entrega-Entregador",
+                Erro = e.Message
             };
         }
         

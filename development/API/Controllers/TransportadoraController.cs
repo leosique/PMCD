@@ -10,8 +10,10 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using System.Linq;
+using API.Services;
 using Model;
 using DTO;
+
 
 namespace Controllers;
 
@@ -38,9 +40,10 @@ public class TransportadoraController : ControllerBase
                 Cnpj = trans.Cnpj,
                 Senha = trans.Senha
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Transportadora não encontrada"
+                Resposta = "Transportadora não encontrada",
+                Erro = e.Message
             };
         }
     }
@@ -58,9 +61,10 @@ public class TransportadoraController : ControllerBase
                 Cnpj = trans.Cnpj,
                 Senha = trans.Senha
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Transportadora não encontrada"
+                Resposta = "Transportadora não encontrada",
+                Erro = e.Message
             };
         }
     }
@@ -77,9 +81,10 @@ public class TransportadoraController : ControllerBase
                 Resposta = "Transportadora cadastrada com sucesso",
                 Id = trans.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao cadastrar transportadora"
+                Resposta = "Erro ao cadastrar transportadora",
+                Erro = e.Message
             };
         }
     }
@@ -96,9 +101,10 @@ public class TransportadoraController : ControllerBase
                 Resposta = "Transportadora editada com sucesso",
                 Id = trans.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar transportadora"
+                Resposta = "Erro ao editar transportadora",
+                Erro = e.Message
             };
         }
     }
@@ -114,10 +120,36 @@ public class TransportadoraController : ControllerBase
             return new{
                 Resposta = "Transportadora deletada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao deletar transportadora"
+                Resposta = "Erro ao deletar transportadora",
+                Erro = e.Message
             };
         }
+    }
+
+    //* ------------------------------------------------ Testando Login
+    [HttpPost]
+    [Route("Login")]
+    public Object LoginAsync([FromBody] TransLoginDTO transLoginDTO){
+
+
+        Transportadora trans = Transportadora.Login(transLoginDTO);
+
+        if(trans != null){
+
+            var token = TokenService.GenerateToken(trans);
+
+            return new{
+                transportadora = trans,
+                token = token
+            };
+        }else{
+            return new{
+                Resposta = "Erro em login",
+            };
+        }
+        
+
     }
 }

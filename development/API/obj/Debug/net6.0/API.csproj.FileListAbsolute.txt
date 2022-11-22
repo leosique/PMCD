@@ -84,3 +84,4 @@ C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\DTO.dll
 C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\DTO.pdb
 C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\Model.dll
 C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\Model.pdb
+C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,3 +1,8 @@
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using API.Settings;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +11,21 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// var key = Encoding.ASCII.GetBytes(Settings.Secret);
+
+// builder.Services.AddAuthentication().AddJwtBearer(x => 
+// {
+//     x.RequireHttpsMetadata = false;
+//     x.SaveToken = true;
+//     x.TokenValidationParameters = new TokenValidationParameters 
+//     {
+//         ValidateIssuerSigningKey = true,
+//         IssuerSigningKey = new SymmetricSecurityKey(key),
+//         ValidateIssuer = false,
+//         ValidateAudience = false
+//     };
+// });
 
 var app = builder.Build();
 
@@ -18,6 +38,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

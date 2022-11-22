@@ -35,9 +35,10 @@ public class TransponderController : ControllerBase
             return new{
                 Codigo = trans.Codigo
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Transponder não encontrado"
+                Resposta = "Transponder não encontrado",
+                Erro = e.Message
             };
         }
     }
@@ -52,9 +53,10 @@ public class TransponderController : ControllerBase
             return new{
                 Id = trans.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Transponder não encontrado"
+                Resposta = "Transponder não encontrado",
+                Erro = e.Message
             };
         }
     }
@@ -71,9 +73,10 @@ public class TransponderController : ControllerBase
                 Resposta = "Transponder cadastrado com sucesso",
                 Id = trans.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao cadastrar transponder"
+                Resposta = "Erro ao cadastrar transponder",
+                Erro = e.Message
             };
         }
     }
@@ -89,9 +92,10 @@ public class TransponderController : ControllerBase
             return new{
                 Resposta = "Transponder editado com sucesso",
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar transponder"
+                Resposta = "Erro ao editar transponder",
+                Erro = e.Message
             };
         }
     }
@@ -107,9 +111,10 @@ public class TransponderController : ControllerBase
             return new{
                 Resposta = "Transponder deletado com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao deletar transponder"
+                Resposta = "Erro ao deletar transponder",
+                Erro = e.Message
             };
         }
     }
