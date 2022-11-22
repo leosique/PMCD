@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginAdmComponent } from './login-adm/login-adm.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { GeneralTopBarComponent } from './general-top-bar/general-top-bar.component';
+import { PermissionsComponent } from './permissions/permissions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginAdmComponent,
     TopBarComponent,
-    GeneralTopBarComponent
+    GeneralTopBarComponent,
+    PermissionsComponent
   ],
   imports: [
     BrowserModule,

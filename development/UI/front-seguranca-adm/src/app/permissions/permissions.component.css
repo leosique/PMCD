@@ -267,7 +267,12 @@ table {
 
 /* Editar e cadastrar estação modal */
 
-
+.tabelasRegistro  table {
+    color: #737679;
+    text-align: center;
+    width: 48%;
+    text-justify: center;
+}
 
 .title{
     width: 48%;
@@ -293,20 +298,10 @@ table {
     justify-content: space-between;
    
 }
-
-.codigo{
-    font-weight: bold;
+.last-text{
     color: #737679;
-    position: relative;
-    text-align: center;
-    margin: auto;
 }
-
-.form-control{
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-}
-
-.modal-header{
-    margin-bottom: 20px; 
+.button-add img{
+    color: #2D7DB5;
+    margin-left: 85%;
 }
