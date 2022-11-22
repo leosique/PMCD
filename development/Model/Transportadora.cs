@@ -92,7 +92,7 @@ public partial class Transportadora
     {
         using(var context = new Context())
         {
-            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Nome == transloginDTO.Nome);
+            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == transloginDTO.Cnpj && e.Senha == transloginDTO.Senha);
 
             return transportadora;
         }

@@ -30,6 +30,7 @@ public class TransportadoraController : ControllerBase
     //* ------------------------------------------------ Buscar por ID
     [HttpGet]
     [Route("Buscar/{id}")]
+    [Authorize]
     public Object BuscarPorId(int id)
     {  
         try{
