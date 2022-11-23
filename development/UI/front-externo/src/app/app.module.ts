@@ -7,7 +7,10 @@ import { LoginExternoComponent } from './login-externo/login-externo.component';
 import { GeneralTopBarComponent } from './general-top-bar/general-top-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ListaFretesComponent } from './lista-fretes/lista-fretes.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
+import { CadastroTransportadoraComponent } from './cadastro-transportadora/cadastro-transportadora.component';
+import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motorista.component';
+import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,18 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     GeneralTopBarComponent,
     TopBarComponent,
     ListaFretesComponent,
-    CadastroComponent
+    CadastroVeiculoComponent,
+    CadastroTransportadoraComponent,
+    CadastroMotoristaComponent,
+    CadastroAjudanteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: LoginExternoComponent},
-      {path: '', component: CadastroComponent},
+      {path: '', component: CadastroVeiculoComponent},
+      {path: '', component: CadastroTransportadoraComponent},
     ])
     
   ],
