@@ -54,10 +54,10 @@ tbody{
     align-items: center;
 }
 
-.img-action{
-    width: 5em;
+.actions a{
+    width: 50px;
+    height: 50px;
 }
-
 td{
     vertical-align:baseline;
 	margin: auto;
@@ -267,12 +267,7 @@ table {
 
 /* Editar e cadastrar estação modal */
 
-.tabelasRegistro  table {
-    color: #737679;
-    text-align: center;
-    width: 48%;
-    text-justify: center;
-}
+
 
 .title{
     width: 48%;
@@ -299,7 +294,44 @@ table {
    
 }
 
+.codigo{
+    font-weight: bold;
+    color: #737679;
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
 
+.form-control{
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.modal-header{
+    margin-bottom: 20px; 
+}
+
+.btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
   
-  
-  
+  .btn1 {
+    padding: 0.50rem;
+    margin-top: 1.8rem;
+    display: block;
+    text-decoration: none;
+    background-color: rgb(76, 133, 219);
+    color: #f3f3f3;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+  }
+  .btn1:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgb(76, 133, 219);
+  }

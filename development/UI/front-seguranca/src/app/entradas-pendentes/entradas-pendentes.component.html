@@ -46,7 +46,7 @@
                         <th scope="col" class="no-sort">Código Nota Fiscal</th>
                         <th scope="col">Motorista</th>
                         <th scope="col" class="hidden">Placa Veículo</th>
-                        <th scope="col" >Verificar</th>
+                        <th scope="col" >Aprovar</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -59,8 +59,8 @@
                         <td >BRA20E19</td>
                         <td>
                             <div class="actions">
-                                <a href=""  data-bs-toggle="modal" data-bs-target="#Aprovar" >
-                                    <img src="../../assets/icons/clipboard-list-parts.svg" class="img-action" alt="" srcset="">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  >
+                                    <img src="../../assets/icons/clipboard-list-parts.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
                         </td>
@@ -95,69 +95,72 @@
 
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="#Aprovar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" >Código da nota fiscal: </h5>
-                <h3 class="modal-title codigo" > 5014512565</h3>
-                <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
-            </div>
-            
-            <div class="modal-body">
-                <form class="row g-3">
-                    <div class="col-md-6">
-                      <label for="inputEmail4" class="form-label">Modelo</label>
-                      <input type="text" name="modelo" id="modelo" style="width: 70%;" placeholder="Modelo" />
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputPassword4" class="form-label">Ano</label>
-                      <h5 class="form-control">lalalala</h5>
-                    </div>
-                    <div class="col-12">
-                      <label for="inputAddress" class="form-label">Placa</label>
-                      <h5 class="form-control">lalalala</h5>
-                    </div>
-                    <div class="col-12">
-                      <label for="inputAddress2" class="form-label">CPF</label>
-                      <h5 class="form-control">lalalala</h5>
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Nome</label>
-                        <h5 class="form-control">lalalala</h5>
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">RG</label>
-                        <h5 class="form-control">lalalala</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">CNH</label>
-                        <h5 class="form-control">lalalala</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Nacimento</label>
-                        <h5 class="form-control">lalalala</h5>
-                    </div> 
-                  </form>
-                  <div ></div>
-                  <div class="modal-header">
-                    <h3 class="modal-title codigo" > Ajudante</h3>
+    <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >Código da nota fiscal: </h5>
+                    <h3 class="modal-title codigo" > 5014512565</h3>
+                    <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
                 </div>
-                  <form class="row g-3">
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">CPF</label>
-                        <h5 class="form-control">lalalala</h5>
+                
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-8">
+                          <label for="inputEmail4" class="form-label">Modelo</label>
+                          <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo" />
+                        </div>
+                        <div class="col-md-4">
+                          <label for="inputPassword4" class="form-label">Ano</label>
+                          <input type="text" name="ano" id="ano" class="form-control" placeholder="Ano" />
+                        </div>
+                        <div class="col-12">
+                          <label for="inputAddress" class="form-label">Placa</label>
+                          <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" />
+                        </div>
+                        <div class="col-12">
+                          <label for="inputAddress2" class="form-label">CPF</label>
+                          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Cpf" />
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Nome</label>
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">RG</label>
+                            <input type="text" name="rg" id="rg" class="form-control" placeholder="Rg" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">CNH</label>
+                            <input type="text" name="cnh" id="cnh" class="form-control" placeholder="Cnh" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Data de Nascimento</label>
+                            <input type="date" name="nascimento" id="nascimento" class="form-control" placeholder="Data de Nascimento" />
+                        </div> 
+                      </form>
+                      <div ></div>
+                      <div class="modal-header">
+                        <h3 class="modal-title codigo" > Ajudante</h3>
                     </div>
-                    <div class="col-12">
-                        <label for="inputAddress2" class="form-label">Nome</label>
-                        <h5 class="form-control">lalalala</h5>
+                      <form class="row g-3">
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">CPF</label>
+                            <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Cpf"/>
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Nome</label>
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome"/>
+                        </div>
+                      </form>
+                      <div class="btns-group">
+                        <a  data-bs-dismiss="modal" class="btn1 btn-prev">Cancelar</a>
+                        <a data-bs-dismiss="modal" class="btn1 btn-next">Aprovar</a>
                     </div>
-                  </form>
-
+                    </div>
                 </div>
             </div>
         </div>
-</div>
-   
+    </div>
