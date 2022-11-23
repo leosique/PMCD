@@ -84,6 +84,7 @@ C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\DTO.dll
 C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\DTO.pdb
 C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\Model.dll
 C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\Model.pdb
+<<<<<<< HEAD
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\bin\Debug\net6.0\appsettings.json
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\bin\Debug\net6.0\API.exe
@@ -170,3 +171,6 @@ C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\obj\Debug\net6.0\re
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\obj\Debug\net6.0\API.pdb
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\API\obj\Debug\net6.0\ref\API.dll
+=======
+C:\Users\kla1ct\Desktop\PMCD\development\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> 5be1c0c90bba1ea6b90849f26f4b30dc1c21f60e

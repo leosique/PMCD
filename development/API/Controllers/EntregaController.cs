@@ -45,17 +45,49 @@ public class EntregaController : ControllerBase
                 IdTransportadora = entrega.IdTransportadora,
                 IdResponsavelBosch = entrega.IdResponsavelBosch,
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Entrega não encontrada"
+                Resposta = "Entrega não encontrada",
+                Erro = e.Message
             };
         }
         
     }
 
+
+    //* ------------------------------------------------ Buscar por id
+    [HttpGet]
+    [Route("Aprovadas")]
+    public List<Object> BuscarAprovadas()
+    {  
+                  
+        List<Entrega> entregas = Model.Entrega.BuscarAprovadas();
+        List<Object> listaEntregas = null;
+
+        foreach(Entrega entrega in entregas){
+
+            listaEntregas.Add(
+                new{
+                    PlacaCarro = entrega.PlacaCarro,
+                    CodigoInterno = ((CodigoInterno)entrega.CodigoInterno).ToString(),
+                    PesoEntrada = entrega.PesoEntrada,
+                    PesoSaida = entrega.PesoSaida,
+                    DataEntrega = entrega.DataEntrega,
+                    Liberado = entrega.Liberado,
+                    IdTransponder = entrega.IdTransponder,
+                    IdTransportadora = entrega.IdTransportadora,
+                    IdResponsavelBosch = entrega.IdResponsavelBosch,
+            });
+            
+        }
+        return listaEntregas;
+
+    }
+
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
+    [Authorize]
     public Object Salvar([FromBody] EntregaDTO entregaDTO)
     {  
         try{
@@ -65,9 +97,10 @@ public class EntregaController : ControllerBase
                 Resposta = "Entrega cadastrada com sucesso",
                 Id = entrega.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao cadastrar entrega"
+                Resposta = "Erro ao cadastrar entrega",
+                Erro = e.Message
             };
         }   
     }
@@ -75,6 +108,7 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
+    [Authorize]
     public Object Editar([FromBody] EntregaDTO entregaDTO)
     {  
         try{
@@ -83,9 +117,10 @@ public class EntregaController : ControllerBase
             return new{
                 Resposta = "Entrega editada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar entrega"
+                Resposta = "Erro ao editar entrega",
+                Erro = e.Message
             };
         }
     }
@@ -93,6 +128,7 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Editar Placa
     [HttpPut]
     [Route("Editar/Placa")]
+
     public Object EditarPlaca([FromBody] EntregaDTO entregaDTO)
     {  
         try{
@@ -101,9 +137,10 @@ public class EntregaController : ControllerBase
             return new{
                 Resposta = "Placa editada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar placa"
+                Resposta = "Erro ao editar placa",
+                Erro = e.Message
             };
         }
     }
@@ -119,9 +156,10 @@ public class EntregaController : ControllerBase
             return new{
                 Resposta = "Peso de entrada editada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar peso de entrada"
+                Resposta = "Erro ao editar peso de entrada",
+                Erro = e.Message
             };
         }
         
@@ -138,9 +176,10 @@ public class EntregaController : ControllerBase
             return new{
                 Resposta = "Peso de saída editada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar peso de saída"
+                Resposta = "Erro ao editar peso de saída",
+                Erro = e.Message
             };
         }
     }
@@ -156,9 +195,10 @@ public class EntregaController : ControllerBase
             return new{
                 Resposta = "Transponder editada com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar transponder"
+                Resposta = "Erro ao editar transponder",
+                Erro = e.Message
             };
         }
     }
@@ -174,9 +214,10 @@ public class EntregaController : ControllerBase
             return new{
                 Resposta = "Entrega deletada com sucesso"
                 };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao deletar entrega"
+                Resposta = "Erro ao deletar entrega",
+                Erro = e.Message
             };
         }
         

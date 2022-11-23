@@ -39,9 +39,10 @@ public class ResponsavelBoschController : ControllerBase
                 Documento = rp.Documento,
                 Edv = rp.Edv
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "ResponsavelBosch não encontrado"
+                Resposta = "ResponsavelBosch não encontrado",
+                Erro = e.Message
             };
         }
     }
@@ -60,9 +61,10 @@ public class ResponsavelBoschController : ControllerBase
                 Documento = rp.Documento,
                 Edv = rp.Edv
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "ResponsavelBosch não encontrado"
+                Resposta = "ResponsavelBosch não encontrado",
+                Erro = e.Message
             };
         }
     }
@@ -81,9 +83,10 @@ public class ResponsavelBoschController : ControllerBase
                 Documento = rp.Documento,
                 Edv = rp.Edv
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Responsavel Bosch não encontrado"
+                Resposta = "Responsavel Bosch não encontrado",
+                Erro = e.Message
             };
         }
     }
@@ -99,9 +102,10 @@ public class ResponsavelBoschController : ControllerBase
             return new{
                 Resposta = "Responsavel Bosch cadastrado com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao cadastrar Responsavel Bosch"
+                Resposta = "Erro ao cadastrar Responsavel Bosch",
+                Erro = e.Message
             };
         }
         
@@ -118,9 +122,10 @@ public class ResponsavelBoschController : ControllerBase
             return new{
                 Resposta = "Responsavel Bosch editado com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao editar Respondavel Bosch"
+                Resposta = "Erro ao editar Respondavel Bosch",
+                Erro = e.Message
             };
         }
     }
@@ -136,9 +141,10 @@ public class ResponsavelBoschController : ControllerBase
             return new{
                 Resposta = "Responsavel Bosch deletado com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Resposta = "Erro ao deletar responsavel Bosch"
+                Resposta = "Erro ao deletar responsavel Bosch",
+                Erro = e.Message
             };
         }
     }

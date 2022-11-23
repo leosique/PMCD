@@ -32,15 +32,16 @@ public class EntregadorController : ControllerBase
     {  
         try{
             Entregador entregador = Model.Entregador.BuscarPorId(id);
-
+            
             return new{
                 Nome = entregador.Nome,
                 Documento = entregador.Documento,
                 DataNascimento = entregador.DataNascimento
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Erro = "Entregador não encontrado"
+                Resposta = "Entregador não encontrado",
+                Erro = e.Message
             };
         }
     }
@@ -58,9 +59,10 @@ public class EntregadorController : ControllerBase
                 Resposta = "Entregador cadastrado com sucesso",
                 Id = entregador.Id
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Erro = "Erro ao cadastrar entregador"
+                Resposta = "Erro ao cadastrar entregador",
+                Erro = e.Message
             };
         }
         
@@ -79,9 +81,10 @@ public class EntregadorController : ControllerBase
             return new{
                 Resposta = "Entregador editado com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Erro = "Erro ao editar entregador"
+                Resposta = "Erro ao editar entregador",
+                Erro = e.Message
             };
         }
     }
@@ -99,9 +102,10 @@ public class EntregadorController : ControllerBase
             return new{
                 Resposta = "Entregador deletado com sucesso"
             };
-        }catch{
+        }catch(Exception e){
             return new{
-                Erro = "Erro ao deletar entregador"
+                Resposta = "Erro ao deletar entregador",
+                Erro = e.Message
             };
         }
         
