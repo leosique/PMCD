@@ -57,6 +57,7 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
+    [Authorize]
     public Object Salvar([FromBody] EntregaDTO entregaDTO)
     {  
         try{
@@ -77,6 +78,7 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
+    [Authorize]
     public Object Editar([FromBody] EntregaDTO entregaDTO)
     {  
         try{
@@ -96,6 +98,7 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Editar Placa
     [HttpPut]
     [Route("Editar/Placa")]
+
     public Object EditarPlaca([FromBody] EntregaDTO entregaDTO)
     {  
         try{

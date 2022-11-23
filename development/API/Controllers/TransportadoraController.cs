@@ -49,9 +49,30 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    //* ------------------------------------------------ Buscar por Token
+    [HttpGet]
+    [Route("BuscarIdToken")]
+    [Authorize]
+    public Object BuscarIdToken()
+    {  
+        var identity = HttpContext.User.Identity as ClaimsIdentity;
+        string id = "";
+        if (identity != null)
+        {
+            return new{
+                Id = identity.FindFirst("Id").Value
+            };
+        }else{
+            return new{
+                Resposta = "Id não encontrado"
+            };
+        }
+    }
+
     //* ------------------------------------------------ Buscar por CPNJ
     [HttpGet]
     [Route("BuscarCNPJ/{cpnj}")]
+    [Authorize]
     public Object BuscarPorId(string cnpj)
     {  
         try{
@@ -93,6 +114,7 @@ public class TransportadoraController : ControllerBase
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
+    [Authorize]
     public Object Editar([FromBody] TransportadoraDTO transDTO)
     {  
         try{
@@ -113,6 +135,7 @@ public class TransportadoraController : ControllerBase
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
+    [Authorize]
     public Object Deletar(int id)
     {  
         try{
