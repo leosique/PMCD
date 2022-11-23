@@ -54,6 +54,36 @@ public class EntregaController : ControllerBase
         
     }
 
+
+    //* ------------------------------------------------ Buscar por id
+    [HttpGet]
+    [Route("Aprovadas")]
+    public List<Object> BuscarAprovadas()
+    {  
+                  
+        List<Entrega> entregas = Model.Entrega.BuscarAprovadas();
+        List<Object> listaEntregas = null;
+
+        foreach(Entrega entrega in entregas){
+
+            listaEntregas.Add(
+                new{
+                    PlacaCarro = entrega.PlacaCarro,
+                    CodigoInterno = ((CodigoInterno)entrega.CodigoInterno).ToString(),
+                    PesoEntrada = entrega.PesoEntrada,
+                    PesoSaida = entrega.PesoSaida,
+                    DataEntrega = entrega.DataEntrega,
+                    Liberado = entrega.Liberado,
+                    IdTransponder = entrega.IdTransponder,
+                    IdTransportadora = entrega.IdTransportadora,
+                    IdResponsavelBosch = entrega.IdResponsavelBosch,
+            });
+            
+        }
+        return listaEntregas;
+
+    }
+
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]

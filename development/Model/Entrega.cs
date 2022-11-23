@@ -78,6 +78,26 @@ public partial class Entrega
         }
     }
 
+    public static List<Entrega> BuscarAprovadas()
+    {
+        using(var context = new Context())
+        {
+            List<Entrega> entregas = context.Entregas.Where(e => e.Liberado == true).ToList();
+
+            return entregas;
+        }
+    }
+
+    public static List<Entrega> BuscarPendentes()
+    {
+        using(var context = new Context())
+        {
+            List<Entrega> entregas = context.Entregas.Where(e => e.Liberado == false).ToList();
+
+            return entregas;
+        }
+    }
+
     public void Editar()
     {
         using(var context = new Context())
