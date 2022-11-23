@@ -1,0 +1,32 @@
+<app-top-bar></app-top-bar>
+<body>
+    <form action="#" class="form">
+        
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step" data-title="Veículo"></div>
+            <div class="progress-step progress-step-active" data-title="Transportadora"></div>
+            <div class="progress-step" data-title="Motorista"></div>
+            <div class="progress-step" data-title="Ajudante"></div>
+        </div>
+        <div class="title-group">Informações do ajudante</div>
+        <div class="input-group">
+            <div class="select" style="display: flex; flex-direction: row">
+            <label for="ajudante">Possui algum ajudante?</label>
+            <select onclick="selected(this.value)" id="ajudante">
+                <option selected>Selecionar</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+            </div>
+            <div class="pergunta-ajudante" style="display: none; gap: 3rem;">
+                <input type="number" name="cpf" id="cpf" placeholder="CPF"/>
+                <input type="text" name="nome" id="nome" placeholder="Nome"/>
+            </div>
+        </div>
+        <div class="btns-group">
+            <a href="#" class="btn btn-prev">Anterior</a>
+            <a href="#" class="btn btn-next">Finalizar</a>
+        </div>
+    </form>
+</body>
