@@ -4,9 +4,9 @@
         
         <div class="progressbar">
             <div class="progress" id="progress"></div>
-            <div class="progress-step" data-title="Veículo"></div>
+            <div class="progress-step progress-step-active" data-title="Veículo"></div>
             <div class="progress-step progress-step-active" data-title="Transportadora"></div>
-            <div class="progress-step" data-title="Motorista"></div>
+            <div class="progress-step " data-title="Motorista"></div>
             <div class="progress-step" data-title="Ajudante"></div>
         </div>
             <div class="title-group">Informações da transportadora</div>
@@ -17,8 +17,8 @@
                 <input type="number" name="cnpj" id="cnpj" placeholder="CNPJ"/>
             </div>
             <div class="btns-group">
-                <a href="#" class="btn btn-prev">Anterior</a>
-                <a href="#" class="btn btn-next">Avançar</a>
+                <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-veiculo']">Anterior</a>
+                <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']">Avançar</a>
             </div>
     </form>    
 </body>
