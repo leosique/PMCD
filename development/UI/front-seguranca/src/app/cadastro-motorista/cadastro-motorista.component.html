@@ -5,23 +5,27 @@
         <div class="progressbar">
             <div class="progress" id="progress"></div>
             <div class="progress-step progress-step-active" data-title="Veículo"></div>
-            <div class="progress-step" data-title="Transportadora"></div>
-            <div class="progress-step" data-title="Motorista"></div>
+            <div class="progress-step progress-step-active" data-title="Motorista"></div>
             <div class="progress-step" data-title="Ajudante"></div>
         </div>
-
-        <div class="form-step form-step-active">
-            <div class="title-group">Informações veículo</div>
+            <div class="title-group">Informações do motorista</div>
             <div class="input-group">
-                <input type="text" name="placa" id="placa" placeholder="Insira a placa do veículo" />
+                <input type="text" name="nome" id="nome" placeholder="Nome" />
             </div>
             <div class="input-group" style="display: flex;  flex-direction: row; justify-content: space-between;">
-                <input type="text" name="modelo" id="modelo" style="width: 67%; border-radius: 10px;" placeholder="Modelo" />
-                <input type="text" name="ano" id="ano" style="width: 30%; border-radius: 10px" placeholder="Ano"/>
+                <input type="number" name="CPF" id="CPF" style="width: 48%; border-radius: 0.5rem" placeholder="CPF" />
+                <input type="number" name="rg" id="rg" style="width: 48%; border-radius: 0.5rem" placeholder="RG" />
             </div>
-            <div class="">
-                <a href="#" class="btn btn-next width-50 ml-auto" [routerLink]="['/cadastro-transportadora']">Avançar</a>
+            <div class="input-group">
+                <input type="number" name="cnh" id="cnh" placeholder="CNH" />
             </div>
-        </div>
-    </form>
+            <div class="input-group">
+                <label for="nascimento" style="color: #666;">Data de nascimento</label>
+                <input type="date" name="nascimento" id="nascimento" style="border-radius: 0.5rem;" placeholder="Data de Nascimento" />
+            </div>
+            <div class="btns-group">
+                <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-veiculo']">Anterior</a>
+                <a href="#" class="btn btn-next" [routerLink]="['/cadastro-ajudante']">Aprovar</a>
+            </div>
+    </form>  
 </body>

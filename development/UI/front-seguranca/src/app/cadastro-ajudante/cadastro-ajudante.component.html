@@ -1,1 +1,23 @@
-<p>cadastro-ajudante works!</p>
+<app-top-bar></app-top-bar>
+<body>
+    <form action="#" class="form">
+        
+        <div class="progressbar">
+            <div class="progress " id="progress"></div>
+            <div class="progress-step progress-step-active" data-title="Veículo"></div>
+            <div class="progress-step progress-step-active" data-title="Motorista"></div>
+            <div class="progress-step progress-step-active" data-title="Ajudante"></div>
+        </div>
+        <div class="title-group">Informações do ajudante</div>
+        <div class="input-group">
+            <input type="number" name="cpf" id="cpf" placeholder="CPF" />
+        </div>
+        <div class="input-group">
+            <input type="text" name="nome-ajudante" id="nome-ajudante" style="border-radius: 0.5rem;" placeholder="Nome" />
+        </div>
+        <div class="btns-group">
+            <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-motorista']">Anterior</a>
+            <a href="#" class="btn btn-next">Finalizar</a>
+        </div>
+    </form>
+</body>
