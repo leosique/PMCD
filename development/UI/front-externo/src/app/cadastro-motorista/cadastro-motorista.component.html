@@ -3,12 +3,12 @@
     <form action="#" class="form">
         
         <div class="progressbar">
-            <div class="progress" id="progress"></div>
+            <div class="progress " id="progress"></div>
             <div class="progress-step progress-step-active" data-title="Veículo"></div>
-            <div class="progress-step progress-step-active" data-title="Transportadora"></div>
             <div class="progress-step progress-step-active" data-title="Motorista"></div>
-            <div class="progress-step" data-title="Ajudante"></div>
+            <div class="progress-step " data-title="Adicionais"></div>
         </div>
+
             <div class="title-group">Informações do motorista</div>
             <div class="input-group">
                 <input type="text" name="nome" id="nome" placeholder="Nome" />
@@ -25,8 +25,8 @@
                 <input type="date" name="nascimento" id="nascimento" style="border-radius: 0.5rem;" placeholder="Data de Nascimento" />
             </div>
             <div class="btns-group">
-                <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-transportadora']">Anterior</a>
-                <a href="#" class="btn btn-next" [routerLink]="['/cadastro-ajudante']">Avançar</a>
+                <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-veiculo']">Anterior</a>
+                <a href="#" class="btn btn-next" [routerLink]="['/cadastro-adicionais']">Avançar</a>
             </div>
     </form>  
 </body>

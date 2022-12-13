@@ -11,6 +11,7 @@ import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.co
 import { CadastroTransportadoraComponent } from './cadastro-transportadora/cadastro-transportadora.component';
 import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motorista.component';
 import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
+import { CadastroAdicionaisComponent } from './cadastro-adicionais/cadastro-adicionais.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante
     CadastroVeiculoComponent,
     CadastroTransportadoraComponent,
     CadastroMotoristaComponent,
-    CadastroAjudanteComponent
+    CadastroAjudanteComponent,
+    CadastroAdicionaisComponent
   ],
   imports: [
     BrowserModule,
