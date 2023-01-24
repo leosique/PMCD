@@ -7,7 +7,7 @@ namespace Model;
 
 public partial class Context : DbContext
 {
-
+    public virtual DbSet<Ip> Ips { get; set; }
     public virtual DbSet<Entrega> Entregas { get; set; }
     public virtual DbSet<Entregador> Entregadores { get; set; }
     public virtual DbSet<EntregaEntregador> EntregasEntregadores { get; set; }
@@ -19,7 +19,7 @@ public partial class Context : DbContext
     {
         string computador = Environment.MachineName;
         string database = "PMCD";
-        optionsBuilder.UseSqlServer("Server=" + computador + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
+        optionsBuilder.UseSqlServer("Server=" + computador + "\\SQLEXPRESS" + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,6 +29,13 @@ public partial class Context : DbContext
             entity.ToTable("Transponder");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Codigo);
+        });
+
+        modelBuilder.Entity<Ip>(entity =>
+        {
+            entity.ToTable("IpsValidos");
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.EnderecoIp);
         });
 
         modelBuilder.Entity<Entregador>(entity =>
