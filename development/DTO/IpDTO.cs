@@ -9,6 +9,6 @@ namespace DTO;
 public class IpDTO 
 {
     public int Id { get; set; }
-    public string Ip { get; set; }
+    public string IpAddress { get; set; }
 
 }
