@@ -48,7 +48,8 @@ CREATE TABLE "Transportadora" (
   id int PRIMARY KEY identity,
   nome varchar(255) default NULL,
   cnpj varchar(255),
-  senha varchar(100)
+  senha varchar(100),
+  primeiroAcesso bit
 );
 
 
