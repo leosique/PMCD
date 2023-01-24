@@ -152,12 +152,13 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    
+
     //* ------------------------------------------------ Testando Login
     [HttpPost]
     [Route("Login")]
     public Object LoginAsync([FromBody] TransLoginDTO transLoginDTO){
-
-
+        
         Transportadora trans = Transportadora.Login(transLoginDTO);
 
         if(trans != null){
