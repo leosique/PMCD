@@ -33,7 +33,7 @@ public partial class Context : DbContext
 
         modelBuilder.Entity<Ip>(entity =>
         {
-            entity.ToTable("IpsValidos");
+            entity.ToTable("Ip");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.EnderecoIp);
         });
