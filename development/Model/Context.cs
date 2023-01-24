@@ -63,6 +63,7 @@ public partial class Context : DbContext
             entity.Property(e => e.Nome);
             entity.Property(e => e.Cnpj);
             entity.Property(e => e.Senha);
+            entity.Property(e => e.PrimeiroAcesso);
         });
 
         modelBuilder.Entity<Entrega>(entity =>
