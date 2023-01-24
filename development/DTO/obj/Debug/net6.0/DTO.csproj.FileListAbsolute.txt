@@ -22,3 +22,15 @@ C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\DTO\obj\Debug\net6.0\DT
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\DTO\obj\Debug\net6.0\refint\DTO.dll
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\DTO\obj\Debug\net6.0\DTO.pdb
 C:\Users\GOR1CT\Documents\Repositórios\PMCD\development\DTO\obj\Debug\net6.0\ref\DTO.dll
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\bin\Debug\net6.0\DTO.deps.json
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\bin\Debug\net6.0\DTO.dll
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\bin\Debug\net6.0\DTO.pdb
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.csproj.AssemblyReference.cache
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.AssemblyInfoInputs.cache
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.AssemblyInfo.cs
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.dll
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\refint\DTO.dll
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\DTO.pdb
+C:\Users\mom1ct\Desktop\PMCD\development\DTO\obj\Debug\net6.0\ref\DTO.dll
