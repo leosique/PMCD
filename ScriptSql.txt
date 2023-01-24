@@ -118,3 +118,8 @@ INSERT INTO EntregaEntregador (idEntregador,idEntrega,motorista) VALUES(5,4,0);
 INSERT INTO EntregaEntregador (idEntregador,idEntrega,motorista) VALUES(1,4,1);
 INSERT INTO EntregaEntregador (idEntregador,idEntrega,motorista) VALUES(2,2,1);
 INSERT INTO EntregaEntregador (idEntregador,idEntrega,motorista) VALUES(3,4,1);
+
+create table "IpsValidos" (
+	id int Primary KEY identity,
+	ip varchar(15)
+);
