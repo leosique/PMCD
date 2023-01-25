@@ -134,6 +134,25 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    //* ------------------------------------------------ Mudar senha ao primeiro acesso
+    [HttpPut]
+    [Route("EditarPrimeiroAcesso/{senhaNova}")]
+    public Object EditarPrimeiroAcesso([FromBody] TransportadoraDTO transDTO, string senhaNova)
+    {  
+        try{
+            Transportadora trans = new Transportadora(transDTO);
+            trans.EditarPrimeiroAcesso(senhaNova);
+            return new{
+                Resposta = "Senha alterada com sucesso"
+            };
+        }catch(Exception e){
+            return new{
+                Resposta = "Erro ao editar transportadora",
+                Erro = e.Message
+            };
+        }
+    }
+
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
