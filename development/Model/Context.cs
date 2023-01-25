@@ -18,6 +18,7 @@ public partial class Context : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string computador = Environment.MachineName;
+        computador += "\\SQLEXPRESS";
         string database = "PMCD";
         optionsBuilder.UseSqlServer("Server=" + computador + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
     }
@@ -63,6 +64,7 @@ public partial class Context : DbContext
             entity.Property(e => e.Nome);
             entity.Property(e => e.Cnpj);
             entity.Property(e => e.Senha);
+            entity.Property(e => e.PrimeiroAcesso);
         });
 
         modelBuilder.Entity<Entrega>(entity =>

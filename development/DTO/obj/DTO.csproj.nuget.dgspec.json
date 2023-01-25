@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\KLA1CT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DTO;
+using System.Security.Cryptography;
 
 namespace Model;
 
@@ -12,6 +13,7 @@ public partial class Transportadora
     public string Cnpj { get; set; }
     public string Senha {get; set; }
 
+    public bool PrimeiroAcesso {get; set;}
 
     public virtual List<Entrega> EntregaList { get; set; }
 
@@ -31,6 +33,7 @@ public partial class Transportadora
     {
         using(var context = new Context())
         {
+            this.PrimeiroAcesso = true;
             context.Add(this);
             context.SaveChanges();
         }
@@ -70,8 +73,20 @@ public partial class Transportadora
         {
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == cnpj);
 
+            if(transportadora == null)
+                throw new ArgumentException("O CNPJ nao pode ser encontrado.");
+
             return transportadora;
         }
+    }
+
+    public bool Verifica(string senha){
+        using(var context = new Context()){
+            if(senha != this.Senha)
+                throw new ArgumentException("Senha incompativel");
+        }
+        
+       return this.PrimeiroAcesso;
     }
 
     public void Editar()
@@ -88,6 +103,23 @@ public partial class Transportadora
         }
     }
 
+    public void EditarPrimeiroAcesso(string senhaNova)
+    {
+        using(var context = new Context())
+        {
+            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == this.Cnpj);
+
+            if(this.Senha == transportadora.Senha && transportadora.PrimeiroAcesso){
+                transportadora.Senha = senhaNova;
+                transportadora.PrimeiroAcesso = false;
+            }else{
+                throw new ArgumentException("Senhas diferentes ou nao e o primeiro acesso");
+            }
+
+            context.SaveChanges();
+        }
+    }
+
     public static Transportadora Login(TransLoginDTO transloginDTO)
     {
         using(var context = new Context())
@@ -96,5 +128,16 @@ public partial class Transportadora
 
             return transportadora;
         }
+    }
+
+    public string GeraSenha(){
+        byte[] senha = new byte[6];
+        Random r = new Random();
+        r.NextBytes(senha);
+        string novaSenha = Convert.ToBase64String(senha);
+        this.Senha = novaSenha;
+        Salvar();
+        
+        return novaSenha;
     }
 }

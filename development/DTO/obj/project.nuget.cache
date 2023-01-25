@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "n0OH/bChPAzYluNMHjQ19JzrKdFISJYb3nvgxuuJ7+x64J9JhHCRHiHnUcopcC3Blr4eYOEZujbyz40gK7zSxw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj",
+=======
+  "dgSpecHash": "/dqL0/L234LYNMxvMvLzMIQePvQieUkZgGFl4L/1IW1ulDlwTpCj0T6stbDSHonWmaD5wVVGYmY9oeuKK5MG/g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+>>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
   "expectedPackageFiles": [],
   "logs": []
 }

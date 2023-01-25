@@ -8,9 +8,17 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = API
 build_property.RootNamespace = API
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\kol1ct\source\repos\PMCD\development\API\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\kol1ct\source\repos\PMCD\development\API
+=======
+build_property.ProjectDir = C:\Users\KLA1CT\Desktop\PMCD\development\API\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\KLA1CT\Desktop\PMCD\development\API
+>>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
 build_property._RazorSourceGeneratorDebug = 
