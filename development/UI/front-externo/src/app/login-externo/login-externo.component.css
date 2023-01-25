@@ -105,14 +105,15 @@
   width: 30%;
   font-size: 1.2em;
   border-radius: 5px;
+  transition: opacity 100ms ease-in-out;
 } 
 .button-login:hover,
 .button-login:focus{
-  background-color: var(--Bosch-Blue-Ligth);
+  opacity: 0.7;
 }
 
 .button-login:active{
-  background-color: var(--Bosch-Blue-Ligth);
+  opacity: 0.7;
 }
 @media (max-width: 700px)
 {
@@ -124,3 +125,18 @@
 
 
 
+.linkAcesso{
+  display: grid;
+  place-items: center;
+}
+
+.linkAcesso a{
+  color: var(--Bosch-Blue);
+  text-decoration: none;
+
+  transition: opacity 100ms ease-in-out;
+}
+
+.linkAcesso a:hover{
+  opacity: 0.7;
+}

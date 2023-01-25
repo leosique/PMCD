@@ -18,6 +18,7 @@ public partial class Context : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string computador = Environment.MachineName;
+        computador += "\\SQLEXPRESS";
         string database = "PMCD";
         optionsBuilder.UseSqlServer("Server=" + computador + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
     }

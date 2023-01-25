@@ -3,10 +3,10 @@
     <div class="card">
         <form action="" class="form">
             <div class="form_item">
-                <label for="" >Usuário</label>
+                <label for="" >CNPJ</label>
                 <div id="div_1" class="form_box">
                     <img src="../../assets/icons/user.svg" id="img_div_1" alt="">
-                    <input type="text" id="usuario" placeholder="Digite seu usuário" (click)="mudarCorAzul('div_1')" (blur)="mudarCorCinza('div_1')">
+                    <input type="text" id="cnpj" placeholder="Digite seu CNPJ" (click)="mudarCorAzul('div_1')" (blur)="mudarCorCinza('div_1')">
                 </div>
             </div>
     
@@ -19,6 +19,10 @@
             </div>
         </form>
     
-        <button class="button-login" role="button" >ENTRAR</button>
+        <button class="button-login" role="button" (click)="verificarPrimeiroAcesso()">ENTRAR</button>
+
+        <div class="linkAcesso">
+            <a href="/primeiro-acesso" >Primeiro acesso </a>
+        </div>
     </div>
 </div>
