@@ -19,7 +19,7 @@ public partial class Context : DbContext
     {
         string computador = Environment.MachineName;
         string database = "PMCD";
-        optionsBuilder.UseSqlServer("Server=" + computador + "\\SQLEXPRESS" + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
+        optionsBuilder.UseSqlServer("Server=" + computador + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -76,6 +76,7 @@ public partial class Context : DbContext
             entity.Property(e => e.PesoSaida);
             entity.Property(e => e.DataEntrega);
             entity.Property(e => e.Liberado);
+            entity.Property(e => e.NotaFiscal);
 
             entity.HasOne(d => d.Transponder)
                 .WithMany(p => p.EntregaList)
