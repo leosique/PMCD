@@ -93,6 +93,24 @@ public partial class Transportadora
         }
     }
 
+    public void EditarPrimeiroAcesso(string senhaNova)
+    {
+        using(var context = new Context())
+        {
+            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == this.Cnpj);
+
+            if(this.Senha == transportadora.Senha && transportadora.PrimeiroAcesso){
+                transportadora.Senha = senhaNova;
+                transportadora.PrimeiroAcesso = false;
+            }
+            else{
+                
+            }
+
+            context.SaveChanges();
+        }
+    }
+
     public static Transportadora Login(TransLoginDTO transloginDTO)
     {
         using(var context = new Context())
