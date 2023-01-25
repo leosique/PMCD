@@ -78,6 +78,7 @@ public partial class Context : DbContext
             entity.Property(e => e.PesoSaida);
             entity.Property(e => e.DataEntrega);
             entity.Property(e => e.Liberado);
+            entity.Property(e => e.NotaFiscal);
 
             entity.HasOne(d => d.Transponder)
                 .WithMany(p => p.EntregaList)

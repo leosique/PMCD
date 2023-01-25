@@ -13,6 +13,7 @@ public partial class Entrega
     public int PesoSaida { get; set; }
     public DateTime? DataEntrega {get; set; }
     public Boolean? Liberado {get; set; }
+    public string NotaFiscal {get;set; }
     public int? IdTransponder {get; set; }
     public int? IdTransportadora {get; set; }
     public int? IdResponsavelBosch {get; set; }
@@ -37,6 +38,7 @@ public partial class Entrega
         this.PesoSaida = entregaDTO.PesoSaida;
         this.DataEntrega = entregaDTO.DataEntrega;
         this.Liberado = entregaDTO.Liberado;
+        this.NotaFiscal = entregaDTO.NotaFiscal;
         this.IdTransponder = entregaDTO.IdTransponder;
         this.IdTransportadora = entregaDTO.IdTransportadora;
         this.IdResponsavelBosch = entregaDTO.IdResponsavelBosch;
