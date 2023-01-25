@@ -57,16 +57,24 @@ export class PrimeiroAcessoComponent implements OnInit {
           mensagemErro += ", " + campo
         }
       });
+
+      if (erro != null) {
+        erro.style.display = "block";
+        erro.textContent = mensagemErro;
+      }
+    }else if(senhaNova != repetirSenha){
+      mensagemErro = "As senhas informadas não são iguais"
+      
+      if (erro != null) {
+        erro.style.display = "block";
+        erro.textContent = mensagemErro;
+      }
+    }else{
+      this.EditarSenha();
     }
 
 
-
-    if (erro != null) {
-      erro.style.display = "block";
-      erro.textContent = mensagemErro;
-    }
-
-    //this.EditarSenha();
+    
   }
 
   EditarSenha() {
@@ -97,9 +105,17 @@ export class PrimeiroAcessoComponent implements OnInit {
     localStorage.removeItem('authToken');
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        if(response.data["erro"] === undefined){
+          instance.router.navigate(['cadastro-veiculo']);
+        }else{
+      
+          if (erro != null) {
+            erro.style.display = "block";
+            erro.textContent = response.data["erro"];
+          }
+        }
+        
 
-        //instance.router.navigate(['cadastro-veiculo']);
 
       })
       .catch(function (error) {
