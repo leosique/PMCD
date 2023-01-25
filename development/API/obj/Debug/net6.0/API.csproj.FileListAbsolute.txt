@@ -271,7 +271,6 @@ C:\Users\mom1ct\Desktop\PMCD\development\API\obj\Debug\net6.0\scopedcss\bundle\A
 C:\Users\mom1ct\Desktop\PMCD\development\API\obj\Debug\net6.0\API.csproj.CopyComplete
 C:\Users\mom1ct\Desktop\PMCD\development\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\mom1ct\Desktop\PMCD\development\API\obj\Debug\net6.0\ref\API.dll
-<<<<<<< HEAD
 C:\Users\kol1ct\Source\Repos\PMCD\development\API\obj\Debug\net6.0\API.dll
 C:\Users\kol1ct\Source\Repos\PMCD\development\API\obj\Debug\net6.0\refint\API.dll
 C:\Users\kol1ct\Source\Repos\PMCD\development\API\obj\Debug\net6.0\API.pdb
@@ -359,6 +358,5 @@ C:\Users\kol1ct\source\repos\PMCD\development\API\obj\Debug\net6.0\scopedcss\bun
 C:\Users\kol1ct\source\repos\PMCD\development\API\obj\Debug\net6.0\API.csproj.CopyComplete
 C:\Users\kol1ct\source\repos\PMCD\development\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\kol1ct\source\repos\PMCD\development\API\obj\Debug\net6.0\ref\API.dll
-=======
 >>>>>>> d0e9bb27c050f8acd6770ae88585a40aacfce2d8
 >>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e

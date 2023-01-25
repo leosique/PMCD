@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\Model\\Model.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
-        "projectName": "DTO",
-        "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\KLA1CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +58,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -87,19 +69,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj",
-        "projectName": "Model",
-        "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\KLA1CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,13 +82,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj": {
                 "projectPath": "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj"
-=======
-              "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
->>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
               }
             }
           }

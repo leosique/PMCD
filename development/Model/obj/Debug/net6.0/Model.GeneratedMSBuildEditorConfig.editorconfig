@@ -7,8 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Model
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\kol1ct\source\repos\PMCD\development\Model\
-=======
-build_property.ProjectDir = C:\Users\KLA1CT\Desktop\PMCD\development\Model\
->>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
