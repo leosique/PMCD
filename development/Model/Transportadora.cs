@@ -62,7 +62,8 @@ public partial class Transportadora
         {
             Console.WriteLine(Id);
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Id == Id);
-            Console.WriteLine(transportadora.Cnpj);
+            if(transportadora == null)
+                throw new ArgumentException("O CNPJ nao pode ser encontrado.");
             return transportadora;
         }
     }
@@ -94,6 +95,8 @@ public partial class Transportadora
         using(var context = new Context())
         {
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Id == this.Id);
+            if(transportadora == null)
+                throw new ArgumentException("O CNPJ nao pode ser encontrado.");
 
             transportadora.Nome = this.Nome;
             transportadora.Cnpj = this.Cnpj;
@@ -108,6 +111,8 @@ public partial class Transportadora
         using(var context = new Context())
         {
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == this.Cnpj);
+            if(transportadora == null)
+                throw new ArgumentException("O CNPJ nao pode ser encontrado.");
 
             if(this.Senha == transportadora.Senha && transportadora.PrimeiroAcesso){
                 transportadora.Senha = senhaNova;
@@ -125,6 +130,8 @@ public partial class Transportadora
         using(var context = new Context())
         {
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == transloginDTO.Cnpj && e.Senha == transloginDTO.Senha);
+            if(transportadora == null)
+                throw new ArgumentException("O CNPJ nao pode ser encontrado.");
 
             return transportadora;
         }
