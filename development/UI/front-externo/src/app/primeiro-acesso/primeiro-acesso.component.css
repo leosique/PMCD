@@ -123,4 +123,14 @@
 }
 
 
+.erroDiv{
+  display: grid;
+  place-items: center;
+}
+
+.erro{
+  width: 90%;
+  color: var(--Bosch-Red);
+  display: none;
+}
 

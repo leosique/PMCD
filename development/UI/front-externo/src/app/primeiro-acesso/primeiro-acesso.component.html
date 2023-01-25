@@ -6,7 +6,7 @@
                 <label for="" >CNPJ</label>
                 <div id="div_1" class="form_box">
                     <img src="../../assets/icons/user.svg" id="img_div_1" alt="">
-                    <input type="text" id="usuario" placeholder="Digite seu CNPJ" (click)="mudarCorAzul('div_1')" (blur)="mudarCorCinza('div_1')">
+                    <input type="text" id="cnpj" placeholder="Digite seu CNPJ" (click)="mudarCorAzul('div_1')" (blur)="mudarCorCinza('div_1')">
                 </div>
             </div>
     
@@ -14,26 +14,31 @@
                 <label for="">Senha antiga</label>
                 <div id="div_2" class="form_box">
                     <img src="../../assets/icons/key-fill.svg" id="img_div_2" alt="">
-                    <input type="password" id="senha" placeholder="Digite a senha antiga" (click)="mudarCorAzul('div_2')" (blur)="mudarCorCinza('div_2')">
+                    <input type="password" id="senhaAntiga" placeholder="Digite a senha antiga" (click)="mudarCorAzul('div_2')" (blur)="mudarCorCinza('div_2')">
                 </div>
             </div>
             <div class="form_item">
                 <label for="">Nova senha</label>
                 <div id="div_3" class="form_box">
                     <img src="../../assets/icons/key-fill.svg" id="img_div_3" alt="">
-                    <input type="password" id="senha" placeholder="Digite sua nova senha" (click)="mudarCorAzul('div_3')" (blur)="mudarCorCinza('div_3')">
+                    <input type="password" id="senhaNova" placeholder="Digite sua nova senha" (click)="mudarCorAzul('div_3')" (blur)="mudarCorCinza('div_3')">
                 </div>
             </div>
             <div class="form_item">
                 <label for="">Repetir senha</label>
                 <div id="div_4" class="form_box">
                     <img src="../../assets/icons/key-fill.svg" id="img_div_4" alt="">
-                    <input type="password" id="senha" placeholder="Repita a senha" (click)="mudarCorAzul('div_4')" (blur)="mudarCorCinza('div_4')">
+                    <input type="password" id="repetirSenha" placeholder="Repita a senha" (click)="mudarCorAzul('div_4')" (blur)="mudarCorCinza('div_4')">
                 </div>
             </div>
+
         </form>
     
-        <button class="button-login" role="button" (click)="EditarSenha()">Criar nova senha</button>
+        <div class="erroDiv">
+            <p class="erro" id="erro"></p>
+        </div>
+
+        <button class="button-login" role="button" (click)="verificarCampos()">Criar nova senha</button>
 
    
     </div>
