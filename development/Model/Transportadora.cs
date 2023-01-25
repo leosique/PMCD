@@ -73,6 +73,9 @@ public partial class Transportadora
         {
             var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == cnpj);
 
+            if(transportadora == null)
+                throw new ArgumentException("O CNPJ nao pode ser encontrado.");
+
             return transportadora;
         }
     }
