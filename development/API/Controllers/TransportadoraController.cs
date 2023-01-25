@@ -36,6 +36,7 @@ public class TransportadoraController : ControllerBase
         try{
             Transportadora trans = Model.Transportadora.BuscarPorId(id);
             return new{
+                Resposta = "Transportadora encontrada",
                 Id = trans.Id,
                 Nome = trans.Nome,
                 Cnpj = trans.Cnpj,
@@ -73,11 +74,12 @@ public class TransportadoraController : ControllerBase
     [HttpGet]
     [Route("BuscarCNPJ/{cpnj}")]
     [Authorize]
-    public Object BuscarPorId(string cnpj)
+    public Object BuscarPorCNPJ(string cnpj)
     {  
         try{
             Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
             return new{
+                Resposta = "Transportadora encontrada",
                 Id = trans.Id,
                 Nome = trans.Nome,
                 Cnpj = trans.Cnpj,
@@ -152,6 +154,24 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("Verifica/(cnpj)")]
+    public Object Verifica(string cnpj){
+        try{
+            Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
+            bool v = trans.Verifica();
+            return new{
+                Resposta = "Sucesso ao verificar primeiro acesso",
+                primeiroAcesso = v
+            };
+        }
+        catch(Exception e){
+            return new{
+                Resposta = "Erro ao verificar se é o primeiro acesso",
+                Erro = e.Message
+            };
+        }
+    }
     
 
     //* ------------------------------------------------ Testando Login

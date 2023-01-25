@@ -12,6 +12,7 @@ public partial class Transportadora
     public string Cnpj { get; set; }
     public string Senha {get; set; }
 
+    public bool PrimeiroAcesso {get; set;}
 
     public virtual List<Entrega> EntregaList { get; set; }
 
@@ -72,6 +73,10 @@ public partial class Transportadora
 
             return transportadora;
         }
+    }
+
+    public bool Verifica(){
+       return this.PrimeiroAcesso;
     }
 
     public void Editar()
