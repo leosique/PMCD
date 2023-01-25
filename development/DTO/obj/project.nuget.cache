@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n0OH/bChPAzYluNMHjQ19JzrKdFISJYb3nvgxuuJ7+x64J9JhHCRHiHnUcopcC3Blr4eYOEZujbyz40gK7zSxw==",
+  "dgSpecHash": "/dqL0/L234LYNMxvMvLzMIQePvQieUkZgGFl4L/1IW1ulDlwTpCj0T6stbDSHonWmaD5wVVGYmY9oeuKK5MG/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj",
+  "projectFilePath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

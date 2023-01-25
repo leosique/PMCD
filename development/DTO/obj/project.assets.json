@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kol1ct\\.nuget\\packages\\": {}
+    "C:\\Users\\KLA1CT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj",
+      "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
       "projectName": "DTO",
-      "projectPath": "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\DTO.csproj",
-      "packagesPath": "C:\\Users\\kol1ct\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\obj\\",
+      "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+      "packagesPath": "C:\\Users\\KLA1CT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,16 +61,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\kol1ct\\source\\repos\\PMCD\\development\\DTO\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
