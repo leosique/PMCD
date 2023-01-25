@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DTO;
+using System.Security.Cryptography;
 
 namespace Model;
 
@@ -32,6 +33,7 @@ public partial class Transportadora
     {
         using(var context = new Context())
         {
+            this.PrimeiroAcesso = true;
             context.Add(this);
             context.SaveChanges();
         }
@@ -75,7 +77,12 @@ public partial class Transportadora
         }
     }
 
-    public bool Verifica(){
+    public bool Verifica(string senha){
+        using(var context = new Context()){
+            if(senha != this.Senha)
+                throw new ArgumentException("Senha incompativel");
+        }
+        
        return this.PrimeiroAcesso;
     }
 
@@ -102,9 +109,8 @@ public partial class Transportadora
             if(this.Senha == transportadora.Senha && transportadora.PrimeiroAcesso){
                 transportadora.Senha = senhaNova;
                 transportadora.PrimeiroAcesso = false;
-            }
-            else{
-                
+            }else{
+                throw new ArgumentException("Senhas diferentes ou nao e o primeiro acesso");
             }
 
             context.SaveChanges();
@@ -119,5 +125,16 @@ public partial class Transportadora
 
             return transportadora;
         }
+    }
+
+    public string GeraSenha(){
+        byte[] senha = new byte[6];
+        Random r = new Random();
+        r.NextBytes(senha);
+        string novaSenha = Convert.ToBase64String(senha);
+        this.Senha = novaSenha;
+        Salvar();
+        
+        return novaSenha;
     }
 }
