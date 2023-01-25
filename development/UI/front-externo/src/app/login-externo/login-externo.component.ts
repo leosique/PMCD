@@ -49,13 +49,13 @@ export class LoginExternoComponent implements OnInit {
   }
 
   verificarPrimeiroAcesso(){
-
-    let cnpj = document.getElementById("cnpj") as HTMLInputElement;
+    let senha = (document.getElementById("senha") as HTMLInputElement).value;
+    let cnpj = (document.getElementById("cnpj") as HTMLInputElement).value;
    
 
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/Transportadora/Verifica/' + cnpj.value,
+      url: 'https://localhost:7274/Transportadora/Verifica/' + cnpj + "/" + senha,
       headers: {
         'Content-Type': 'application/json'
       }
