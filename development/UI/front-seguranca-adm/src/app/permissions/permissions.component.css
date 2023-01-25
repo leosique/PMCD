@@ -86,10 +86,7 @@ table tr td {
     text-align: center;
 }
 
-.save-btn:hover{
-    transform: scale(1.05);
-    transition: 0.5s;
-}
+
 
 
 
@@ -299,9 +296,27 @@ table {
    
 }
 .last-text{
+    margin-top: 2vh;
     color: #737679;
 }
-.button-add img{
+.button-add{
     color: #2D7DB5;
-    margin-left: 85%;
+    float: right;
+}
+
+.last-infos{
+    margin:10px;
+    display: flex;
+}
+
+.inputIP{
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    background-color: #e9e7e7;
+    border-radius: 3px;
+
 }

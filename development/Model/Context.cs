@@ -37,6 +37,7 @@ public partial class Context : DbContext
             entity.ToTable("Ip");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.EnderecoIp);
+            entity.Property(e => e.Adm);
         });
 
         modelBuilder.Entity<Entregador>(entity =>
