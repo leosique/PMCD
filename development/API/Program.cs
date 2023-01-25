@@ -30,6 +30,11 @@ builder.Services.AddAuthentication(x => {
     };
 });
 
+// CORS
+builder.Services.AddCors(p=>p.AddPolicy("corsapp", builder =>{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 
 // CORS
 builder.Services.AddCors(p=>p.AddPolicy("corsapp", builder =>{
@@ -45,10 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// CORS
 app.UseCors("corsapp");
-
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
