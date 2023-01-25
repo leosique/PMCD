@@ -74,7 +74,7 @@ export class LoginExternoComponent implements OnInit {
         }else{
           console.log(response.data);
           let mensagemErro = response.data['erro']
-          //instance.login();
+          instance.login();
 
           if(erro!= null){
             erro.style.display = "block"
