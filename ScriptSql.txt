@@ -53,12 +53,12 @@ CREATE TABLE "Transportadora" (
 );
 
 
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Flavia Gallagher','26648046657131','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Jana Caldwell','78215534028676','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Vladimir Vincent','95446426302082','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Paki Molina','35386112807663','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Jillian Acevedo','35328781282256','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Dalton Gallagher','35544209650608','123');
+INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Flavia Gallagher','26648046657131','123', 1);
+INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Jana Caldwell','78215534028676','123', 1);
+INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Vladimir Vincent','95446426302082','123', 1);
+INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Paki Molina','35386112807663','123', 0);
+INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Jillian Acevedo','35328781282256','123', 0);
+INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Dalton Gallagher','35544209650608','123', 0);
 
 
 CREATE TABLE "ResponsavelBosch" (
@@ -124,3 +124,11 @@ CREATE TABLE "Ip" (
 	id int Primary KEY identity,
 	enderecoIp varchar(20)
 );
+
+INSERT INTO Ip(enderecoIp) VALUES("111.111.111.111");
+INSERT INTO Ip(enderecoIp) VALUES("1.1.1.1");
+INSERT INTO Ip(enderecoIp) VALUES("0.0.0.0");
+INSERT INTO Ip(enderecoIp) VALUES("1.2.3.4");
+INSERT INTO Ip(enderecoIp) VALUES("256.256.256.256");
+INSERT INTO Ip(enderecoIp) VALUES("222.222.222.222");
+INSERT INTO Ip(enderecoIp) VALUES("0.111.0.0");
