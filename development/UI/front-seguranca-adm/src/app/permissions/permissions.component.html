@@ -21,10 +21,10 @@
 
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Inactive"  >
+                                <a href=""  >
                                     <img src="../../assets/icons/Trash.svg" class="img-input" alt="" srcset="">
                                 </a>
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Inactive"  >
+                                <a href="" data-bs-toggle="modal" data-bs-target="#ChangeModal"  >
                                     <img src="../../assets/icons/pencil-square.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
@@ -37,11 +37,85 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="last-text">Mostrando de 1 até 1 de 1 registros </p>
-            <br>
-        </div>
+            <div class="last-infos">
+                <p class="last-text">Mostrando de 1 até 1 de 1 registros </p>
+                
+                <div class="buttons">
+                    <div  id="AntBtn" class="pageButtons">
+                    <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
+                    </div>
+        
+                    <div>
+                    <a class="btn btn-primary pages" >
+                        1
+                    </a>
+                    </div>
+                    
+                    <div  id="ProxBtn" class="pageButtons" >
+                    <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
+                    </div>
+                </div>
+            </div>
+            
+        <br>
     </div>
-    <a class="button-add"href="" data-bs-toggle="modal" data-bs-target="#Inactive"  >
-        <img src="../../assets/icons/plus.svg" class="img-input" alt="" srcset="">
-    </a>
-   
+
+<a class="button-add" href="" data-bs-toggle="modal" data-bs-target="#AddModal"  >
+    <img src="../../assets/icons/plus.svg" class="img-input" alt="" srcset="" style="color: #2D7DB5;">
+</a>
+</div>
+
+   <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="ChangeModal" tabindex="-1" aria-labelledby="ChangeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ChangeModalLabel">Alteração</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="change-modal">
+                <table id="datatable" class="table table-bordered">
+                    <tbody class="table-group">
+                        <tr>
+                            <td >Allan Kley</td>
+                            <td >92897498</td>
+                            <td>
+                                <select name="options" id="select-option">
+                                    <option value="adm">ADM</option>
+                                    <option value="Seguranca">Segurança</option>
+                                </select>
+                            </td>   
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar alteração</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="AddModalLabel">Adicionar permissão</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Inserir IP</p>
+            <input class="inputIP" type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
