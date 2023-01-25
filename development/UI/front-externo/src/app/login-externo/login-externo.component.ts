@@ -51,7 +51,8 @@ export class LoginExternoComponent implements OnInit {
   verificarPrimeiroAcesso(){
     let senha = (document.getElementById("senha") as HTMLInputElement).value;
     let cnpj = (document.getElementById("cnpj") as HTMLInputElement).value;
-   
+    let erro = document.getElementById("erro")
+    
 
     var config = {
       method: 'get',
@@ -71,7 +72,14 @@ export class LoginExternoComponent implements OnInit {
         if(primeiroacesso){
           instance.router.navigate(['primeiro-acesso']);
         }else{
-          instance.login();
+          console.log(response.data);
+          let mensagemErro = response.data['erro']
+          //instance.login();
+
+          if(erro!= null){
+            erro.style.display = "block"
+            erro.textContent = mensagemErro
+          }
         }
      
       })
