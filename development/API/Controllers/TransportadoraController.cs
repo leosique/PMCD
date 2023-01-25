@@ -36,6 +36,7 @@ public class TransportadoraController : ControllerBase
         try{
             Transportadora trans = Model.Transportadora.BuscarPorId(id);
             return new{
+                Resposta = "Transportadora encontrada",
                 Id = trans.Id,
                 Nome = trans.Nome,
                 Cnpj = trans.Cnpj,
@@ -73,11 +74,12 @@ public class TransportadoraController : ControllerBase
     [HttpGet]
     [Route("BuscarCNPJ/{cpnj}")]
     [Authorize]
-    public Object BuscarPorId(string cnpj)
+    public Object BuscarPorCNPJ(string cnpj)
     {  
         try{
             Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
             return new{
+                Resposta = "Transportadora encontrada",
                 Id = trans.Id,
                 Nome = trans.Nome,
                 Cnpj = trans.Cnpj,
@@ -132,6 +134,25 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    //* ------------------------------------------------ Mudar senha ao primeiro acesso
+    [HttpPut]
+    [Route("EditarPrimeiroAcesso/{senhaNova}")]
+    public Object EditarPrimeiroAcesso([FromBody] TransportadoraDTO transDTO, string senhaNova)
+    {  
+        try{
+            Transportadora trans = new Transportadora(transDTO);
+            trans.EditarPrimeiroAcesso(senhaNova);
+            return new{
+                Resposta = "Senha alterada com sucesso"
+            };
+        }catch(Exception e){
+            return new{
+                Resposta = "Erro ao editar transportadora",
+                Erro = e.Message
+            };
+        }
+    }
+
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
@@ -152,12 +173,31 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("Verifica/(cnpj)")]
+    public Object Verifica(string cnpj){
+        try{
+            Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
+            bool v = trans.Verifica();
+            return new{
+                Resposta = "Sucesso ao verificar primeiro acesso",
+                primeiroAcesso = v
+            };
+        }
+        catch(Exception e){
+            return new{
+                Resposta = "Erro ao verificar se é o primeiro acesso",
+                Erro = e.Message
+            };
+        }
+    }
+    
+
     //* ------------------------------------------------ Testando Login
     [HttpPost]
     [Route("Login")]
     public Object LoginAsync([FromBody] TransLoginDTO transLoginDTO){
-
-
+        
         Transportadora trans = Transportadora.Login(transLoginDTO);
 
         if(trans != null){

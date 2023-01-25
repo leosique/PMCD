@@ -12,6 +12,7 @@ public partial class Transportadora
     public string Cnpj { get; set; }
     public string Senha {get; set; }
 
+    public bool PrimeiroAcesso {get; set;}
 
     public virtual List<Entrega> EntregaList { get; set; }
 
@@ -74,6 +75,10 @@ public partial class Transportadora
         }
     }
 
+    public bool Verifica(){
+       return this.PrimeiroAcesso;
+    }
+
     public void Editar()
     {
         using(var context = new Context())
@@ -83,6 +88,24 @@ public partial class Transportadora
             transportadora.Nome = this.Nome;
             transportadora.Cnpj = this.Cnpj;
             transportadora.Senha = this.Senha;
+
+            context.SaveChanges();
+        }
+    }
+
+    public void EditarPrimeiroAcesso(string senhaNova)
+    {
+        using(var context = new Context())
+        {
+            var transportadora = context.Transportadoras.FirstOrDefault(e => e.Cnpj == this.Cnpj);
+
+            if(this.Senha == transportadora.Senha && transportadora.PrimeiroAcesso){
+                transportadora.Senha = senhaNova;
+                transportadora.PrimeiroAcesso = false;
+            }
+            else{
+                
+            }
 
             context.SaveChanges();
         }
