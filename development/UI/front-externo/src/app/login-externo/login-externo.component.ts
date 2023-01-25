@@ -23,25 +23,80 @@ export class LoginExternoComponent implements OnInit {
     inp?.setAttribute('style', 'border-bottom: .15em solid #C1C7CC;');
   }
 
-  verificarPrimeiroAcesso(){
-    var primeiroacesso = false
-
-    if(primeiroacesso){
-      this.router.navigate(['primeiro-acesso']);
-    }else{
-      this.login();
+  verificaCampos(){
+    let cnpj = (document.getElementById("cnpj") as HTMLInputElement).value;
+    let senha = (document.getElementById("senha") as HTMLInputElement).value;
+    let erro = document.getElementById("erro")
+    let mensagemErro = ""
+    
+    if(cnpj!= "" && senha != ""){
+      this.verificarPrimeiroAcesso();
     }
+
+    if(cnpj== "" && senha == ""){
+      mensagemErro = "Campo cnpj e senha nulos"
+    }else if (cnpj == ""){ 
+      mensagemErro = "Campo cnpj nulo"
+    }else{
+      mensagemErro = "Campo senha nulo"
+    }
+
+    if(erro!= null){
+      erro.style.display = "block"
+      erro.textContent = mensagemErro
+    }
+    
+  }
+
+  verificarPrimeiroAcesso(){
+
+    let cnpj = document.getElementById("cnpj") as HTMLInputElement;
+   
+
+    var config = {
+      method: 'get',
+      url: 'https://localhost:7274/Transportadora/Verifica/' + cnpj.value,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    let instance = this;
+    localStorage.removeItem('authToken');
+    axios(config)
+      .then(function (response) {
+        
+        var primeiroacesso = response.data['primeiroAcesso'];
+
+        if(primeiroacesso){
+          instance.router.navigate(['primeiro-acesso']);
+        }else{
+          instance.login();
+        }
+     
+      })
+      .catch(function (error) {
+      })
+    
+
+
+
+
+
+
+    
   }
 
   login(){
     let cnpj = document.getElementById("cnpj") as HTMLInputElement;
     let senha = document.getElementById("senha") as HTMLInputElement;
+    let erro = document.getElementById("erro")
+    
 
     var data = JSON.stringify({
       "cnpj": cnpj.value,
       "senha": senha.value
     });
-    console.log(data);
 
 
     var config = {
@@ -58,10 +113,24 @@ export class LoginExternoComponent implements OnInit {
     axios(config)
       .then(function (response) {
         console.log(response.data);
+        var token = response.data["token"]
+
+        if(token == ""){
+          console.log("informações incorretas");
+
+          if(erro!= null){
+            erro.style.display = "block"
+            erro.textContent = "Cnpj ou senha incorretos"
+          }
+          
+        }else{
+
+          localStorage.setItem('authToken', token);
+          
+          instance.router.navigate(['cadastro-veiculo']);
+        }
         
-        //localStorage.setItem('authToken', response.data);
-        
-        instance.router.navigate(['cadastro-veiculo']);
+
      
       })
       .catch(function (error) {

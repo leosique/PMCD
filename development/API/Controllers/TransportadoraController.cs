@@ -174,7 +174,7 @@ public class TransportadoraController : ControllerBase
     }
 
     [HttpGet]
-    [Route("Verifica/(cnpj)")]
+    [Route("Verifica/{cnpj}")]
     public Object Verifica(string cnpj){
         try{
             Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
@@ -187,6 +187,7 @@ public class TransportadoraController : ControllerBase
         catch(Exception e){
             return new{
                 Resposta = "Erro ao verificar se é o primeiro acesso",
+                primeiroAcesso = false,
                 Erro = e.Message
             };
         }
@@ -210,6 +211,7 @@ public class TransportadoraController : ControllerBase
             };
         }else{
             return new{
+                token = "",
                 Resposta = "Erro em login",
             };
         }
