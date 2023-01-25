@@ -154,7 +154,7 @@ public class TransportadoraController : ControllerBase
     }
 
     [HttpGet]
-    [Route("Verifica")]
+    [Route("Verifica/{cnpj}/{senha}")]
     public Object Verifica(string cnpj, string senha){
         try{
             Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
