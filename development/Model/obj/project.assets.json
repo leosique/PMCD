@@ -1991,11 +1991,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\KLA1CT\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\mom1ct\\.nuget\\packages\\": {}
+>>>>>>> d0e9bb27c050f8acd6770ae88585a40aacfce2d8
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj",
       "projectName": "Model",
       "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj",
@@ -2004,6 +2009,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
+      "projectName": "Model",
+      "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
+      "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d0e9bb27c050f8acd6770ae88585a40aacfce2d8
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2017,8 +2032,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
               "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+=======
+            "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+>>>>>>> d0e9bb27c050f8acd6770ae88585a40aacfce2d8
             }
           }
         }

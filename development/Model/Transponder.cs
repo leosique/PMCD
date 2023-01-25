@@ -52,9 +52,9 @@ public partial class Transponder
     {
         using(var context = new Context())
         {
-            var transponder = context.Transponders.FirstOrDefault(e => e.Id == Id);
+            var trans = context.Transponders.FirstOrDefault(e => e.Id == Id);
 
-            return transponder;
+            return trans;
         }
     }
 

@@ -73,7 +73,6 @@ public partial class Entrega
         using(var context = new Context())
         {
             Entrega entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
-
             return entrega;
         }
     }
