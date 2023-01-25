@@ -54,12 +54,12 @@
                         <ng-container >
                             <ng-container >
 
-                        <td>5014512565</td>
+                        <td>{{aprovada.notaFiscal}}</td>
                         <td >Allan Kley</td>
                         <td >{{aprovada.placaCarro}}</td>
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  >
+                                <a  data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(aprovada.id)">
                                     <img src="../../assets/icons/clipboard-checkmark.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
@@ -102,7 +102,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" >Código da nota fiscal: </h5>
-                    <h3 class="modal-title codigo" > 5014512565</h3>
+                    <h3 class="modal-title codigo" >{{detalhes_entrega.notaFiscal}}</h3>
                     <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
                 </div>
                 
@@ -118,7 +118,7 @@
                         </div> -->
                         <div class="col-12">
                           <label for="inputAddress" class="form-label">Placa</label>
-                          <h5 class="form-control">lalalala</h5>
+                          <h5 class="form-control">{{detalhes_entrega.placaCarro}}</h5>
                         </div>
                         <div class="col-12">
                           <label for="inputAddress2" class="form-label">CPF</label>

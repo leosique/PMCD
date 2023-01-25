@@ -33,6 +33,7 @@
     margin-left: 2em;
     margin-right: 2em;
     width: 100%;
+    
   }
 }
 
@@ -105,14 +106,15 @@
   width: 30%;
   font-size: 1.2em;
   border-radius: 5px;
+  transition: opacity 100ms ease-in-out;
 } 
 .button-login:hover,
 .button-login:focus{
-  background-color: var(--Bosch-Blue-Ligth);
+  opacity: 0.7;
 }
 
 .button-login:active{
-  background-color: var(--Bosch-Blue-Ligth);
+  opacity: 0.7;
 }
 @media (max-width: 700px)
 {
@@ -122,5 +124,13 @@
 
 }
 
+.erroDiv{
+  display: grid;
+  place-items: center;
+}
 
-
+.erro{
+  width: 90%;
+  color: var(--Bosch-Red);
+  display: none;
+}
