@@ -49,6 +49,23 @@ public class EntregaEntregadorController : ControllerBase
   
     }
 
+    [HttpGet]
+    [Route("Aprovadas")]
+    public IActionResult BuscarAprovadas()
+    {
+
+        List<EntregaEntregador> entregas = Model.EntregaEntregador.BuscarAprovadas();
+
+        var output = entregas.Select(e => new
+        {
+            Id = e.Id,
+            Entrega = e.Entrega,
+            Entregador = e.Entregador
+        });
+
+        return Ok(output);
+    }
+
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
