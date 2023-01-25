@@ -106,17 +106,14 @@ INSERT INTO EntregaEntregador (idEntregador,idEntrega,motorista) VALUES(3,4,1);
 
 CREATE TABLE "Ip" (
 	id int Primary KEY identity,
-	enderecoIp varchar(20)
+	enderecoIp varchar(20),
+  adm bit
 );
 
-<<<<<<< HEAD
-
-=======
-INSERT INTO Ip(enderecoIp) VALUES('111.111.111.111');
-INSERT INTO Ip(enderecoIp) VALUES('1.1.1.1');
-INSERT INTO Ip(enderecoIp) VALUES('0.0.0.0');
-INSERT INTO Ip(enderecoIp) VALUES('1.2.3.4');
-INSERT INTO Ip(enderecoIp) VALUES('256.256.256.256');
-INSERT INTO Ip(enderecoIp) VALUES('222.222.222.222');
-INSERT INTO Ip(enderecoIp) VALUES('0.111.0.0');
->>>>>>> 3c08d43ba1fdc5108349755273318181e0e8740e
+INSERT INTO Ip(enderecoIp) VALUES('111.111.111.111',1);
+INSERT INTO Ip(enderecoIp) VALUES('1.1.1.1',1);
+INSERT INTO Ip(enderecoIp) VALUES('0.0.0.0',0);
+INSERT INTO Ip(enderecoIp) VALUES('1.2.3.4',0);
+INSERT INTO Ip(enderecoIp) VALUES('256.256.256.256',0);
+INSERT INTO Ip(enderecoIp) VALUES('222.222.222.222',0);
+INSERT INTO Ip(enderecoIp) VALUES('0.111.0.0',0);

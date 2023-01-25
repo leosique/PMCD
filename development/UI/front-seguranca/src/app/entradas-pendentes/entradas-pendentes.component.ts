@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
+import axios from 'axios';
+import { Entrega } from 'src/interfaces/entrega';
 @Component({
   selector: 'app-entradas-pendentes',
   templateUrl: './entradas-pendentes.component.html',
   styleUrls: ['./entradas-pendentes.component.css']
 })
 export class EntradasPendentesComponent implements OnInit {
+  pendentes : Array<Entrega> = []
+
   // array: Array<Pendentes> = [];
 
   // min:number = 0;
@@ -19,6 +22,21 @@ export class EntradasPendentesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.GetEntrgasPendentes()
+  }
+
+  GetEntrgasPendentes(){
+    var config = {
+      method: 'get',
+      url: 'https://localhost:7274/Entrega/Pendentes',
+      headers: {},
+    };
+    var instance = this;
+    axios(config)
+      .then(function(response:any) {
+        console.log(response.data);
+        instance.pendentes = response.data
+      });     
   }
 
   // ProxPag(){
