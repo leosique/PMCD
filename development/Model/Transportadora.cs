@@ -102,9 +102,8 @@ public partial class Transportadora
             if(this.Senha == transportadora.Senha && transportadora.PrimeiroAcesso){
                 transportadora.Senha = senhaNova;
                 transportadora.PrimeiroAcesso = false;
-            }
-            else{
-                
+            }else{
+                throw new ArgumentException("Senhas diferentes ou nao e o primeiro acesso");
             }
 
             context.SaveChanges();
