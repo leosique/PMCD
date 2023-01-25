@@ -6,9 +6,6 @@ CREATE TABLE "Entregador" (
 );
 
 
-
-
-
 INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Reese Paul','81035398621','2023-04-28');
 INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Yardley Evans','55488444535','2023-01-26');
 INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Priscilla Mccormick','35815825695','2023-06-22');
@@ -17,17 +14,10 @@ INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Chester Lester','
 INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Daquan Snyder','58618217896','2023-10-27');
 
 
-
-
-
-
 CREATE TABLE "Transponder" (
   id int PRIMARY KEY identity,
   codigo varchar(255)
 );
-
-
-
 
 
 INSERT INTO Transponder (codigo) VALUES('FVB92SPB5EO');
@@ -38,26 +28,21 @@ INSERT INTO Transponder (codigo) VALUES('WNC35HBB3NT');
 
 
 
-
-
-
-
-
-
 CREATE TABLE "Transportadora" (
   id int PRIMARY KEY identity,
   nome varchar(255) default NULL,
   cnpj varchar(255),
-  senha varchar(100)
+  senha varchar(100),
+  primeiroAcesso bit
 );
 
 
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Flavia Gallagher','26648046657131','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Jana Caldwell','78215534028676','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Vladimir Vincent','95446426302082','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Paki Molina','35386112807663','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Jillian Acevedo','35328781282256','123');
-INSERT INTO Transportadora (nome,cnpj,senha) VALUES('Dalton Gallagher','35544209650608','123');
+INSERT INTO Transportadora (nome,cnpj,senha,primeiroAcesso) VALUES('Flavia Gallagher','26648046657131','123', 1);
+INSERT INTO Transportadora (nome,cnpj,senha,primeiroAcesso) VALUES('Jana Caldwell','78215534028676','123', 1);
+INSERT INTO Transportadora (nome,cnpj,senha,primeiroAcesso) VALUES('Vladimir Vincent','95446426302082','123', 1);
+INSERT INTO Transportadora (nome,cnpj,senha,primeiroAcesso) VALUES('Paki Molina','35386112807663','123', 0);
+INSERT INTO Transportadora (nome,cnpj,senha,primeiroAcesso) VALUES('Jillian Acevedo','35328781282256','123', 0);
+INSERT INTO Transportadora (nome,cnpj,senha,primeiroAcesso) VALUES('Dalton Gallagher','35544209650608','123', 0);
 
 
 CREATE TABLE "ResponsavelBosch" (
@@ -85,6 +70,7 @@ CREATE TABLE "Entrega" (
   pesoSaida int NULL,
   dataEntrega datetime NULL,
   liberado bit NULL,
+  notaFiscal varchar(255),
   idTransponder integer FOREIGN KEY REFERENCES Transponder(id) NULL,
   idTransportadora int FOREIGN KEY REFERENCES Transportadora(id) NULL,
   idResponsavelBosch int FOREIGN KEY REFERENCES ResponsavelBosch(id) NULL
@@ -92,14 +78,13 @@ CREATE TABLE "Entrega" (
 );
 
 
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('LGS6Q79',3,27,43,'2022-09-10',0,2,3,7);
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('ILW2K48',1,34,46,'2022-09-10',0,2,2,3);
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('YRE2I63',2,22,47,'2022-09-10',0,3,3,5);
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('OOH1E15',3,31,48,'2022-09-10',0,5,5,2);
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('KPN9R36',0,25,50,'2022-09-10',0,2,5,4);
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('JXP2V22',2,35,50,'2022-09-10',0,2,5,5);
-INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,idTransponder,idTransportadora,idResponsavelBosch) VALUES('VUM9C61',2,39,41,'2022-09-10',0,2,3,4);
-
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('LGS6Q79',3,27,43,'2022-09-10',0,'51080701212344000127550010000000981364112281',2,3,7);
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('ILW2K48',1,34,46,'2022-09-10',0,'31080701212344000127550010453000981364112281',2,2,3);
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('YRE2I63',2,22,47,'2022-09-10',0,'41080701212344000127550010000000981364112281',3,3,5);
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('OOH1E15',3,31,48,'2022-09-10',0,'71080701212344000127550010000000981393112281',5,5,2);
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('KPN9R36',0,25,50,'2022-09-10',0,'51080701212344000127550010000000986844112281',2,5,4);
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('JXP2V22',2,35,50,'2022-09-10',0,'21080701212344044127550010000000981364112281',2,5,5);
+INSERT INTO Entrega (placaCarro,codigoInterno,pesoEntrada,pesoSaida,dataEntrega,liberado,notaFiscal,idTransponder,idTransportadora,idResponsavelBosch) VALUES('VUM9C61',2,39,41,'2022-09-10',0,'51080701212344000127550010000000981364112444',2,3,4);
 
 
 
@@ -121,5 +106,14 @@ INSERT INTO EntregaEntregador (idEntregador,idEntrega,motorista) VALUES(3,4,1);
 
 CREATE TABLE "Ip" (
 	id int Primary KEY identity,
-	enderecoIp varchar(20)
+	enderecoIp varchar(20),
+  adm bit
 );
+
+INSERT INTO Ip(enderecoIp,adm) VALUES('111.111.111.111',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('1.1.1.1',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('0.0.0.0',0);
+INSERT INTO Ip(enderecoIp,adm) VALUES('1.2.3.4',0);
+INSERT INTO Ip(enderecoIp,adm) VALUES('256.256.256.256',0);
+INSERT INTO Ip(enderecoIp,adm) VALUES('222.222.222.222',0);
+INSERT INTO Ip(enderecoIp,adm) VALUES('0.111.0.0',0);

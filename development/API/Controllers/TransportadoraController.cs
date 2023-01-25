@@ -36,6 +36,7 @@ public class TransportadoraController : ControllerBase
         try{
             Transportadora trans = Model.Transportadora.BuscarPorId(id);
             return new{
+                Resposta = "Transportadora encontrada",
                 Id = trans.Id,
                 Nome = trans.Nome,
                 Cnpj = trans.Cnpj,
@@ -73,11 +74,12 @@ public class TransportadoraController : ControllerBase
     [HttpGet]
     [Route("BuscarCNPJ/{cpnj}")]
     [Authorize]
-    public Object BuscarPorId(string cnpj)
+    public Object BuscarPorCNPJ(string cnpj)
     {  
         try{
             Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
             return new{
+                Resposta = "Transportadora encontrada",
                 Id = trans.Id,
                 Nome = trans.Nome,
                 Cnpj = trans.Cnpj,
@@ -86,26 +88,6 @@ public class TransportadoraController : ControllerBase
         }catch(Exception e){
             return new{
                 Resposta = "Transportadora não encontrada",
-                Erro = e.Message
-            };
-        }
-    }
-
-    //* ------------------------------------------------ Criar
-    [HttpPost]
-    [Route("Salvar")]
-    public Object Salvar([FromBody] TransportadoraDTO transDTO)
-    {  
-        try{
-            Transportadora trans = new Transportadora(transDTO);
-            trans.Salvar();
-            return new{
-                Resposta = "Transportadora cadastrada com sucesso",
-                Id = trans.Id
-            };
-        }catch(Exception e){
-            return new{
-                Resposta = "Erro ao cadastrar transportadora",
                 Erro = e.Message
             };
         }
@@ -132,6 +114,25 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    //* ------------------------------------------------ Mudar senha ao primeiro acesso
+    [HttpPut]
+    [Route("EditarPrimeiroAcesso/{senhaNova}")]
+    public Object EditarPrimeiroAcesso([FromBody] TransportadoraDTO transDTO, string senhaNova)
+    {  
+        try{
+            Transportadora trans = new Transportadora(transDTO);
+            trans.EditarPrimeiroAcesso(senhaNova);
+            return new{
+                Resposta = "Senha alterada com sucesso"
+            };
+        }catch(Exception e){
+            return new{
+                Resposta = "Erro ao alterar a senha",
+                Erro = e.Message
+            };
+        }
+    }
+
     //* ------------------------------------------------ Deletar
     [HttpDelete]
     [Route("Deletar/{id}")]
@@ -152,12 +153,33 @@ public class TransportadoraController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("Verifica/{cnpj}/{senha}")]
+    public Object Verifica(string cnpj, string senha){
+        try{
+            Transportadora trans = Model.Transportadora.BuscarPorCNPJ(cnpj);
+
+            bool v = trans.Verifica(senha);
+            return new{
+                Resposta = "Sucesso ao verificar primeiro acesso",
+                primeiroAcesso = v
+            };
+        }
+        catch(Exception e){
+            return new{
+                Resposta = "Erro ao verificar se é o primeiro acesso",
+                primeiroAcesso = false,
+                Erro = e.Message
+            };
+        }
+    }
+    
+
     //* ------------------------------------------------ Testando Login
     [HttpPost]
     [Route("Login")]
     public Object LoginAsync([FromBody] TransLoginDTO transLoginDTO){
-
-
+        
         Transportadora trans = Transportadora.Login(transLoginDTO);
 
         if(trans != null){
@@ -170,10 +192,28 @@ public class TransportadoraController : ControllerBase
             };
         }else{
             return new{
+                token = "",
                 Resposta = "Erro em login",
             };
         }
-        
+    }
 
+    [HttpPost]
+    [Route("Salvar")]
+    public Object GerarSenha([FromBody] TransportadoraDTO transDTO){
+        try{
+            Transportadora trans = new Transportadora(transDTO);
+            string senhaGerada = trans.GeraSenha();
+            return new{
+                Resposta = "Senha gerada com sucesso",
+                senhaGerada = senhaGerada
+            };
+        }
+        catch(Exception e){
+            return new{
+                Resposta = "Erro ao gerar senha",
+                Erro = e.Message
+            };
+        }
     }
 }
