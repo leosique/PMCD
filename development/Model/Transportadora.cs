@@ -118,7 +118,7 @@ public partial class Transportadora
                 transportadora.Senha = senhaNova;
                 transportadora.PrimeiroAcesso = false;
             }else{
-                throw new ArgumentException("Senhas diferentes ou nao e o primeiro acesso");
+                throw new ArgumentException("Senha antiga incorreta");
             }
 
             context.SaveChanges();
