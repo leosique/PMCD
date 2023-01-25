@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "/dqL0/L234LYNMxvMvLzMIQePvQieUkZgGFl4L/1IW1ulDlwTpCj0T6stbDSHonWmaD5wVVGYmY9oeuKK5MG/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
-=======
-  "dgSpecHash": "GEP9kx7QdlusXkyNPnAsDE7d3O3DIv/iN/D+/yZgl9kmXWbmJgUPfNj3KrwhFN0of8IOUHx5qU2aDNjAnKUE9Q==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
->>>>>>> d0e9bb27c050f8acd6770ae88585a40aacfce2d8
   "expectedPackageFiles": [],
   "logs": []
 }

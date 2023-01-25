@@ -125,18 +125,3 @@
 
 
 
-.linkAcesso{
-  display: grid;
-  place-items: center;
-}
-
-.linkAcesso a{
-  color: var(--Bosch-Blue);
-  text-decoration: none;
-
-  transition: opacity 100ms ease-in-out;
-}
-
-.linkAcesso a:hover{
-  opacity: 0.7;
-}
