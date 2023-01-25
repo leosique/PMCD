@@ -8,6 +8,7 @@ public partial class Ip
 
     public int Id { get; set; }
     public string EnderecoIp { get; set; }
+    public bool Adm {get;set;}
 
 
     public Ip(IpDTO ipDTO){
@@ -19,7 +20,6 @@ public partial class Ip
     {
         
     }
-
 
     public void Salvar()
     {
@@ -75,6 +75,11 @@ public partial class Ip
         using(var context = new Context())
         {
             var ip = context.Ips.Select(x => x.EnderecoIp).ToList();
+            // var ips = context.Ips.ToList();
+
+
+            // foreach(var i in ips)
+            //     Console.WriteLine(i.EnderecoIp);
 
             return ip;
         }
