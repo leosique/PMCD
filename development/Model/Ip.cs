@@ -70,11 +70,11 @@ public partial class Ip
         }
     }
 
-    public static List<string> BuscarTodos()
+    public static List<T> thisIsAtest<T>()
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Select(x => x.EnderecoIp).ToList();
+            var ip = context.Ips.Select(x => new{x.EnderecoIp,x.Adm});
             // var ips = context.Ips.ToList();
 
 
