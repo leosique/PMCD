@@ -52,6 +52,31 @@ public partial class EntregaEntregador
             throw new ArgumentException("Não foi possível encontrar as entregas.");
         }
     }
+    public static List<EntregaEntregador> BuscarPendentes()
+    {
+        using(var context = new Context())
+        {
+            List<EntregaEntregador> entregas = context.EntregasEntregadores
+                .Join(context.Entregas, e => e.IdEntrega, i => i.Id, (e, i) => new EntregaEntregador
+                {
+                    Id = e.Id,
+                    IdEntregador = e.Entregador.Id,
+                    Motorista = e.Motorista,
+                    Entrega = i,                    
+                })
+                .Join(context.Entregadores, e => e.IdEntregador, i => i.Id, (e, i) => new EntregaEntregador
+                {
+                    Id = e.Id,
+                    Motorista = e.Motorista,
+                    Entrega = e.Entrega,
+                    Entregador = i,
+                })
+                .Where(e => e.Entrega.Liberado == false)
+                .ToList();
+
+            return entregas;
+        }
+    }
 
     public void Salvar()
     {
