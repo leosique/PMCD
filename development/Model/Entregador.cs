@@ -53,6 +53,9 @@ public partial class Entregador
                     context.Remove(x);
                 }
             }
+            else{
+                throw new ArgumentException("Não foi possível deletar.");
+            }
 
             context.Remove(this);
             context.SaveChanges();
@@ -66,7 +69,9 @@ public partial class Entregador
           
             var entregador = context.Entregadores.FirstOrDefault(e => e.Id == Id);
 
-            return entregador;
+            if(entregador != null)
+                return entregador;
+            throw new ArgumentException("Não foi possível encontrar o entregador.");
         }
     }
 
@@ -75,8 +80,8 @@ public partial class Entregador
         using(var context = new Context())
         {
             Entregador entregador = context.Entregadores.FirstOrDefault(e => e.Id == this.Id);
-            Console.WriteLine(this.Id);
-            Console.WriteLine(entregador.Nome);
+            if(entregador == null)
+                throw new ArgumentException("Não foi possível encontrar o entregador.");
             
 
             entregador.Nome = this.Nome;

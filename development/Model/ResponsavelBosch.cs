@@ -48,6 +48,9 @@ public partial class ResponsavelBosch
                     x.IdResponsavelBosch = null;
                 }
             }
+            else{
+                throw new ArgumentException("Não foi possivel deletar.");
+            }
 
             context.Remove(this);
             context.SaveChanges();
@@ -60,7 +63,9 @@ public partial class ResponsavelBosch
         {
             var responsavelBosch = context.ResponsaveisBosch.FirstOrDefault(e => e.Id == Id);
 
-            return responsavelBosch;
+            if(responsavelBosch != null)
+                return responsavelBosch;
+            throw new ArgumentException("Não foi possível encontrar o responsável Bosch.");
         }
     }
 
@@ -70,7 +75,9 @@ public partial class ResponsavelBosch
         {
             var responsavelBosch = context.ResponsaveisBosch.FirstOrDefault(e => e.Edv == Edv);
 
-            return responsavelBosch;
+            if(responsavelBosch != null)
+                return responsavelBosch;
+            throw new ArgumentException("Não foi possível encontrar o responsável Bosch.");
         }
     }
 
@@ -80,7 +87,9 @@ public partial class ResponsavelBosch
         {
             var responsavelBosch = context.ResponsaveisBosch.FirstOrDefault(e => e.Documento == Doc);
 
-            return responsavelBosch;
+            if(responsavelBosch != null)
+                return responsavelBosch;
+            throw new ArgumentException("Não foi possível encontrar o responsável Bosch.");
         }
     }
 
@@ -89,6 +98,9 @@ public partial class ResponsavelBosch
         using(var context = new Context())
         {
             var responsavelBosch = context.ResponsaveisBosch.FirstOrDefault(e => e.Id == this.Id);
+
+            if(responsavelBosch == null)
+                throw new ArgumentException("Não foi possível encontrar o responsável Bosch.");
 
             responsavelBosch.Nome = this.Nome;
             responsavelBosch.Documento = this.Documento;

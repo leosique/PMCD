@@ -11,3 +11,5 @@ export interface Entrega {
   pesoSaida: number,
   placaCarro: string,
 }
+
+

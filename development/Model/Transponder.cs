@@ -42,6 +42,9 @@ public partial class Transponder
                     x.IdTransponder = null;
                 }
             }
+            else{
+                throw new ArgumentException("Não foi possível deletar.");
+            }
 
             context.Remove(this);
             context.SaveChanges();
@@ -54,7 +57,9 @@ public partial class Transponder
         {
             var trans = context.Transponders.FirstOrDefault(e => e.Id == Id);
 
-            return trans;
+            if(trans != null)
+                return trans;
+            throw new ArgumentException("Não foi possível encontrar o transponder");
         }
     }
 
@@ -62,9 +67,11 @@ public partial class Transponder
     {
         using(var context = new Context())
         {
-            var transponder = context.Transponders.FirstOrDefault(e => e.Codigo == cod);
+            var trans = context.Transponders.FirstOrDefault(e => e.Codigo == cod);
 
-            return transponder;
+            if(trans != null)
+                return trans;
+            throw new ArgumentException("Não foi possível encontrar o transponder");
         }
     }
 
@@ -72,9 +79,13 @@ public partial class Transponder
     {
         using(var context = new Context())
         {
-            var transponder = context.Transponders.FirstOrDefault(e => e.Id == this.Id);
+            var trans = context.Transponders.FirstOrDefault(e => e.Id == this.Id);
 
-            transponder.Codigo = this.Codigo;
+            if(trans == null)
+                throw new ArgumentException("Não foi possível encontrar o transponder");
+            
+
+            trans.Codigo = this.Codigo;
 
             context.SaveChanges();
         }

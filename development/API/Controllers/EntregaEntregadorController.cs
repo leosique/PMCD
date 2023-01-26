@@ -84,6 +84,23 @@ public class EntregaEntregadorController : ControllerBase
         return Ok(output);
     }
 
+    [HttpGet]
+    [Route("Pendentes")]
+    public IActionResult BuscarPendentes()
+    {
+
+        List<EntregaEntregador> entregas = Model.EntregaEntregador.BuscarPendentes();
+
+        var output = entregas.Select(e => new
+        {
+            Id = e.Id,
+            Entrega = e.Entrega,
+            Entregador = e.Entregador
+        });
+
+        return Ok(output);
+    }
+
     //* ------------------------------------------------ Criar
     [HttpPost]
     [Route("Salvar")]
