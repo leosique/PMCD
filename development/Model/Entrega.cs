@@ -64,6 +64,9 @@ public partial class Entrega
                     context.Remove(x);
                 }
             }
+            else{
+                throw new ArgumentException("Não foi possível deletar. Verifique se as informações inseridas estão corretas");
+            }
 
             context.Remove(this);
             context.SaveChanges();
@@ -75,7 +78,10 @@ public partial class Entrega
         using(var context = new Context())
         {
             Entrega entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
-            return entrega;
+
+            if(entrega != null)
+                return entrega;
+            throw new ArgumentException("Não foi possível encontrar a entrega.");
         }
     }
 
@@ -85,7 +91,9 @@ public partial class Entrega
         {
             List<Entrega> entregas = context.Entregas.Where(e => e.Liberado == true).ToList();
 
-            return entregas;
+            if(entregas != null)
+                return entregas;
+            throw new ArgumentException("Não foi possível encontrar nenhuma entrega aprovada.");
         }
     }
 
@@ -95,7 +103,9 @@ public partial class Entrega
         {
             List<Entrega> entregas = context.Entregas.Where(e => e.Liberado == false).ToList();
 
-            return entregas;
+            if(entregas != null)
+                return entregas;
+            throw new ArgumentException("Não foi possível encontrar nenhuma entrega pendente.");
         }
     }
 
@@ -104,6 +114,9 @@ public partial class Entrega
         using(var context = new Context())
         {
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
+
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível editar a entrega.");
 
             entrega.PlacaCarro = this.PlacaCarro;
             entrega.CodigoInterno = this.CodigoInterno;
@@ -125,6 +138,9 @@ public partial class Entrega
         {
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
 
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
+
             entrega.PlacaCarro = this.PlacaCarro;
 
             context.SaveChanges();
@@ -136,6 +152,9 @@ public partial class Entrega
         using(var context = new Context())
         {
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
+
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
 
             entrega.PesoEntrada = this.PesoEntrada;
 
@@ -149,6 +168,9 @@ public partial class Entrega
         {
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
 
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
+
             entrega.PesoSaida = this.PesoSaida;
 
             context.SaveChanges();
@@ -160,6 +182,9 @@ public partial class Entrega
         using(var context = new Context())
         {
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
+
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
 
             entrega.IdTransponder = this.IdTransponder;
 
