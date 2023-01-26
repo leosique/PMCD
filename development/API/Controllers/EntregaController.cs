@@ -296,6 +296,27 @@ public class EntregaController : ControllerBase
                 Erro = e.Message
             };
         }
+    }
 
+    [HttpGet]
+    [Route("TransportadoraEntregaPendente/{cnpj}")]
+    public Object BuscarEntregaPendente(string cnpj){
+        try
+        {
+            Model.Entrega.BuscarEntregaPendentePorTransportadora(cnpj);
+
+            return new
+            {
+                Resposta = "Entrega(s) encontrada(s) com sucesso!"
+            };
+        }
+        catch (Exception e)
+        {
+            return new
+            {
+                Resposta = "Erro ao encontrar entregas",
+                Erro = e.Message
+            };
+        }
     }
 }
