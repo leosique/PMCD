@@ -97,6 +97,25 @@ public partial class Entrega
         }
     }
 
+    public static void BuscarEntregaPendentePorTransportadora(string cnpj){
+        using(var context = new Context()){
+            var entregas = context.Entregas.Join(context.Transportadoras, e => e.IdTransportadora, i => i.Id, (e, i) => new {
+                Id = e.Id,
+                NotaFiscal = e.NotaFiscal,
+                DataEntrega = e.DataEntrega,
+                Cnpj = i.Cnpj,
+                Liberado = e.Liberado
+            }).Where(e => e.Cnpj == cnpj)
+            .Where(e => e.Liberado == true)
+            .ToList();
+
+            // return entregas.Select(x => new{
+            //     NotaFiscal = x.NotaFiscal,
+            //     DataEntrega = x.DataEntrega
+            // });
+        }
+    }
+
     public static List<Entrega> BuscarPendentes()
     {
         using(var context = new Context())
