@@ -1,0 +1,22 @@
+<app-top-bar></app-top-bar>
+<body>
+    <form action="#" class="form">
+        
+        
+            <div class="title-group">Transportadora cadastrada !</div>
+
+            <div class="input-group">
+                <p>Nome transportadora: {{transportadora.nome}}</p>
+            </div>
+            <div class="input-group">
+                <p>CNPJ: {{transportadora.cnpj}}</p>
+            </div>
+            <div class="input-group">
+                <p>Senha gerada: {{transportadora.senha}}</p>
+            </div>
+            <div class="btns-group" id="cadastro-btn">
+                <a href="#" class="btn" [routerLink]="['/']">Voltar</a>
+            </div>
+    </form>    
+</body>
+
