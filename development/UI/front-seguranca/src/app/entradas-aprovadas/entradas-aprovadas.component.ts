@@ -40,7 +40,7 @@ export class EntradasAprovadasComponent implements OnInit {
   GetEntrgasAprovadas(){
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/EntregaEntregador/Aprovadas',
+      url: 'https://localhost:7274/EntregaEntregador/Liberados',
       headers: {},
     };
     var instance = this;
