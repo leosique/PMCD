@@ -9,7 +9,9 @@ public class EntregadorDTO
 {
     public int Id {get; set; }
     public string Nome {get; set; }
-    public string Documento {get; set; }
+    public string Cpf { get; set; }
+    public string Cnh { get; set; }
+    public string Rg { get; set; }
     public string DataNascimento {get; set; }
 
 }
