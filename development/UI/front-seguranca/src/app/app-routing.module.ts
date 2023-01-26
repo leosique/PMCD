@@ -7,6 +7,7 @@ import { PermissoesComponent } from './permissoes/permissoes.component';
 import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
 import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motorista.component';
 import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
+import { Error404Component } from './error404/error404.component';
 
 const routes: Routes = [
  
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'cadastro-veiculo', component:CadastroVeiculoComponent},
   {path: 'cadastro-motorista', component:CadastroMotoristaComponent},
   {path: 'cadastro-ajudante', component:CadastroAjudanteComponent},
+  {path: 'erro404', component:Error404Component},
 ];
 
 @NgModule({
