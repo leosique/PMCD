@@ -12,7 +12,6 @@ export class CadastroVeiculoComponent {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // instance.router.navigate(['/sucesso']);
         
   }
 
@@ -34,12 +33,7 @@ export class CadastroVeiculoComponent {
         localStorage.setItem("modelo", modelo);
         localStorage.setItem("ano", ano);
         this.router.navigate(['/cadastro-motorista']);
-        
-        
     }
-    
   }
-
-
 }
 

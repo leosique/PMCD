@@ -9,6 +9,5 @@ export class CadastroMotoristaComponent {
   constructor(private router: Router) {}
   ngOnInit(): void {
 
-        
   }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DTO;
+using System.Net;
 namespace Model;
 
 public partial class Ip
@@ -13,6 +14,7 @@ public partial class Ip
 
     public Ip(IpDTO ipDTO){
         this.EnderecoIp = ipDTO.EnderecoIp;
+        this.Adm = (bool)ipDTO.Adm;
     }
 
     public Ip()
@@ -24,6 +26,7 @@ public partial class Ip
     {
         using(var context = new Context())
         {
+            Console.WriteLine(this.Adm);
             context.Add(this);
             context.SaveChanges();
         }
@@ -111,5 +114,27 @@ public partial class Ip
 
             context.SaveChanges();
         }
+    }
+
+    public static bool VerificaIp(){
+        string enderecoIp = GetIp();
+        
+        using(var context = new Context()){
+            var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == enderecoIp);
+            
+            if(ip != null)
+                return ip.Adm;
+            throw new ArgumentException("Não foi possível encontrar o Ip");
+        }
+    }
+
+    public static string GetIp(){
+        string nomeMaquina = Dns.GetHostName();
+        IPAddress[] ipLocal = Dns.GetHostAddresses(nomeMaquina);
+        Console.WriteLine(nomeMaquina);
+        string ip = ipLocal[1].ToString(); //[0] é IPv6 [1] é IPv4
+        Console.WriteLine(ip);
+
+        return ip;
     }
 }
