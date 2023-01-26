@@ -310,3 +310,6 @@ table {
 .modal-header{
     margin-bottom: 20px; 
 }
+.actions img{
+    filter: brightness(0) saturate(100%) invert(41%) sepia(91%) saturate(434%) hue-rotate(162deg) brightness(88%) contrast(86%);
+  }
