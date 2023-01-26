@@ -1615,7 +1615,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DTO": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0"
         },
         "compile": {
           "bin/placeholder/Model.dll": {}
@@ -4393,19 +4393,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mom1ct\\.nuget\\packages\\": {}
+    "C:\\Users\\SAS5CT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\obj\\",
+      "projectPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\SAS5CT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAS5CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4419,11 +4419,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+            "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
             },
-            "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+            "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\Model\\Model.csproj"
             }
           }
         }

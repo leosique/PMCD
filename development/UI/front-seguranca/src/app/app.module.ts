@@ -9,6 +9,9 @@ import { LoginSegurancaComponent } from './login-seguranca/login-seguranca.compo
 import { EntradasPendentesComponent } from './entradas-pendentes/entradas-pendentes.component';
 import { EntradasAprovadasComponent } from './entradas-aprovadas/entradas-aprovadas.component';
 import { PermissoesComponent } from './permissoes/permissoes.component';
+import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
+import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motorista.component';
+import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { PermissoesComponent } from './permissoes/permissoes.component';
     EntradasPendentesComponent,
     EntradasAprovadasComponent,
     PermissoesComponent,
+    CadastroVeiculoComponent,
+    CadastroMotoristaComponent,
+    CadastroAjudanteComponent,
   ],
   imports: [
     BrowserModule,
