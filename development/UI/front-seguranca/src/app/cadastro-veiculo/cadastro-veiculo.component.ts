@@ -20,13 +20,13 @@ export class CadastroVeiculoComponent {
     let modelo = (document.getElementById("modelo") as HTMLInputElement).value;
     let ano = (document.getElementById("ano") as HTMLInputElement).value;
     let erro = document.getElementById("erro") as HTMLElement
+    let erroDiv = document.getElementById("erroDiv") as HTMLElement
 
     if(veiculo=="" || modelo=="" || ano==""){
-      erro.style.display = "block";
+      erroDiv.style.display = "block";
       erro.textContent = "Todos os campos devem ser preenchidos";
     }
     else{
-        localStorage.getItem("id");
         localStorage.setItem("veiculo", veiculo);
         localStorage.setItem("modelo", modelo);
         localStorage.setItem("ano", ano);
