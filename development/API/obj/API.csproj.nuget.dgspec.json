@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj": {}
+    "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj": {
+    "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\obj\\",
+        "projectPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\kol1ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+              "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj"
               },
-              "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+              "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\Model\\Model.csproj"
               }
             }
           }
@@ -76,8 +76,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -89,21 +88,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+    "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+        "projectUniqueName": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj",
         "projectName": "DTO",
-        "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
-        "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\obj\\",
+        "projectPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\kol1ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -134,8 +133,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -144,21 +142,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+    "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\obj\\",
+        "projectPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\kol1ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kol1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -172,8 +170,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-                "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+              "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\kol1ct\\Source\\Repos\\PMCD\\development\\DTO\\DTO.csproj"
               }
             }
           }
@@ -205,8 +203,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -215,7 +212,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.308\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginSegurancaComponent } from './login-seguranca/login-seguranca.component';
 import { EntradasPendentesComponent } from './entradas-pendentes/entradas-pendentes.component';
 import { EntradasAprovadasComponent } from './entradas-aprovadas/entradas-aprovadas.component';
+import { PermissoesComponent } from './permissoes/permissoes.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { EntradasAprovadasComponent } from './entradas-aprovadas/entradas-aprova
     LoginSegurancaComponent,
     EntradasPendentesComponent,
     EntradasAprovadasComponent,
+    PermissoesComponent,
   ],
   imports: [
     BrowserModule,
