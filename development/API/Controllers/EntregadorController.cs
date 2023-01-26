@@ -35,7 +35,9 @@ public class EntregadorController : ControllerBase
             
             return new{
                 Nome = entregador.Nome,
-                Documento = entregador.Documento,
+                Cpf = entregador.Cpf,
+                Cnh = entregador.Cnh,
+                Rg = entregador.Rg,
                 DataNascimento = entregador.DataNascimento
             };
         }catch(Exception e){

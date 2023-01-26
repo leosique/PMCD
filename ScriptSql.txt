@@ -1,18 +1,18 @@
 CREATE TABLE "Entregador" (
   id int PRIMARY KEY identity,
   nome varchar(255) default NULL,
-  documento varchar(255),
+  cpf varchar(255),
+  cnh varchar(255),
+  rg varchar(255),
   dataNascimento varchar(255),
 );
 
-
-INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Reese Paul','81035398621','2023-04-28');
-INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Yardley Evans','55488444535','2023-01-26');
-INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Priscilla Mccormick','35815825695','2023-06-22');
-INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Alden Guy','02338727153','2023-09-15');
-INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Chester Lester','46037574343','2021-12-31');
-INSERT INTO Entregador (nome,documento,dataNascimento) VALUES('Daquan Snyder','58618217896','2023-10-27');
-
+INSERT INTO Entregador (nome,cpf,cnh,rg,dataNascimento) VALUES('Reese Paul','81035398621','000123456789','1234567','2023-04-28');
+INSERT INTO Entregador (nome,cpf,cnh,rg,dataNascimento) VALUES('Yardley Evans','55488444535','000213456789','2134567','2023-01-26');
+INSERT INTO Entregador (nome,cpf,cnh,rg,dataNascimento) VALUES('Priscilla Mccormick','35815825695','000132456789','1324567','2023-06-22');
+INSERT INTO Entregador (nome,cpf,cnh,rg,dataNascimento) VALUES('Alden Guy','02338727153','000124356789','1243567','2023-09-15');
+INSERT INTO Entregador (nome,cpf,cnh,rg,dataNascimento) VALUES('Chester Lester','46037574343','000123546789','1235467','2021-12-31');
+INSERT INTO Entregador (nome,cpf,cnh,rg,dataNascimento) VALUES('Daquan Snyder','58618217896','000123465789','1234657','2023-10-27');
 
 CREATE TABLE "Transponder" (
   id int PRIMARY KEY identity,
