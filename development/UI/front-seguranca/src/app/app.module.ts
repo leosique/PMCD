@@ -8,9 +8,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginSegurancaComponent } from './login-seguranca/login-seguranca.component';
 import { EntradasPendentesComponent } from './entradas-pendentes/entradas-pendentes.component';
 import { EntradasAprovadasComponent } from './entradas-aprovadas/entradas-aprovadas.component';
-import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
-import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motorista.component';
-import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
+import { PermissoesComponent } from './permissoes/permissoes.component';
+
 
 @NgModule({
   declarations: [
@@ -20,9 +19,7 @@ import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante
     LoginSegurancaComponent,
     EntradasPendentesComponent,
     EntradasAprovadasComponent,
-    CadastroVeiculoComponent,
-    CadastroMotoristaComponent,
-    CadastroAjudanteComponent
+    PermissoesComponent,
   ],
   imports: [
     BrowserModule,

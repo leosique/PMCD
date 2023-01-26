@@ -33,7 +33,27 @@ public class IpController : ControllerBase
         try{
             var ip = Model.Ip.BuscarPorId(id);
             return new{
-                EnderecoIp = ip.EnderecoIp
+                EnderecoIp = ip.EnderecoIp,
+                Adm = ip.Adm
+            };
+        }catch(Exception e){
+            return new{
+                Resposta = "Ip não encontrado",
+                Erro = e.Message
+            };
+        }
+    }
+
+    //* ------------------------------------------------ Buscar por Endereco
+    [HttpGet]
+    [Route("BuscarEndereco/{endereco}")]
+    public Object BuscarPorEndereco(string endereco)
+    {  
+        try{
+            var ip = Model.Ip.BuscarPorEndereco(endereco);
+            return new{
+                EnderecoIp = ip.EnderecoIp,
+                Adm = ip.Adm
             };
         }catch(Exception e){
             return new{

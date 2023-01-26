@@ -18,9 +18,9 @@ public partial class Context : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string computador = Environment.MachineName;
-        computador = "//SQLEXPRESS";
+        computador += "//SQLEXPRESS";
         string database = "PMCD";
-        optionsBuilder.UseSqlServer("Server=" + computador + "\\SQLEXPRESS" + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
+        optionsBuilder.UseSqlServer("Server=" + computador + ";Database=" + database + ";Trusted_Connection=True;TrustServerCertificate=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -37,6 +37,7 @@ public partial class Context : DbContext
             entity.ToTable("Ip");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.EnderecoIp);
+            entity.Property(e => e.Adm);
         });
 
         modelBuilder.Entity<Entregador>(entity =>
@@ -78,6 +79,7 @@ public partial class Context : DbContext
             entity.Property(e => e.PesoSaida);
             entity.Property(e => e.DataEntrega);
             entity.Property(e => e.Liberado);
+            entity.Property(e => e.NotaFiscal);
 
             entity.HasOne(d => d.Transponder)
                 .WithMany(p => p.EntregaList)
