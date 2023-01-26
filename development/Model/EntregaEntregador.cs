@@ -47,7 +47,9 @@ public partial class EntregaEntregador
                 .Where(e => e.Entrega.Liberado == true)
                 .ToList();
 
-            return entregas;
+            if(entregas != null)
+                return entregas;
+            throw new ArgumentException("Não foi possível encontrar as entregas.");
         }
     }
 
@@ -75,7 +77,9 @@ public partial class EntregaEntregador
         {
             var entregaEntregador = context.EntregasEntregadores.FirstOrDefault(e => e.Id == Id);
 
-            return entregaEntregador;
+            if(entregaEntregador != null)
+                return entregaEntregador;
+            throw new ArgumentException("Não foi possivel encontrar o ID.");
         }
     }
 
@@ -84,6 +88,9 @@ public partial class EntregaEntregador
         using(var context = new Context())
         {
             var entregaEntregador = context.EntregasEntregadores.FirstOrDefault(e => e.Id == this.Id);
+
+            if(entregaEntregador == null)
+                throw new ArgumentException("Não foi possivel encontrar o ID.");
 
             entregaEntregador.Entrega = this.Entrega;
             entregaEntregador.Entregador = this.Entregador;
