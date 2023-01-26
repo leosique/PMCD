@@ -22,19 +22,9 @@
               <li class="nav-item hover-link">
                 <a class="nav-link" [routerLink]="['/entradas-aprovadas']">Aprovadas</a>
               </li>
-              <li class="nav-item hover-link">
-                <a class="nav-link" [routerLink]="['/permissoes']">Permissoes</a>
+              <li class="nav-item hover-link" *ngIf="adm">
+                <a class="nav-link" [routerLink]="['/permissoes']">Permissões</a>
               </li>
-            </ul>
-          </div>
-          <div>
-            <ul class="navbar-nav nav-icons">
-              <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/']">
-                  <img src="../../assets/icons/log-out.svg" class="img-sair" alt="">
-                </a>
-              </li>
-  
             </ul>
           </div>
         </div>
