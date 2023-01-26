@@ -14,7 +14,7 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr >
+                    <tr *ngFor="let ip of arrayIP, index as i">
                        
 
                         <td>
@@ -27,8 +27,9 @@
                                 </a>
                             </div>
                         </td>
-                        <td >92897498</td>
-                        <td> ADM </td>
+                        <td >{{arrayIP[i].enderecoIp}}</td>
+                        <td *ngIf="arrayIP[i].adm"> ADM</td>
+                        <td *ngIf="!arrayIP[i].adm"> Regular</td>
                    
                     </tr>
                 </tbody>
@@ -77,7 +78,7 @@
                     <tbody class="table-group">
                         <p  style="font-weight:bold;">IP</p>
                         <tr>
-                            <td >92897498</td>
+                            <td>92897498</td>
                             <td>
                                 <select name="options" id="select-option">
                                     <option value="adm">ADM</option>

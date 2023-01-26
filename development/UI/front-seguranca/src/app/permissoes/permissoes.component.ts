@@ -27,4 +27,8 @@ export class PermissoesComponent implements OnInit {
       }); 
   }
 
+  editarIP(ip:number){
+    
+  }
 }
+
