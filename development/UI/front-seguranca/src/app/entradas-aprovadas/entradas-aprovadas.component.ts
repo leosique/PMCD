@@ -11,7 +11,7 @@ import axios from 'axios';
 export class EntradasAprovadasComponent implements OnInit {
 
   constructor() { }
-  list_entrgas_aprovadas : Array<EntregaMotorista> = []
+  list_entregas_aprovadas : Array<EntregaMotorista> = []
   detalhes_entrega : Entrega = { 
     id : 0,
     codigoInterno: "",
@@ -46,7 +46,7 @@ export class EntradasAprovadasComponent implements OnInit {
     var instance = this;
     axios(config)
       .then(function(response:any) {
-        instance.list_entrgas_aprovadas = response.data
+        instance.list_entregas_aprovadas = response.data
       });     
   }
 
