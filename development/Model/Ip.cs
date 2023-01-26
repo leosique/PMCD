@@ -34,7 +34,11 @@ public partial class Ip
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Where(e => e.EnderecoIp == this.EnderecoIp);            
+            var ip = context.Ips.Where(e => e.EnderecoIp == this.EnderecoIp);     
+
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o endereco IP");
+       
             context.Remove(this);
             context.SaveChanges();
         }
@@ -44,7 +48,11 @@ public partial class Ip
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Where(e => e.Id == this.Id);            
+            var ip = context.Ips.Where(e => e.Id == this.Id);
+
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o ID");
+
             context.Remove(this);
             context.SaveChanges();
         }
@@ -56,6 +64,9 @@ public partial class Ip
         {
             var ip = context.Ips.FirstOrDefault(e => e.Id == Id);
 
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o ID");
+
             return ip;
         }
     }
@@ -66,6 +77,9 @@ public partial class Ip
         {
             var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == enderecoIp);
 
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o endereco IP");
+
             return ip;
         }
     }
@@ -74,12 +88,10 @@ public partial class Ip
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Select(x => new{x.EnderecoIp,x.Adm});
-            // var ips = context.Ips.ToList();
-
-
-            // foreach(var i in ips)
-            //     Console.WriteLine(i.EnderecoIp);
+            var ip = context.Ips.Select(x => x.EnderecoIp).ToList();
+        
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o endereco IP");
 
             return ip;
         }
@@ -90,6 +102,9 @@ public partial class Ip
         using(var context = new Context())
         {
             var ip = context.Ips.FirstOrDefault(e => e.Id == this.Id);
+
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o ID");
 
             ip.EnderecoIp = this.EnderecoIp;
 

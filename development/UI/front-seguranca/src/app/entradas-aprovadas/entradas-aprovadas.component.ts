@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Entrega } from 'src/interfaces/entrega';
+import { Entregador } from 'src/interfaces/entregador';
+import {EntregaMotorista} from 'src/interfaces/entregaMotorista';
 import axios from 'axios';
 @Component({
   selector: 'app-entradas-aprovadas',
@@ -9,7 +11,7 @@ import axios from 'axios';
 export class EntradasAprovadasComponent implements OnInit {
 
   constructor() { }
-  list_entrgas_aprovadas : Array<Entrega> = []
+  list_entrgas_aprovadas : Array<EntregaMotorista> = []
   detalhes_entrega : Entrega = { 
     id : 0,
     codigoInterno: "",
@@ -23,6 +25,14 @@ export class EntradasAprovadasComponent implements OnInit {
     pesoSaida: 0,
     placaCarro: ""
   }
+  detalhes_entregador: Entregador = {
+    id: 0,
+    nome:"",
+    cpf: "",
+    cnh: "",
+    rg: "",
+    dataNascimento: new Date(),
+  }
   ngOnInit(): void {
     this.GetEntrgasAprovadas()
   }
@@ -30,28 +40,39 @@ export class EntradasAprovadasComponent implements OnInit {
   GetEntrgasAprovadas(){
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/Entrega/Aprovadas',
+      url: 'https://localhost:7274/EntregaEntregador/Aprovadas',
       headers: {},
     };
     var instance = this;
     axios(config)
       .then(function(response:any) {
-        console.log(response.data);
         instance.list_entrgas_aprovadas = response.data
       });     
   }
 
-  detalhesEntrada(id: number){
+  detalhesEntrada(idEntrega: number,idEntregador : number){
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/Entrega/Buscar/'+id,
+      url: 'https://localhost:7274/Entrega/Buscar/'+idEntrega,
       headers: {},
     };
     var instance = this;
     axios(config)
       .then(function(response:any) {
         instance.detalhes_entrega = response.data
-        
+        instance.detalhesEntregador(idEntregador)
+      }); 
+  }
+  detalhesEntregador(idEntregador : number){
+    var config = {
+      method: 'get',
+      url: 'https://localhost:7274/Entregador/Buscar/'+idEntregador,
+      headers: {},
+    };
+    var instance = this;
+    axios(config)
+      .then(function(response:any) {
+        instance.detalhes_entregador = response.data      
       }); 
   }
 

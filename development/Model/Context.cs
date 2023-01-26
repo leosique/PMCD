@@ -45,7 +45,9 @@ public partial class Context : DbContext
             entity.ToTable("Entregador");
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Nome);
-            entity.Property(e => e.Documento);
+            entity.Property(e => e.Cpf);
+            entity.Property(e => e.Cnh);
+            entity.Property(e => e.Rg);
             entity.Property(e => e.DataNascimento);
         });
 

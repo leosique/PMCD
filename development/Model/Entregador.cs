@@ -7,7 +7,9 @@ public partial class Entregador
 {
     public int Id { get; set; }
     public string Nome { get; set; }
-    public string Documento { get; set; }
+    public string Cpf { get; set; }
+    public string Cnh { get; set; }
+    public string Rg { get; set; }
     public string DataNascimento { get; set; }
 
 
@@ -23,7 +25,9 @@ public partial class Entregador
     {
         this.Id = entregadorDTO.Id;
         this.Nome = entregadorDTO.Nome;
-        this.Documento = entregadorDTO.Documento;
+        this.Cpf = entregadorDTO.Cpf;
+        this.Rg = entregadorDTO.Rg;
+        this.Cnh = entregadorDTO.Cnh;
         this.DataNascimento = entregadorDTO.DataNascimento;
         this.EntregaEntregadorList = new List<EntregaEntregador>();
     }
@@ -49,6 +53,9 @@ public partial class Entregador
                     context.Remove(x);
                 }
             }
+            else{
+                throw new ArgumentException("Não foi possível deletar.");
+            }
 
             context.Remove(this);
             context.SaveChanges();
@@ -62,7 +69,9 @@ public partial class Entregador
           
             var entregador = context.Entregadores.FirstOrDefault(e => e.Id == Id);
 
-            return entregador;
+            if(entregador != null)
+                return entregador;
+            throw new ArgumentException("Não foi possível encontrar o entregador.");
         }
     }
 
@@ -71,12 +80,14 @@ public partial class Entregador
         using(var context = new Context())
         {
             Entregador entregador = context.Entregadores.FirstOrDefault(e => e.Id == this.Id);
-            Console.WriteLine(this.Id);
-            Console.WriteLine(entregador.Nome);
+            if(entregador == null)
+                throw new ArgumentException("Não foi possível encontrar o entregador.");
             
 
             entregador.Nome = this.Nome;
-            entregador.Documento = this.Documento;
+            entregador.Cpf = this.Cpf;
+            entregador.Cnh = this.Cnh;
+            entregador.Rg = this.Rg;
             entregador.DataNascimento = this.DataNascimento;
 
             

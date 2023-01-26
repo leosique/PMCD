@@ -4393,11 +4393,20 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\faj2ct\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\pet2ct\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\mom1ct\\.nuget\\packages\\": {}
+>>>>>>> 50e1fd5a4072a96ade38aa91d81f9c48dd25a251
+>>>>>>> c6e69a61d3d470c38ae1df992784f13ca945ec7f
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
       "projectName": "API",
       "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
@@ -4406,6 +4415,27 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\faj2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "projectName": "API",
+      "projectPath": "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\pet2ct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\API\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\pet2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "projectName": "API",
+      "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\API\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 50e1fd5a4072a96ade38aa91d81f9c48dd25a251
+>>>>>>> c6e69a61d3d470c38ae1df992784f13ca945ec7f
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4419,11 +4449,27 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
               "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
             },
             "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
               "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+            },
+            "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\pet2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+=======
+            "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+            },
+            "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+>>>>>>> 50e1fd5a4072a96ade38aa91d81f9c48dd25a251
+>>>>>>> c6e69a61d3d470c38ae1df992784f13ca945ec7f
             }
           }
         }
