@@ -11,15 +11,12 @@
 
         <div class="form-step form-step-active">
             <div class="title-group">Informações veículo</div>
-            <div class="input-group" style="display: flex;  flex-direction: row; justify-content: space-between;">
-                <input type="text" name="modelo" id="modelo" style="width: 67%; border-radius: 10px;" placeholder="Modelo" />
-                <input type="text" name="ano" id="ano" style="width: 30%; border-radius: 10px" placeholder="Ano"/>
-            </div>
+
             <div class="input-group">
-                <input type="text" name="placa" id="placa" placeholder="Insira a placa do veículo" />
+                <input type="text" name="placa" id="placa" placeholder="Insira a placa do veículo" required/>
             </div>
             <div class="">
-                <a href="#" class="btn btn-next width-50 ml-auto" [routerLink]="['/cadastro-motorista']">Avançar</a>
+                <a  (click)="veiculoRegister()" href="#" class="btn btn-next width-50 ml-auto" [routerLink]="['/cadastro-motorista']">Avançar</a>
             </div>
         </div>
     </form>
