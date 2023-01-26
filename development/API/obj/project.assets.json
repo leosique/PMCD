@@ -4393,11 +4393,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\SAS5CT\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\KLA1CT\\.nuget\\packages\\": {}
+>>>>>>> e5a3b09a065219be03fc997f04656cb0189a8d0a
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\API\\API.csproj",
       "projectName": "API",
       "projectPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\API\\API.csproj",
@@ -4406,6 +4411,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SAS5CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "projectName": "API",
+      "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\KLA1CT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\API\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> e5a3b09a065219be03fc997f04656cb0189a8d0a
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4419,11 +4434,19 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
               "projectPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
             },
             "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
               "projectPath": "C:\\Users\\SAS5CT\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+=======
+            "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+            },
+            "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+>>>>>>> e5a3b09a065219be03fc997f04656cb0189a8d0a
             }
           }
         }
