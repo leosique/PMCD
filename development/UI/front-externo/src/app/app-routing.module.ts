@@ -10,6 +10,7 @@ import { CadastroAdicionaisComponent } from './cadastro-adicionais/cadastro-adic
 import { PrimeiroAcessoComponent } from './primeiro-acesso/primeiro-acesso.component';
 
 const routes: Routes = [
+  {path:'primeiro-acesso', component:PrimeiroAcessoComponent},
   {path:'login',component:LoginExternoComponent},
   {path:'lista-fretes',component:ListaFretesComponent},
   {path:'cadastro-veiculo', component:CadastroVeiculoComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path:'cadastro-ajudante', component:CadastroAjudanteComponent},
   {path:'cadastro-transportadora', component:CadastroTransportadoraComponent},
   {path:'cadastro-adicionais', component:CadastroAdicionaisComponent},
-  {path:'primeiro-acesso', component:PrimeiroAcessoComponent},
+
 ];
 
 @NgModule({

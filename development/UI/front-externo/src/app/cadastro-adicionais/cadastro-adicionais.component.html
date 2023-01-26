@@ -1,12 +1,12 @@
 <app-top-bar></app-top-bar>
 
 <form action="#" class="form">
-    <div class="progressbar">
+    <!-- <div class="progressbar">
         <div class="progress " id="progress"></div>
         <div class="progress-step progress-step-active" data-title="Veículo"></div>
         <div class="progress-step progress-step-active" data-title="Motorista"></div>
         <div class="progress-step progress-step-active" data-title="Adicionais"></div>
-    </div>
+    </div> -->
     <div class="title-group">Informações do adicionais</div>
     <div class="input-group">
         <label for="entrega" style="color: #666;">Código Nota Fiscal</label>
@@ -18,18 +18,11 @@
         <input type="date" name="entrega" id="entrega" style="border-radius: 0.5rem;"
             placeholder="Data prevista para entrega" />
     </div>
-    <div class="actions">
-        <a href="" data-bs-toggle="modal" data-bs-target="#ajudante">
-            <button class="add-ajud" style="margin: 0 auto; margin-bottom: 1.5rem;">+ Adicionar ajudante</button>
-        </a>
-    </div>
-    <div class="btns-group">
-        <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-motorista']">Anterior</a>
-        <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']">Avançar</a>
-    </div>
+    <a href="#" class="btn btn-next">Salvar</a>
+   
 </form>
 
-<div class="modal fade" id="ajudante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="ajudante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
 
         <div class="modal-content">
@@ -59,4 +52,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

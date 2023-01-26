@@ -21,8 +21,6 @@ export class CadastroVeiculoComponent {
     let ano = (document.getElementById("ano") as HTMLInputElement).value;
     let erro = document.getElementById("erro") as HTMLElement
 
-    
-
     if(veiculo=="" || modelo=="" || ano==""){
       erro.style.display = "block";
       erro.textContent = "Todos os campos devem ser preenchidos";
