@@ -303,11 +303,12 @@ public class EntregaController : ControllerBase
     public Object BuscarEntregaPendente(string cnpj){
         try
         {
-            Model.Entrega.BuscarEntregaPendentePorTransportadora(cnpj);
-
+            List<Object> EntregasPendentes = Model.Entrega.BuscarEntregaPendentePorTransportadora(cnpj);
+            
             return new
             {
-                Resposta = "Entrega(s) encontrada(s) com sucesso!"
+                Resposta = "Entrega(s) encontrada(s) com sucesso!",
+                EntregasPendentes = EntregasPendentes
             };
         }
         catch (Exception e)

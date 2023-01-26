@@ -97,8 +97,9 @@ public partial class Entrega
         }
     }
 
-    public static void BuscarEntregaPendentePorTransportadora(string cnpj){
+    public static List<object> BuscarEntregaPendentePorTransportadora(string cnpj){
         using(var context = new Context()){
+           Console.WriteLine("AAaaaAA");
             var entregas = context.Entregas.Join(context.Transportadoras, e => e.IdTransportadora, i => i.Id, (e, i) => new {
                 Id = e.Id,
                 NotaFiscal = e.NotaFiscal,
@@ -109,10 +110,15 @@ public partial class Entrega
             .Where(e => e.Liberado == true)
             .ToList();
 
-            // return entregas.Select(x => new{
-            //     NotaFiscal = x.NotaFiscal,
-            //     DataEntrega = x.DataEntrega
-            // });
+            if(entregas == null || entregas.Count <= 0)
+                throw new ArgumentException("Nenhuma entrega foi encontrada.");
+
+            List<Object> a = new List<Object>();
+            foreach(var i in entregas){
+                a.Add(i);
+            }
+            
+            return a;
         }
     }
 
