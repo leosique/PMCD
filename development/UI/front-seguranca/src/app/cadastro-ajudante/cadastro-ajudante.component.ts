@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastro-ajudante.component.css']
 })
 export class CadastroAjudanteComponent {
-
+  
 }

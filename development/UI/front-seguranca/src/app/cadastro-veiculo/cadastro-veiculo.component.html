@@ -19,7 +19,8 @@
                 <input type="number" name="ano" id="ano" placeholder="Ano"/>
             </div>
             <div class="btns-group">
-                <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']" style="width: 100%;">Avançar</a>
+                <!-- <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']" style="width: 100%;">Avançar</a> -->
+                <a class="btn btn-next" (click)="verificaCampos()">Avançar</a>
             </div>
     </form>    
 </body>
