@@ -1991,19 +1991,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mom1ct\\.nuget\\packages\\": {}
+    "C:\\Users\\GOR1CT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
+      "projectUniqueName": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
-      "packagesPath": "C:\\Users\\mom1ct\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\Model\\obj\\",
+      "projectPath": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\Model\\Model.csproj",
+      "packagesPath": "C:\\Users\\GOR1CT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mom1ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\GOR1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2017,8 +2017,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\mom1ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+            "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj"
             }
           }
         }
