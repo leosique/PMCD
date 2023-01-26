@@ -5,10 +5,7 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DTO
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\pet2ct\Desktop\PMCD\development\DTO\
-=======
-build_property.ProjectDir = C:\Users\kol1ct\Source\Repos\PMCD\development\DTO\
->>>>>>> afbcc0e507c99fb8864eb796ef2b9a8cc68bfbaa
