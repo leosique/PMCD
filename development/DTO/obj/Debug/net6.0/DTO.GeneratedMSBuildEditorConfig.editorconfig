@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DTO
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\SAS5CT\Desktop\PMCD\development\DTO\
+=======
 build_property.ProjectDir = C:\Users\KLA1CT\Desktop\PMCD\development\DTO\
+>>>>>>> e5a3b09a065219be03fc997f04656cb0189a8d0a
