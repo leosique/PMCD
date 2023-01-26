@@ -1,0 +1,62 @@
+<app-top-bar></app-top-bar>
+
+<form action="#" class="form">
+    <div class="progressbar">
+        <div class="progress " id="progress"></div>
+        <div class="progress-step progress-step-active" data-title="Veículo"></div>
+        <div class="progress-step progress-step-active" data-title="Motorista"></div>
+        <div class="progress-step progress-step-active" data-title="Adicionais"></div>
+    </div>
+    <div class="title-group">Informações do ajudante</div>
+    <!-- <div class="input-group">
+        <label for="entrega" style="color: #666;">Código Nota Fiscal</label>
+        <input type="text" name="entrega" id="entrega" style="border-radius: 0.5rem;"
+            placeholder="Código Nota Fiscal" />
+    </div> 
+    git <div class="input-group">
+        <label for="entrega" style="color: #666;">Data prevista para entrega</label>
+        <input type="date" name="entrega" id="entrega" style="border-radius: 0.5rem;"
+            placeholder="Data prevista para entrega" />
+    </div> -->
+    <div class="actions">
+        <a href="" data-bs-toggle="modal" data-bs-target="#ajudante">
+            <button class="add-ajud" style="margin: 0 auto; margin-bottom: 1.5rem;">+ Adicionar ajudante</button>
+        </a>
+    </div>
+    <div class="btns-group">
+        <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-motorista']">Anterior</a>
+        <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']">Avançar</a>
+    </div>
+</form>
+
+<div class="modal fade" id="ajudante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Cadastro ajudante</h1>
+                <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form class="row g-3">
+                    <div class="col-12">
+                        <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" />
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                    </div>
+                    <div class="col-12">
+                        <label for="nascimento" class="form-label">Data de Nascimento</label>
+                        <input type="date" name="nascimento" id="nascimento" class="form-control"
+                            placeholder="Data de Nascimento" />
+                    </div>
+                </form>
+                <div class="btns-group" style="margin-top: 2rem;">
+                    <a data-bs-dismiss="modal" class="btn btn-prev">Cancelar</a>
+                    <a data-bs-dismiss="modal" class="btn btn-next">Aprovar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
