@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Entrega } from 'src/interfaces/entrega';
 import { Entregador } from 'src/interfaces/entregador';
 import {EntregaMotorista} from 'src/interfaces/entregaMotorista';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-entradas-pendentes',
   templateUrl: './entradas-pendentes.component.html',
@@ -41,7 +43,7 @@ export class EntradasPendentesComponent implements OnInit {
   // itemsPerPage: number = 9;
   // PagTotalArray: Array<number> = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.GetEntrgasPendentes()
@@ -84,6 +86,10 @@ export class EntradasPendentesComponent implements OnInit {
       .then(function(response:any) {
         instance.detalhes_entregador = response.data      
       }); 
+  }
+  aprovar(id:number){
+    localStorage.setItem("id", id.toString())
+    this.router.navigate(['/cadastro-veiculo']);
   }
 
 

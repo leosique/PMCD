@@ -52,7 +52,7 @@ public partial class EntregaEntregador
             throw new ArgumentException("Não foi possível encontrar as entregas.");
         }
     }
-    public static List<EntregaEntregador> BuscarPendentes()
+    public static List<EntregaEntregador> BuscarPendentes(bool liberado)
     {
         using(var context = new Context())
         {
@@ -71,7 +71,7 @@ public partial class EntregaEntregador
                     Entrega = e.Entrega,
                     Entregador = i,
                 })
-                .Where(e => e.Entrega.Liberado == false)
+                .Where(e => e.Entrega.Liberado == liberado)
                 .ToList();
 
             return entregas;
