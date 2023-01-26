@@ -1,0 +1,25 @@
+<app-top-bar></app-top-bar>
+<body>
+    <form action="#" class="form">
+        
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step progress-step-active" data-title="Veículo"></div>
+            <div class="progress-step " data-title="Motorista"></div>
+            <div class="progress-step" data-title="Ajudante"></div>
+        </div>
+            <div class="title-group">Informações da veículo</div>
+            <div class="input-group">
+                <input type="text" name="veiculo" id="veiculo" placeholder="Insira a placa do veículo"/>
+            </div>
+            <div class="input-group">
+                <input type="text" name="modelo" id="modelo" placeholder="Modelo"/>
+            </div>
+            <div class="input-group">
+                <input type="number" name="ano" id="ano" placeholder="Ano"/>
+            </div>
+            <div class="btns-group">
+                <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']" style="width: 100%;">Avançar</a>
+            </div>
+    </form>    
+</body>
