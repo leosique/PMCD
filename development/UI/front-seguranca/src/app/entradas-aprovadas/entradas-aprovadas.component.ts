@@ -28,7 +28,9 @@ export class EntradasAprovadasComponent implements OnInit {
   detalhes_entregador: Entregador = {
     id: 0,
     nome:"",
-    documento:"",
+    cpf: "",
+    cnh: "",
+    rg: "",
     dataNascimento: new Date(),
   }
   ngOnInit(): void {

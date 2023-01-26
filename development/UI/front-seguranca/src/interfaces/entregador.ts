@@ -1,7 +1,9 @@
 export interface Entregador{
     id: number,
     nome: string,
-    documento: string,
+    cpf: string,
+    cnh: string,
+    rg: string,
     dataNascimento: Date,
   
 }
