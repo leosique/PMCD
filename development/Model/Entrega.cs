@@ -8,6 +8,8 @@ public partial class Entrega
 {
     public int Id { get; set; }
     public string PlacaCarro { get; set; }
+    public string? ModeloCarro { get; set; }
+    public string? AnoCarro { get; set; }
     public CodigoInterno CodigoInterno { get; set; }
     public int PesoEntrada { get; set; }
     public int PesoSaida { get; set; }
