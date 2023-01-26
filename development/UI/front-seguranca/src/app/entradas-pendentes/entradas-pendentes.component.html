@@ -44,8 +44,8 @@
                 <thead>
                     <tr>
                         <th scope="col" class="no-sort">Código Nota Fiscal</th>
-                        <th scope="col">Motorista</th>
-                        <th scope="col" class="hidden">Placa Veículo</th>
+                        <th scope="col">Data entrega</th>
+                  
                         <th scope="col" >Aprovar</th>
                     </tr>
                 </thead>
@@ -55,11 +55,10 @@
                             <ng-container >
 
                         <td>{{pendente.entrega.notaFiscal}}</td>
-                        <td>{{pendente.entregador.nome}}</td>
-                        <td>{{pendente.entrega.placaCarro}}</td>
+                        <td>{{pendente.entrega.dataEntrega | date:"dd/MM/yyyy"}}</td>
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(pendente.entrega.id,pendente.entregador.id)">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="aprovar(pendente.entrega.id)">
                                     <img src="../../assets/icons/check-circle-fill.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
@@ -96,7 +95,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
 
             <div class="modal-content">
@@ -108,14 +107,14 @@
                 
                 <div class="modal-body">
                     <form class="row g-3">
-                        <!-- <div class="col-md-8">
+                        <div class="col-md-8">
                           <label for="inputEmail4" class="form-label">Modelo</label>
                           <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo" />
                         </div>
                         <div class="col-md-4">
                           <label for="inputPassword4" class="form-label">Ano</label>
                           <input type="text" name="ano" id="ano" class="form-control" placeholder="Ano" />
-                        </div> -->
+                        </div> 
                         <div class="col-12">
                           <label for="inputAddress" class="form-label">Placa</label>
                           <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" value="{{detalhes_entrega.placaCarro}}"/>
@@ -163,4 +162,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
