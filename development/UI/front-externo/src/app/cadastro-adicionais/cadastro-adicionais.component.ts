@@ -24,6 +24,14 @@ export class CadastroAdicionaisComponent implements OnInit {
     var data = JSON.stringify({
       "notaFiscal": notaFiscal,
       "dataEntrega": dataEntrega,
+      "placaCarro": " ",
+      "codigoInterno": 0,
+      "pesoEntrada": 0,
+      "pesoSaida": 0,
+      "liberado": false,
+      "idTransponder": 0,
+      "idTransportadora": 0,
+      "idResponsavelBosch": 0
     });
     
     var config = {
@@ -38,7 +46,7 @@ export class CadastroAdicionaisComponent implements OnInit {
     axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
-      alert("Benefiário registrado com sucesso!");
+      alert("Entrega registrada com sucesso!");
     })
     .catch(function (error) {
       alert(error);
