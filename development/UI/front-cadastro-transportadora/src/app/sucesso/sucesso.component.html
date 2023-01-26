@@ -6,16 +6,13 @@
             <div class="title-group">Transportadora cadastrada !</div>
 
             <div class="input-group">
-                <p>Nome transportadora: </p>
-                <p id="nome"></p>
+                <p>Nome transportadora: {{transportadora.nome}}</p>
             </div>
             <div class="input-group">
-                <p>CNPJ: </p>
-                <p id="cnpj"></p>
+                <p>CNPJ: {{transportadora.cnpj}}</p>
             </div>
             <div class="input-group">
-                <p>Senha gerada: </p>
-                <p id="senha-gerada"></p>
+                <p>Senha gerada: {{transportadora.senha}}</p>
             </div>
             <div class="btns-group" id="cadastro-btn">
                 <a href="#" class="btn" [routerLink]="['/']">Voltar</a>

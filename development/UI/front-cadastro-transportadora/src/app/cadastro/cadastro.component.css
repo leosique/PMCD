@@ -109,3 +109,14 @@ select {
   visibility: hidden;
 }
 
+.erroDiv{
+  display: flex;
+  align-items: center;
+  height: 3em;
+}
+
+.erro{
+  width: 90%;
+  color: var(--Bosch-Red);
+  display: none;
+}
