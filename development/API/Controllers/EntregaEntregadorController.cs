@@ -66,6 +66,24 @@ public class EntregaEntregadorController : ControllerBase
         return Ok(output);
     }
 
+    
+    [HttpGet]
+    [Route("Transportadoras/{cnpj}")]
+    public IActionResult BuscarTransportadoras(string cnpj)
+    {
+
+        List<EntregaEntregador> entregas = Model.EntregaEntregador.BuscarTransportadora(cnpj);
+
+        var output = entregas.Select(e => new
+        {
+            Id = e.Id,
+            Entrega = e.Entrega,
+            Entregador = e.Entregador
+        });
+
+        return Ok(output);
+    }
+
     [HttpGet]
     [Route("Pendentes")]
     public IActionResult BuscarPendentes()

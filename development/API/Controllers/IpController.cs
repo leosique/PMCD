@@ -69,11 +69,11 @@ public class IpController : ControllerBase
     public Object BuscarTodos()
     {  
         try{
-            List<string> ip = Model.Ip.BuscarTodos();
-
-            return new{
-                ip = ip
-            };
+            List<Tuple<string,bool>> ip = Model.Ip.BuscarTodos();
+            return ip.Select(x => new{
+                x.Item1,
+                x.Item2
+            });
         }catch(Exception e){
             return new{
                 Resposta = "Nenhum endereco IP encontrado",
