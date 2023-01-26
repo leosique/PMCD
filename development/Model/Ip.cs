@@ -12,7 +12,6 @@ public partial class Ip
 
 
     public Ip(IpDTO ipDTO){
-        this.Id = ipDTO.Id;
         this.EnderecoIp = ipDTO.EnderecoIp;
     }
 
@@ -99,16 +98,16 @@ public partial class Ip
         }
     }
 
-    public void Editar()
+    public static void Editar(string endereco)
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.FirstOrDefault(e => e.Id == this.Id);
+            var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == endereco);
 
             if(ip == null)
-                throw new ArgumentException("Não foi possível encontrar o ID");
+                throw new ArgumentException("Não foi possível encontrar o Ip");
 
-            ip.EnderecoIp = this.EnderecoIp;
+            ip.Adm = !ip.Adm;
 
             context.SaveChanges();
         }
