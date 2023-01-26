@@ -18,6 +18,7 @@ import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante
     AppComponent,
     GeneralTopBarComponent,
     TopBarComponent,
+ 
     EntradasPendentesComponent,
     EntradasAprovadasComponent,
     PermissoesComponent,

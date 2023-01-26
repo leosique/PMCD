@@ -9,6 +9,7 @@ import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motori
 import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
 
 const routes: Routes = [
+ 
   {path: 'entradas-pendentes', component:EntradasPendentesComponent},
   {path: 'entradas-aprovadas', component:EntradasAprovadasComponent},
   {path: 'permissoes', component:PermissoesComponent},
