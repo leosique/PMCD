@@ -84,11 +84,13 @@ public partial class Ip
         }
     }
 
-    public static List<string> BuscarTodos()
+    public static List<Tuple<string, bool>> BuscarTodos()
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Select(x => x.EnderecoIp).ToList();
+            var ip = context.Ips
+            .Select(x => new Tuple<string, bool>(x.EnderecoIp, x.Adm))
+            .ToList();
         
             if(ip == null)
                 throw new ArgumentException("Não foi possível encontrar o endereco IP");
