@@ -1,0 +1,14 @@
+.principal{
+    display: grid;
+    place-items: center;
+    gap: 2em;
+}
+
+h1{
+    font-size: 6em;
+    font-weight: bold;
+}
+
+p{
+    font-size: 2em;
+}
