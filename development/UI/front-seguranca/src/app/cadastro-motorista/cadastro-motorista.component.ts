@@ -23,12 +23,12 @@ export class CadastroMotoristaComponent {
     let cnh = (document.getElementById("cnh") as HTMLInputElement).value;
     let nascimento = (document.getElementById("nascimento") as HTMLInputElement).value;
     let erro = document.getElementById("erro") as HTMLElement
+    let erroDiv = document.getElementById("erroDiv") as HTMLElement
 
     if(nome=="" || cpf=="" || rg=="" || cnh=="" || nascimento==""){
-      erro.style.display = "block";
+      erroDiv.style.display = "block";
       erro.textContent = "Todos os campos devem ser preenchidos";
     }
-
     else{
         localStorage.setItem("nome", nome);
         localStorage.setItem("cpf", cpf);

@@ -168,3 +168,15 @@ select {
 .form1, .form2, .form3, .form4{
   visibility: hidden;
 }
+
+.erroDiv{
+  display: flex;
+  align-items: center;
+  height: 2em;
+  display: none;
+}
+
+.erro{
+  width: 90%;
+  color: var(--Bosch-Red);
+}

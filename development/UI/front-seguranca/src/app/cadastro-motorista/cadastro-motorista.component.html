@@ -24,6 +24,9 @@
                 <label for="nascimento" style="color: #666;">Data de nascimento</label>
                 <input type="date" name="nascimento" id="nascimento" style="border-radius: 0.5rem;" placeholder="Data de Nascimento" required/>
             </div>
+            <div class="erroDiv" id="erroDiv">
+                <p class="erro" id="erro">teste</p>
+            </div>
             <div class="btns-group">
                 <a class="btn btn-prev" [routerLink]="['/cadastro-veiculo']">Anterior</a>
                 <a class="btn btn-next" (click)="verificaCampos()">Avançar</a>
