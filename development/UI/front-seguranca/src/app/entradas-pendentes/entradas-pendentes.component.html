@@ -50,17 +50,17 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr *ngFor="let pendente of pendentes">
+                    <tr *ngFor="let pendente of list_entregas_pendentes">
                         <ng-container >
                             <ng-container >
 
-                        <td>{{pendente.notaFiscal}}</td>
-                        <td>Allan Kley</td>
-                        <td>{{pendente.placaCarro}}</td>
+                        <td>{{pendente.entrega.notaFiscal}}</td>
+                        <td>{{pendente.entregador.nome}}</td>
+                        <td>{{pendente.entrega.placaCarro}}</td>
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  >
-                                    <img src="../../assets/icons/clipboard-list-parts.svg" class="img-input" alt="" srcset="">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(pendente.entrega.id,pendente.entregador.id)">
+                                    <img src="../../assets/icons/check-circle-fill.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
                         </td>
@@ -102,7 +102,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" >Código da nota fiscal: </h5>
-                    <h3 class="modal-title codigo" > 5014512565</h3>
+                    <h3 class="modal-title codigo" > {{detalhes_entrega.notaFiscal}}</h3>
                     <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
                 </div>
                 
@@ -118,27 +118,27 @@
                         </div> -->
                         <div class="col-12">
                           <label for="inputAddress" class="form-label">Placa</label>
-                          <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" />
+                          <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" value="{{detalhes_entrega.placaCarro}}"/>
                         </div>
                         <div class="col-12">
                           <label for="inputAddress2" class="form-label">CPF</label>
-                          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Cpf" />
+                          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Cpf" value="{{detalhes_entregador.cpf}}" />
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">Nome</label>
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" value="{{detalhes_entregador.nome}}"/>
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">RG</label>
-                            <input type="text" name="rg" id="rg" class="form-control" placeholder="Rg" />
+                            <input type="text" name="rg" id="rg" class="form-control" placeholder="Rg"  value="{{detalhes_entregador.rg}}"/>
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">CNH</label>
-                            <input type="text" name="cnh" id="cnh" class="form-control" placeholder="Cnh" />
+                            <input type="text" name="cnh" id="cnh" class="form-control" placeholder="Cnh" value="{{detalhes_entregador.cnh}}"/>
                         </div>
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Data de Nascimento</label>
-                            <input type="date" name="nascimento" id="nascimento" class="form-control" placeholder="Data de Nascimento" />
+                            <input type="date" name="nascimento" id="nascimento" class="form-control" placeholder="Data de Nascimento" value="{{detalhes_entregador.dataNascimento}}" />
                         </div> 
                       </form>
                       <div ></div>

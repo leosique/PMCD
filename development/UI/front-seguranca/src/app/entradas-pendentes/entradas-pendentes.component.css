@@ -335,3 +335,7 @@ table {
   .btn1:hover {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgb(76, 133, 219);
   }
+
+  .actions img{
+    filter: brightness(0) saturate(100%) invert(41%) sepia(91%) saturate(434%) hue-rotate(162deg) brightness(88%) contrast(86%);
+  }

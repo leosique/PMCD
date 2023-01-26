@@ -12,7 +12,6 @@ public partial class Ip
 
 
     public Ip(IpDTO ipDTO){
-        this.Id = ipDTO.Id;
         this.EnderecoIp = ipDTO.EnderecoIp;
     }
 
@@ -34,7 +33,11 @@ public partial class Ip
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Where(e => e.EnderecoIp == this.EnderecoIp);            
+            var ip = context.Ips.Where(e => e.EnderecoIp == this.EnderecoIp);     
+
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o endereco IP");
+       
             context.Remove(this);
             context.SaveChanges();
         }
@@ -44,7 +47,11 @@ public partial class Ip
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.Where(e => e.Id == this.Id);            
+            var ip = context.Ips.Where(e => e.Id == this.Id);
+
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o ID");
+
             context.Remove(this);
             context.SaveChanges();
         }
@@ -56,6 +63,9 @@ public partial class Ip
         {
             var ip = context.Ips.FirstOrDefault(e => e.Id == Id);
 
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o ID");
+
             return ip;
         }
     }
@@ -66,32 +76,38 @@ public partial class Ip
         {
             var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == enderecoIp);
 
-            return ip;
-        }
-    }
-
-    public static List<string> BuscarTodos()
-    {
-        using(var context = new Context())
-        {
-            var ip = context.Ips.Select(x => x.EnderecoIp).ToList();
-            // var ips = context.Ips.ToList();
-
-
-            // foreach(var i in ips)
-            //     Console.WriteLine(i.EnderecoIp);
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o endereco IP");
 
             return ip;
         }
     }
 
-    public void Editar()
+    public static List<Tuple<string, bool>> BuscarTodos()
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.FirstOrDefault(e => e.Id == this.Id);
+            var ip = context.Ips
+            .Select(x => new Tuple<string, bool>(x.EnderecoIp, x.Adm))
+            .ToList();
+        
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o endereco IP");
 
-            ip.EnderecoIp = this.EnderecoIp;
+            return ip;
+        }
+    }
+
+    public static void Editar(string endereco)
+    {
+        using(var context = new Context())
+        {
+            var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == endereco);
+
+            if(ip == null)
+                throw new ArgumentException("Não foi possível encontrar o Ip");
+
+            ip.Adm = !ip.Adm;
 
             context.SaveChanges();
         }

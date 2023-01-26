@@ -8,7 +8,8 @@ namespace DTO;
 
 public class IpDTO 
 {
-    public int Id { get; set; }
+    public int ?Id { get; set; }
     public string EnderecoIp { get; set; }
+    public bool ?Adm {get;set;}
 
 }
