@@ -35,6 +35,8 @@ public partial class Entrega
     public Entrega(EntregaDTO entregaDTO){
         this.Id = entregaDTO.Id;
         this.PlacaCarro = entregaDTO.PlacaCarro;
+        this.ModeloCarro = entregaDTO.ModeloCarro;
+        this.AnoCarro = entregaDTO.AnoCarro;
         this.CodigoInterno = (CodigoInterno) entregaDTO.CodigoInterno;
         this.PesoEntrada = entregaDTO.PesoEntrada;
         this.PesoSaida = entregaDTO.PesoSaida;
@@ -146,13 +148,14 @@ public partial class Entrega
                 throw new ArgumentException("Não foi possível editar a entrega.");
 
             entrega.PlacaCarro = this.PlacaCarro;
+            entrega.ModeloCarro = this.ModeloCarro;
+            entrega.AnoCarro = this.AnoCarro;
             entrega.CodigoInterno = this.CodigoInterno;
             entrega.PesoEntrada = this.PesoEntrada;
             entrega.PesoSaida = this.PesoSaida;
             entrega.Transponder = this.Transponder;
             entrega.Transportadora = this.Transportadora;
             entrega.ResponsavelBosch = this.ResponsavelBosch;
-
 
             context.SaveChanges();
         }
