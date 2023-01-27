@@ -154,7 +154,6 @@ public class EntregaController : ControllerBase
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    [Authorize]
     public Object Editar([FromBody] EntregaDTO entregaDTO)
     {
         try
