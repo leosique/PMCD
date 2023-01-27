@@ -47,22 +47,13 @@ export class CadastroVeiculoComponent {
 
   cadastro() {
     let id = localStorage.getItem("id")
-
-    var data = JSON.stringify({
-      "id": id,
-      "placaCarro": this.veiculo.placaCarro,
-      "modeloCarro": this.veiculo.modeloCarro,
-      "anoCarro": this.veiculo.anoCarro
-    });
-    console.log(data);
     
     var config = {
       method: 'put',
-      url: 'https://localhost:7274/Entrega/Editar',
+      url: 'https://localhost:7274/Entrega/EditarPlacaModeloAno/' + id + "/" + this.veiculo.placaCarro + "/" + this.veiculo.modeloCarro + "/" + this.veiculo.anoCarro,
       headers: {
         'Content-Type': 'application/json'
-      },
-      data: data
+      }
     };
 
     let instance = this;

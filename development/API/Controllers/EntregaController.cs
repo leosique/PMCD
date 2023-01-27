@@ -194,6 +194,28 @@ public class EntregaController : ControllerBase
         }
     }
 
+    [HttpPut]
+    [Route("EditarPlacaModeloAno/{id}/{placa}/{modelo}/{ano}")]
+    public Object EditarPlacaModeloAno(int id, string placa, string modelo, string ano)
+    {
+        try
+        {
+            Model.Entrega.EditarPlacaModeloAno(id, placa, modelo, ano);
+            return new
+            {
+                Resposta = "Entrega editada com sucesso"
+            };
+        }
+        catch (Exception e)
+        {
+            return new
+            {
+                Resposta = "Erro ao editar entrega",
+                Erro = e.Message
+            };
+        }
+    }
+
     //* ------------------------------------------------ Editar Liberado
     [HttpPut]
     [Route("AprovaEntrega/{id}")]
