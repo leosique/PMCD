@@ -1,32 +1,12 @@
-<!-- <app-top-bar></app-top-bar>
+<app-top-bar></app-top-bar>
 <div class="container">
     <div class="card">
         <div class="card-header">
             <h4>Fretes a fazer</h4>
-            <div class="ShowCount">
-                <label for="showSelector">Fretes por página:</label>
-                <input name="showSelector" id="showSelector" type="number" value="1"/>
-            </div> 
+            
         </div>
         <div class="card-body">
-            <div class="d-flex flex-row bd-highlight justify-content-between mb-3">
-                <div class="input-group">
-                    
-                    <input type="text" class="form-control" placeholder="Código Nota Fiscal" id="ipPesquisa"
-                        aria-describedby="basic-addon1">
-
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                        </span>
-                    </div>
-                    <input type="date" class="form-control" placeholder="Data de Entrega" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-            </div>
-
-
+            
             <table id="datatable" class="table  table-hover table-bordered">
                 <thead>
                     <tr>
@@ -35,53 +15,18 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr *ngFor="let frete of list_fretes">
-
-                        <ng-container >
-                            <ng-container > -->
-<!-- 
-                        <td>{{frete.entrega.notaFiscal}}</td>
-                        <td>{{frete.entrega.dataEntrega}}</td> -->
-                        <!-- <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let entrega of entregas">
                         <td>
-                            <div class="actions"> -->
-                                <!-- <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(frete.entrega.id,frete.entregador.id)"> -->
-                                    <!-- <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar">
-                                    <img src="../../assets/icons/checkmark.svg" class="img-input" alt="" srcset="">
-                                </a>
-                            </div>
+                            {{entrega.notaFiscal}}
                         </td>
-                    </ng-container>
-                    </ng-container>
+                        <td>
+                            {{entrega.dataEntrega}}
+                        </td>
+
                     </tr>
                 </tbody>
             </table>
 
-            <div class="registros">
-                 Mostrando de 1 até 1 de
-                1 registros 
-                <div class="pageControl">
-
-                    <div class="buttons">
-                        <div  id="AntBtn" class="pageButtons">
-                        <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
-                        </div>
-            
-                        <div>
-                        <a class="btn btn-primary pages" >
-                            1
-                        </a>
-                        </div>
-                        
-                        <div  id="ProxBtn" class="pageButtons" >
-                        <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
-</div> -->
+</div> 
