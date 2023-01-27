@@ -134,3 +134,17 @@
   color: var(--Bosch-Red);
   display: none;
 }
+
+.btn{
+  display: block;
+  text-decoration: none;
+  color: #0000;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #000, 0 0 0 3px rgb(76, 133, 219);
+}

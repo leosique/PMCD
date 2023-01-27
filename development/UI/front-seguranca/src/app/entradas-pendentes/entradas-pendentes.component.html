@@ -3,63 +3,31 @@
     <div class="card">
         <div class="card-header">
             <h4>Entradas Pendentes</h4>
-            <div class="ShowCount">
-                <label for="showSelector">Pendentes por página:</label>
-                <input name="showSelector" id="showSelector" type="number" value="1"/>
-            </div> 
         </div>
         <div class="card-body">
-            <div class="d-flex flex-row bd-highlight justify-content-between mb-3">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/barcode.svg" class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Código Nota Fiscal" id="ipPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/address-consumer-data.svg"  class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Motorista" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/car-licence-plate.svg"  class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Placa Veículo" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-            </div>
+     
+              
 
 
             <table id="datatable" class="table  table-hover table-bordered">
                 <thead>
                     <tr>
                         <th scope="col" class="no-sort">Código Nota Fiscal</th>
-                        <th scope="col">Motorista</th>
-                        <th scope="col" class="hidden">Placa Veículo</th>
+                        <th scope="col">Data entrega</th>
+                  
                         <th scope="col" >Aprovar</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr *ngFor="let pendente of pendentes">
+                    <tr *ngFor="let pendente of list_entregas_pendentes">
                         <ng-container >
                             <ng-container >
 
-                        <td>{{pendente.notaFiscal}}</td>
-                        <td>Allan Kley</td>
-                        <td>{{pendente.placaCarro}}</td>
+                        <td>{{pendente.entrega.notaFiscal}}</td>
+                        <td>{{pendente.entrega.dataEntrega | date:"dd/MM/yyyy"}}</td>
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  >
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="aprovar(pendente.entrega.id)">
                                     <img src="../../assets/icons/check-circle-fill.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
@@ -70,75 +38,53 @@
                 </tbody>
             </table>
 
-            <div class="registros">
-                 Mostrando de 1 até 1 de
-                1 registros 
-                <div class="pageControl">
-
-                    <div class="buttons">
-                        <div  id="AntBtn" class="pageButtons">
-                        <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
-                        </div>
             
-                        <div>
-                        <a class="btn btn-primary pages" >
-                            1
-                        </a>
-                        </div>
-                        
-                        <div  id="ProxBtn" class="pageButtons" >
-                        <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
 
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" >Código da nota fiscal: </h5>
-                    <h3 class="modal-title codigo" > 5014512565</h3>
+                    <h3 class="modal-title codigo" > {{detalhes_entrega.notaFiscal}}</h3>
                     <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
                 </div>
                 
                 <div class="modal-body">
                     <form class="row g-3">
-                        <!-- <div class="col-md-8">
+                        <div class="col-md-8">
                           <label for="inputEmail4" class="form-label">Modelo</label>
                           <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo" />
                         </div>
                         <div class="col-md-4">
                           <label for="inputPassword4" class="form-label">Ano</label>
                           <input type="text" name="ano" id="ano" class="form-control" placeholder="Ano" />
-                        </div> -->
+                        </div> 
                         <div class="col-12">
                           <label for="inputAddress" class="form-label">Placa</label>
-                          <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" />
+                          <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" value="{{detalhes_entrega.placaCarro}}"/>
                         </div>
                         <div class="col-12">
                           <label for="inputAddress2" class="form-label">CPF</label>
-                          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Cpf" />
+                          <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Cpf" value="{{detalhes_entregador.cpf}}" />
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">Nome</label>
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" />
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" value="{{detalhes_entregador.nome}}"/>
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">RG</label>
-                            <input type="text" name="rg" id="rg" class="form-control" placeholder="Rg" />
+                            <input type="text" name="rg" id="rg" class="form-control" placeholder="Rg"  value="{{detalhes_entregador.rg}}"/>
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">CNH</label>
-                            <input type="text" name="cnh" id="cnh" class="form-control" placeholder="Cnh" />
+                            <input type="text" name="cnh" id="cnh" class="form-control" placeholder="Cnh" value="{{detalhes_entregador.cnh}}"/>
                         </div>
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Data de Nascimento</label>
-                            <input type="date" name="nascimento" id="nascimento" class="form-control" placeholder="Data de Nascimento" />
+                            <input type="date" name="nascimento" id="nascimento" class="form-control" placeholder="Data de Nascimento" value="{{detalhes_entregador.dataNascimento}}" />
                         </div> 
                       </form>
                       <div ></div>
@@ -163,4 +109,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->

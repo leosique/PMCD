@@ -12,7 +12,6 @@ public partial class Transportadora
     public string Nome { get; set; }
     public string Cnpj { get; set; }
     public string Senha {get; set; }
-
     public bool PrimeiroAcesso {get; set;}
 
     public virtual List<Entrega> EntregaList { get; set; }

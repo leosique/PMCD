@@ -3,41 +3,10 @@
     <div class="card">
         <div class="card-header">
             <h4>Entradas Aprovadas</h4>
-            <div class="ShowCount">
-                <label for="showSelector">Aprovadas por página:</label>
-                <input name="showSelector" id="showSelector" type="number" value="1"/>
-            </div> 
+           
         </div>
         <div class="card-body">
-            <div class="d-flex flex-row bd-highlight justify-content-between mb-3">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/barcode.svg" class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Código Nota Fiscal" id="ipPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/address-consumer-data.svg"  class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Motorista" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/car-licence-plate.svg"  class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Placa Veículo" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-            </div>
+           
 
 
             <table id="datatable" class="table  table-hover table-bordered">
@@ -50,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr *ngFor="let aprovada of list_entrgas_aprovadas">
+                    <tr *ngFor="let aprovada of list_entregas_aprovadas">
                         <ng-container >
                             <ng-container >
 
@@ -70,28 +39,7 @@
                 </tbody>
             </table>
 
-            <div class="registros">
-                 Mostrando de 1 até 1 de
-                1 registros 
-                <div class="pageControl">
-
-                    <div class="buttons">
-                        <div  id="AntBtn" class="pageButtons">
-                        <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
-                        </div>
-            
-                        <div>
-                        <a class="btn btn-primary pages" >
-                            1
-                        </a>
-                        </div>
-                        
-                        <div  id="ProxBtn" class="pageButtons" >
-                        <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
 
         </div>
     </div>

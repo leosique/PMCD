@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DTO;
+using System.Net;
 namespace Model;
 
 public partial class Ip
@@ -12,8 +13,8 @@ public partial class Ip
 
 
     public Ip(IpDTO ipDTO){
-        this.Id = ipDTO.Id;
         this.EnderecoIp = ipDTO.EnderecoIp;
+        this.Adm = (bool)ipDTO.Adm;
     }
 
     public Ip()
@@ -25,6 +26,7 @@ public partial class Ip
     {
         using(var context = new Context())
         {
+            Console.WriteLine(this.Adm);
             context.Add(this);
             context.SaveChanges();
         }
@@ -99,18 +101,44 @@ public partial class Ip
         }
     }
 
-    public void Editar()
+    public static void Editar(string endereco)
     {
         using(var context = new Context())
         {
-            var ip = context.Ips.FirstOrDefault(e => e.Id == this.Id);
+            var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == endereco);
 
             if(ip == null)
-                throw new ArgumentException("Não foi possível encontrar o ID");
+                throw new ArgumentException("Não foi possível encontrar o Ip");
 
-            ip.EnderecoIp = this.EnderecoIp;
+            ip.Adm = !ip.Adm;
 
             context.SaveChanges();
         }
+    }
+
+    public static bool VerificaIp(){
+        string enderecoIp = GetIp();
+        
+        using(var context = new Context()){
+            var ip = context.Ips.FirstOrDefault(e => e.EnderecoIp == enderecoIp);
+            
+            if(ip != null)
+                return ip.Adm;
+            throw new ArgumentException("Não foi possível encontrar o Ip");
+        }
+    }
+
+    public static string GetIp(){
+        string nomeMaquina = Dns.GetHostName();
+        IPAddress[] ipLocal = Dns.GetHostAddresses(nomeMaquina);
+        Console.WriteLine(nomeMaquina);
+        string ip = ipLocal[3].ToString(); //[0] é IPv6 [3] é IPv4
+
+        for (int i = 0; i < ipLocal.Length; i++)
+        {
+            Console.WriteLine("IP Address {0}: {1} ", i, ipLocal[i].ToString());
+        }
+
+        return ip;
     }
 }

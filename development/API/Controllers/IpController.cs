@@ -71,9 +71,10 @@ public class IpController : ControllerBase
         try{
             List<Tuple<string,bool>> ip = Model.Ip.BuscarTodos();
             return ip.Select(x => new{
-                x.Item1,
-                x.Item2
+                enderecoIp = x.Item1,
+                adm = x.Item2
             });
+
         }catch(Exception e){
             return new{
                 Resposta = "Nenhum endereco IP encontrado",
@@ -103,12 +104,11 @@ public class IpController : ControllerBase
 
     //* ------------------------------------------------ Editar
     [HttpPut]
-    [Route("Editar")]
-    public Object Editar([FromBody] IpDTO IpDTO)
+    [Route("Editar/{enderecoIp}")]
+    public Object Editar(string enderecoIp)
     {  
        try{
-            Ip ip = new Ip(IpDTO);
-            ip.Editar();
+            Model.Ip.Editar(enderecoIp);
             return new{
                 Resposta = "Ip editado com sucesso"
             };
@@ -154,6 +154,28 @@ public class IpController : ControllerBase
         }catch(Exception e){
             return new{
                 Resposta = "Erro ao deletar ip",
+                Erro = e.Message
+            };
+        }
+    }
+
+    //* ------------------------------------------------ Verifica pelo Ip se é adm ou nao
+    [HttpGet]
+    [Route("VerificaIp")]
+    public Object VerificaIp()
+    {  
+        try{
+            //bool adm = Model.Ip.VerificaIp();
+            bool adm = Model.Ip.VerificaIp();
+
+
+            return new{
+                Resposta = "Ip encontrado.",
+                adm = adm
+            };
+        }catch(Exception e){
+            return new{
+                Resposta = "Erro ao encontrar ip.",
                 Erro = e.Message
             };
         }
