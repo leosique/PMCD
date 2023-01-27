@@ -218,4 +218,17 @@ public partial class Entrega
             context.SaveChanges();
         }
     }
+
+    public static void AprovaEntrega(int id){
+        using(var context = new Context()){
+            var entrega = context.Entregas.FirstOrDefault(e => e.Id == id);
+
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
+
+            entrega.Liberado = true;
+
+            context.SaveChanges();
+        }
+    }
 }
