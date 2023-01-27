@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\API\\API.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GOR1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+        "projectName": "API",
+        "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\faj2ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faj2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 160249e7ecec1a9173e079726644edc3ff096068
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +45,19 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj": {
                 "projectPath": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj"
               },
               "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\Model\\Model.csproj": {
                 "projectPath": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\Model\\Model.csproj"
+=======
+              "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+              },
+              "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+>>>>>>> 160249e7ecec1a9173e079726644edc3ff096068
               }
             }
           }
@@ -93,6 +118,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -104,6 +130,19 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GOR1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\faj2ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faj2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 160249e7ecec1a9173e079726644edc3ff096068
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -148,6 +187,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -159,6 +199,19 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GOR1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\faj2ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faj2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 160249e7ecec1a9173e079726644edc3ff096068
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -172,8 +225,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj": {
                 "projectPath": "C:\\Users\\GOR1CT\\Documents\\Repositórios2\\PMCD\\development\\DTO\\DTO.csproj"
+=======
+              "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+>>>>>>> 160249e7ecec1a9173e079726644edc3ff096068
               }
             }
           }

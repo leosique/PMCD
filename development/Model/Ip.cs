@@ -132,8 +132,12 @@ public partial class Ip
         string nomeMaquina = Dns.GetHostName();
         IPAddress[] ipLocal = Dns.GetHostAddresses(nomeMaquina);
         Console.WriteLine(nomeMaquina);
-        string ip = ipLocal[1].ToString(); //[0] é IPv6 [1] é IPv4
-        Console.WriteLine(ip);
+        string ip = ipLocal[3].ToString(); //[0] é IPv6 [3] é IPv4
+
+        for (int i = 0; i < ipLocal.Length; i++)
+        {
+            Console.WriteLine("IP Address {0}: {1} ", i, ipLocal[i].ToString());
+        }
 
         return ip;
     }
