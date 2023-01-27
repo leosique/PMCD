@@ -32,7 +32,6 @@ public class EntregaController : ControllerBase
     {
         try
         {
-
             Entrega entrega = Model.Entrega.BuscarPorId(id);
 
             return new
@@ -58,7 +57,6 @@ public class EntregaController : ControllerBase
                 Erro = e.Message
             };
         }
-
     }
 
 
@@ -88,8 +86,6 @@ public class EntregaController : ControllerBase
             );
         }
         return pendentes;
-
-
     }
 
     //* ------------------------------------------------ Buscar por id
@@ -151,15 +147,37 @@ public class EntregaController : ControllerBase
         }
     }
 
+    //* ------------------------------------------------ Salvar
+    [HttpPost]
+    [Route("SalvarNotaData/{NotaFiscal}/{DataEntrega}")]
+    public Object SalvarNotaData(string NotaFiscal, DateTime DataEntrega){
+        try{
+            Entrega entrega = new Entrega(NotaFiscal, DataEntrega);
+            entrega.Salvar();
+            return new
+            {
+                Resposta = "Entrega salvo com sucesso",
+
+            };
+        }
+        catch(Exception e){
+            return new
+            {
+                Resposta = "Erro ao salvar entrega",
+                Erro = e.Message
+            };
+        }
+    }
+    
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
-    [Authorize]
     public Object Editar([FromBody] EntregaDTO entregaDTO)
     {
         try
         {
             Entrega entrega = new Model.Entrega(entregaDTO);
+            
             entrega.Editar();
             return new
             {
@@ -175,6 +193,29 @@ public class EntregaController : ControllerBase
             };
         }
     }
+
+    //* ------------------------------------------------ Editar Liberado
+    [HttpPut]
+    [Route("AprovaEntrega/{id}")]
+    public Object AprovaEntrega(int id){
+        try
+        {
+            Model.Entrega.AprovaEntrega(id);
+            return new
+            {
+                Resposta = "Entrega aprovada com sucesso!"
+            };
+        }
+        catch (Exception e)
+        {
+            return new
+            {
+                Resposta = "Erro ao aprovar a entrega.",
+                Erro = e.Message
+            };
+        }
+    }
+
 
     //* ------------------------------------------------ Editar Placa
     [HttpPut]

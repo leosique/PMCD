@@ -33,6 +33,7 @@ export class EntradasAprovadasComponent implements OnInit {
     rg: "",
     dataNascimento: new Date(),
   }
+  lista_detalhes_entregador : Array<Entregador> = []
   ngOnInit(): void {
     this.GetEntrgasAprovadas()
   }
@@ -40,40 +41,26 @@ export class EntradasAprovadasComponent implements OnInit {
   GetEntrgasAprovadas(){
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/EntregaEntregador/Liberados',
+      url: 'https://localhost:7274/EntregaEntregador/Aprovadas',
       headers: {},
     };
     var instance = this;
     axios(config)
       .then(function(response:any) {
         instance.list_entregas_aprovadas = response.data
+        console.log(instance.list_entregas_aprovadas);
+        
       });     
   }
 
-  detalhesEntrada(idEntrega: number,idEntregador : number){
-    var config = {
-      method: 'get',
-      url: 'https://localhost:7274/Entrega/Buscar/'+idEntrega,
-      headers: {},
-    };
-    var instance = this;
-    axios(config)
-      .then(function(response:any) {
-        instance.detalhes_entrega = response.data
-        instance.detalhesEntregador(idEntregador)
-      }); 
-  }
-  detalhesEntregador(idEntregador : number){
-    var config = {
-      method: 'get',
-      url: 'https://localhost:7274/Entregador/Buscar/'+idEntregador,
-      headers: {},
-    };
-    var instance = this;
-    axios(config)
-      .then(function(response:any) {
-        instance.detalhes_entregador = response.data      
-      }); 
+  MostraDetalhes(entregaId : number){
+    this.list_entregas_aprovadas.forEach(element => {
+      if(element.entrega.id == entregaId){
+        this.detalhes_entrega = element.entrega
+        this.lista_detalhes_entregador = element.entregadores
+        this.detalhes_entregador = this.lista_detalhes_entregador[0]
+      }
+    });  
   }
 
 }

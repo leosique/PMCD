@@ -7,15 +7,15 @@ namespace Model;
 public partial class Entrega
 {
     public int Id { get; set; }
-    public string PlacaCarro { get; set; }
+    public string? PlacaCarro { get; set; }
     public string? ModeloCarro { get; set; }
     public string? AnoCarro { get; set; }
-    public CodigoInterno CodigoInterno { get; set; }
-    public int PesoEntrada { get; set; }
-    public int PesoSaida { get; set; }
+    public CodigoInterno? CodigoInterno { get; set; }
+    public int? PesoEntrada { get; set; }
+    public int? PesoSaida { get; set; }
     public DateTime? DataEntrega {get; set; }
     public Boolean? Liberado {get; set; }
-    public string NotaFiscal {get;set; }
+    public string? NotaFiscal {get;set; }
     public int? IdTransponder {get; set; }
     public int? IdTransportadora {get; set; }
     public int? IdResponsavelBosch {get; set; }
@@ -32,9 +32,16 @@ public partial class Entrega
         EntregaEntregadorList = new List<EntregaEntregador>();
     }
 
+    public Entrega(string NotaFiscal, DateTime Data){
+        this.DataEntrega = Data;
+        this.NotaFiscal = NotaFiscal;
+    }
+
     public Entrega(EntregaDTO entregaDTO){
         this.Id = entregaDTO.Id;
         this.PlacaCarro = entregaDTO.PlacaCarro;
+        this.ModeloCarro = entregaDTO.ModeloCarro;
+        this.AnoCarro = entregaDTO.AnoCarro;
         this.CodigoInterno = (CodigoInterno) entregaDTO.CodigoInterno;
         this.PesoEntrada = entregaDTO.PesoEntrada;
         this.PesoSaida = entregaDTO.PesoSaida;
@@ -79,6 +86,7 @@ public partial class Entrega
     {
         using(var context = new Context())
         {
+            
             Entrega entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
 
             if(entrega != null)
@@ -140,19 +148,21 @@ public partial class Entrega
     {
         using(var context = new Context())
         {
+            Console.WriteLine("id: ", this.Id);
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
 
             if(entrega == null)
                 throw new ArgumentException("Não foi possível editar a entrega.");
 
             entrega.PlacaCarro = this.PlacaCarro;
+            entrega.ModeloCarro = this.ModeloCarro;
+            entrega.AnoCarro = this.AnoCarro;
             entrega.CodigoInterno = this.CodigoInterno;
             entrega.PesoEntrada = this.PesoEntrada;
             entrega.PesoSaida = this.PesoSaida;
             entrega.Transponder = this.Transponder;
             entrega.Transportadora = this.Transportadora;
             entrega.ResponsavelBosch = this.ResponsavelBosch;
-
 
             context.SaveChanges();
         }
@@ -214,6 +224,19 @@ public partial class Entrega
                 throw new ArgumentException("Não foi possível encontrar a entrega.");
 
             entrega.IdTransponder = this.IdTransponder;
+
+            context.SaveChanges();
+        }
+    }
+
+    public static void AprovaEntrega(int id){
+        using(var context = new Context()){
+            var entrega = context.Entregas.FirstOrDefault(e => e.Id == id);
+
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
+
+            entrega.Liberado = true;
 
             context.SaveChanges();
         }

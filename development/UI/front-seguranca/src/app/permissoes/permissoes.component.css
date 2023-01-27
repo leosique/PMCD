@@ -17,6 +17,7 @@ a{
 table {
     color: #737679;
     text-align: center;
+    justify-content: center;
 }
 table thead{
     font-weight: bold;
@@ -43,6 +44,7 @@ tbody img{
 }
 tbody{
     align-items: center;
+    
 }
 
 .vr{
@@ -77,6 +79,7 @@ tbody img{
 }
 .img-input{
     width: 2.5em;
+    cursor: pointer;
   }
 
 
@@ -84,6 +87,8 @@ tbody img{
 table tr th,
 table tr td {
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -299,8 +304,8 @@ table {
     margin-top: 2vh;
     color: #737679;
 }
-.button-add{
-    color: #2D7DB5;
+.button-add img{
+    filter: brightness(0) saturate(100%) invert(39%) sepia(100%) saturate(340%) hue-rotate(161deg) brightness(92%) contrast(98%);
     float: right;
 }
 
@@ -318,5 +323,13 @@ table {
     margin-bottom: 2vh;
     background-color: #e9e7e7;
     border-radius: 3px;
+
+}
+
+.form-check{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
 
 }
