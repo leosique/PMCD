@@ -32,6 +32,11 @@ public partial class Entrega
         EntregaEntregadorList = new List<EntregaEntregador>();
     }
 
+    public Entrega(string NotaFiscal, DateTime Data){
+        this.DataEntrega = Data;
+        this.NotaFiscal = NotaFiscal;
+    }
+
     public Entrega(EntregaDTO entregaDTO){
         this.Id = entregaDTO.Id;
         this.PlacaCarro = entregaDTO.PlacaCarro;
