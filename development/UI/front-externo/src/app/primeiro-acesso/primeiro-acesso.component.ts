@@ -106,7 +106,7 @@ export class PrimeiroAcessoComponent implements OnInit {
     axios(config)
       .then(function (response) {
         if(response.data["erro"] === undefined){
-          instance.router.navigate(['cadastro-veiculo']);
+          instance.router.navigate(['lista-frete']);
         }else{
       
           if (erro != null) {

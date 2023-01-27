@@ -117,7 +117,7 @@ public partial class Entrega
                 Cnpj = i.Cnpj,
                 Liberado = e.Liberado
             }).Where(e => e.Cnpj == cnpj)
-            .Where(e => e.Liberado == true)
+            .Where(e => e.Liberado == false)
             .ToList();
 
             if(entregas == null || entregas.Count <= 0)
