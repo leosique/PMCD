@@ -25,6 +25,19 @@ export class ListaFretesComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  detalhesEntrada(idTransportadora: number){
+    var config = {
+      method: 'get',
+      url: 'https://localhost:7274/Entrega/Buscar/'+idTransportadora,
+      headers: {},
+    };
+    var instance = this;
+    axios(config)
+      .then(function(response:any) {
+        instance.detalhes_entrega = response.data
+        instance.detalhesEntregador(idEntregador)
+      }); 
+  }
 
   // ProxPag(){
   //   if(this.pagAtual != this.pages){
