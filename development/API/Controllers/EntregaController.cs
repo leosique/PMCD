@@ -32,7 +32,6 @@ public class EntregaController : ControllerBase
     {
         try
         {
-
             Entrega entrega = Model.Entrega.BuscarPorId(id);
 
             return new
@@ -58,7 +57,6 @@ public class EntregaController : ControllerBase
                 Erro = e.Message
             };
         }
-
     }
 
 
@@ -174,6 +172,29 @@ public class EntregaController : ControllerBase
             };
         }
     }
+
+    //* ------------------------------------------------ Editar Liberado
+    [HttpPut]
+    [Route("AprovaEntrega/{id}")]
+    public Object AprovaEntrega(int id){
+        try
+        {
+            Model.Entrega.AprovaEntrega(id);
+            return new
+            {
+                Resposta = "Entrega aprovada com sucesso!"
+            };
+        }
+        catch (Exception e)
+        {
+            return new
+            {
+                Resposta = "Erro ao aprovar a entrega.",
+                Erro = e.Message
+            };
+        }
+    }
+
 
     //* ------------------------------------------------ Editar Placa
     [HttpPut]
