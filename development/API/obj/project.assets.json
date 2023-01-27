@@ -4393,19 +4393,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KLA1CT\\.nuget\\packages\\": {}
+    "C:\\Users\\pet2ct\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\KLA1CT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\API\\obj\\",
+      "projectPath": "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\pet2ct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KLA1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pet2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4419,11 +4419,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\DTO\\DTO.csproj"
+            "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\DTO\\DTO.csproj"
             },
-            "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\KLA1CT\\Desktop\\PMCD\\development\\Model\\Model.csproj"
+            "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\pet2ct\\Desktop\\Repositorios\\PMCD\\development\\Model\\Model.csproj"
             }
           }
         }
