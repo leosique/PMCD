@@ -16,7 +16,7 @@ export class CadastroAjudanteComponent {
   constructor(private router: Router) { }
 
   listaAjudantes: Array<Ajudante> = []
-  ajudante: Ajudante = {nome:"", cpf:"", dataNascimento: ""}
+
   ngOnInit(): void {
       this.listaAjudantes.push({
         nome:"Allan Kley",
@@ -41,10 +41,13 @@ export class CadastroAjudanteComponent {
       erro.textContent = "Todos os campos devem ser preenchidos";
     }else{
 
-      this.ajudante.cpf = cpf
-      this.ajudante.nome = nome
-      this.ajudante.dataNascimento = nascimento
-      this.listaAjudantes.push(this.ajudante)
+      let ajudante = {
+        cpf: cpf,
+        nome: nome,
+        dataNascimento: nascimento
+      }
+
+      this.listaAjudantes.push(ajudante)
       console.log(this.listaAjudantes);
       
     }

@@ -109,8 +109,6 @@ export class CadastroMotoristaComponent {
 
     axios(config)
       .then(function (response) {
-     
-
 
         instance.router.navigate(['/cadastro-ajudante']);
        
