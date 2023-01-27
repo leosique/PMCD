@@ -4398,11 +4398,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\api\\API.csproj",
+      "projectUniqueName": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\api\\API.csproj",
+      "projectPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\API.csproj",
       "packagesPath": "C:\\Users\\faj2ct\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\api\\obj\\",
+      "outputPath": "C:\\Users\\faj2ct\\Desktop\\PMCD\\development\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\faj2ct\\AppData\\Roaming\\NuGet\\NuGet.Config",

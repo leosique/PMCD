@@ -1,118 +1,92 @@
 <app-top-bar></app-top-bar>
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h2>Permissões</h2>
-        </div>
-        <br>
-            <table id="datatable" class="table  table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col" class="no-sort">Ações</th>
-                        <th scope="col" class="hidden">IP</th>
-                        <th scope="col" >Permissões</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr *ngFor="let ip of arrayIP, index as i">
-                       
-
-                        <td>
-                            <div class="actions">
-                                <a href=""  >
-                                    <img src="../../assets/icons/Trash.svg" class="img-input" alt="" srcset="">
-                                </a>
-                                <a href="" data-bs-toggle="modal" data-bs-target="#ChangeModal"  >
-                                    <img src="../../assets/icons/pencil-square.svg" class="img-input" alt="" srcset="">
-                                </a>
-                            </div>
-                        </td>
-                        <td >{{arrayIP[i].enderecoIp}}</td>
-                        <td *ngIf="arrayIP[i].adm"> ADM</td>
-                        <td *ngIf="!arrayIP[i].adm"> Regular</td>
-                   
-                    </tr>
-                </tbody>
-            </table>
-            <div class="last-infos">
-                <p class="last-text">Mostrando de 1 até 1 de 1 registros </p>
-                
-                <div class="buttons">
-                    <div  id="AntBtn" class="pageButtons">
-                    <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
-                    </div>
-        
-                    <div>
-                    <a class="btn btn-primary pages" >
-                        1
-                    </a>
-                    </div>
-                    
-                    <div  id="ProxBtn" class="pageButtons" >
-                    <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
-                    </div>
-                </div>
-            </div>
-            
-        <br>
+  <div class="card">
+    <div class="card-header">
+      <h2>Permissões</h2>
     </div>
+    <br>
+    <table id="datatable" class="table  table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" class="no-sort">Ações</th>
+          <th scope="col" class="hidden">IP</th>
+          <th scope="col">Permissões</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let ip of arrayIP, index as i">
+          <td>
+            <div class="actions">
+              <a (click)="guardaIP(arrayIP[i].enderecoIp)">
+                <img src="../../assets/icons/Trash.svg" class="img-input" alt="" srcset="" href=""
+                  data-bs-toggle="modal" data-bs-target="#Excluir">
+              </a>
+            </div>
+          </td>
 
-<a class="button-add" href="" data-bs-toggle="modal" data-bs-target="#AddModal"  >
-    <img src="../../assets/icons/plus.svg" class="img-input" alt="" srcset="" style="color: #2D7DB5;">
-</a>
+          <td >{{arrayIP[i].enderecoIp}}</td>
+          <td class="menor" *ngIf="arrayIP[i].adm">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked (click)="mudaIP(arrayIP[i].enderecoIp)">
+              <label class="form-check-label" for="flexSwitchCheckChecked">ADM</label>
+            </div>
+          </td>
+          <td *ngIf="!arrayIP[i].adm" class="menor">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="mudaIP(arrayIP[i].enderecoIp)">
+              <label class="form-check-label" for="flexSwitchCheckDefault">ADM</label>
+            </div>
+          </td>
+          <!-- <td *ngIf="arrayIP[i].adm"> ADM</td>
+                        <td *ngIf="!arrayIP[i].adm"> Regular</td> -->
+        </tr>
+      </tbody>
+    </table>
+      <br>
+  </div>
+
+  <a class="button-add" href="" data-bs-toggle="modal" data-bs-target="#AddModal">
+    <img src="../../assets/icons/plus.svg" class="img-input" alt="" srcset="">
+  </a>
 </div>
 
-   <!-- Button trigger modal -->
 
-  <!-- Modal -->
-  <div class="modal fade" id="ChangeModal" tabindex="-1" aria-labelledby="ChangeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="ChangeModalLabel">Alteração</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="change-modal">
-                <table id="datatable" class="table table-bordered">
-                    <tbody class="table-group">
-                        <p  style="font-weight:bold;">IP</p>
-                        <tr>
-                            <td>92897498</td>
-                            <td>
-                                <select name="options" id="select-option">
-                                    <option value="adm">ADM</option>
-                                    <option value="Seguranca">Segurança</option>
-                                </select>
-                            </td>   
-                        </tr>
-                    </tbody>
-                </table>
-        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary">Salvar alteração</button>
-        </div>
+<!-- Modal -->
+
+<div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="AddModalLabel">Adicionar permissão</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Inserir IP</p>
+        <input class="inputIP" type="text">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Adicionar</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="AddModalLabel">Adicionar permissão</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <p>Inserir IP</p>
-            <input class="inputIP" type="text">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Adicionar</button>
-        </div>
+<div class="modal fade" id="Excluir" tabindex="-1" aria-labelledby="ExcluirLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ExcluirLabel">Deletar endereço de IP</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Você deseja realmente excluir o endereço de IP?</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteIP()">Excluir IP</button>
       </div>
     </div>
   </div>
+</div>

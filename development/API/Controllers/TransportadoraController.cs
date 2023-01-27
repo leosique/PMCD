@@ -72,8 +72,7 @@ public class TransportadoraController : ControllerBase
 
     //* ------------------------------------------------ Buscar por CPNJ
     [HttpGet]
-    [Route("BuscarCNPJ/{cpnj}")]
-    [Authorize]
+    [Route("BuscarCNPJ/{cnpj}")]
     public Object BuscarPorCNPJ(string cnpj)
     {  
         try{

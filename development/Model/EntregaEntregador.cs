@@ -78,6 +78,50 @@ public partial class EntregaEntregador
         }
     }
 
+    public static List<EntregaEntregador> BuscarTransportadora(string cnpj)
+    {
+        using(var context = new Context())
+        {
+            List<EntregaEntregador> entregas = context.EntregasEntregadores
+                .Join(context.Entregas, e => e.IdEntrega, i => i.Id, (e, i) => new
+                {
+                    Id = e.Id,
+                    IdEntregador = e.IdEntregador,
+                    IdTransportadora = i.IdTransportadora,
+                    Motorista = e.Motorista,
+                    Entrega = i,                    
+                })
+                .Join(context.Entregadores, e => e.IdEntregador, i => i.Id, (e, i) => new
+                {
+                    Id = e.Id,
+                    IdTransportadora = e.IdTransportadora,
+                    Motorista = e.Motorista,
+                    Entrega = e.Entrega,
+                    Entregador = i,
+                })
+                .Join(context.Transportadoras, e => e.IdTransportadora, i => i.Id, (e,i) => new
+                {
+                    Id = e.Id,
+                    Motorista = e.Motorista,
+                    Entrega = e.Entrega,
+                    Entregador = e.Entregador,
+                    Transportadora = i,
+                })
+                .Where(e => e.Transportadora.Cnpj == cnpj)
+                .Select(e => new EntregaEntregador
+                {
+                    Id = e.Id,
+                    Motorista = e.Motorista,
+                    Entrega = e.Entrega,
+                    Entregador = e.Entregador,
+                })
+                .ToList();
+
+            return entregas;
+        }
+    }
+
+
     public void Salvar()
     {
         using(var context = new Context())

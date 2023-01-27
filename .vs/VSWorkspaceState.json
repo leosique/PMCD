@@ -6,6 +6,6 @@
     "\\development\\API\\Controllers",
     "\\development\\Model"
   ],
-  "SelectedNode": "\\development\\Model\\Entrega.cs",
+  "SelectedNode": "\\development\\API\\Controllers\\EntregaEntregadorController.cs",
   "PreviewInSolutionExplorer": false
 }

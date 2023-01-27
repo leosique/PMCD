@@ -74,6 +74,7 @@ public class IpController : ControllerBase
                 enderecoIp = x.Item1,
                 adm = x.Item2
             });
+
         }catch(Exception e){
             return new{
                 Resposta = "Nenhum endereco IP encontrado",
@@ -103,12 +104,11 @@ public class IpController : ControllerBase
 
     //* ------------------------------------------------ Editar
     [HttpPut]
-    [Route("Editar")]
-    public Object Editar([FromBody] IpDTO IpDTO)
+    [Route("Editar/{enderecoIp}")]
+    public Object Editar(string enderecoIp)
     {  
        try{
-            Ip ip = new Ip(IpDTO);
-            ip.Editar();
+            Model.Ip.Editar(enderecoIp);
             return new{
                 Resposta = "Ip editado com sucesso"
             };
