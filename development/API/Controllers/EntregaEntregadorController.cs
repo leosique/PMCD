@@ -61,26 +61,11 @@ public class EntregaEntregadorController : ControllerBase
             .Select(g => new
             {
                 Entrega = g.Key,
-                Entregadores = g.Select(e => e.Entregador)                
-            });
-
-        return Ok(output);
-    }
-
-    [HttpGet]
-    [Route("MotoristaEntrega")]
-    public IActionResult MotoristaEntrega()
-    {
-
-        List<EntregaEntregador> entregas = Model.EntregaEntregador.BuscarAprovadas();
-
-        var output = entregas
-            .Select(g => new
-            {
-                Id = g.Id,
-                Motorista = g.Motorista,
-                Entrega = g.Entrega,
-                Entregador = g.Entregador,
+                Entregadores = g.Select(e => new
+                {
+                    Motorista = e.Motorista,
+                    Entregador = e.Entregador
+                })                
             });
 
         return Ok(output);

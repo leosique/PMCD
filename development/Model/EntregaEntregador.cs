@@ -48,7 +48,6 @@ public partial class EntregaEntregador
                 .ToList();
 
 
-
             if(entregas != null)
                 return entregas;
             throw new ArgumentException("Não foi possível encontrar as entregas.");
