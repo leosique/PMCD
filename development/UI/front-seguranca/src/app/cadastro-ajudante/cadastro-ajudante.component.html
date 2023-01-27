@@ -8,16 +8,14 @@
         <div class="progress-step progress-step-active" data-title="Adicionais"></div>
     </div>
     <div class="title-group">Informações do ajudante</div>
-    <!-- <div class="input-group">
-        <label for="entrega" style="color: #666;">Código Nota Fiscal</label>
-        <input type="text" name="entrega" id="entrega" style="border-radius: 0.5rem;"
-            placeholder="Código Nota Fiscal" />
-    </div> 
-    git <div class="input-group">
-        <label for="entrega" style="color: #666;">Data prevista para entrega</label>
-        <input type="date" name="entrega" id="entrega" style="border-radius: 0.5rem;"
-            placeholder="Data prevista para entrega" />
-    </div> -->
+
+    <div class="ajudantes">
+        <div class="ajudanteInfo" *ngFor="let ajudante of listaAjudantes">
+            <p>{{ajudante.nome}}</p>
+            <img src="../../assets/icons/Trash.svg" (click)="deletarAjudante(ajudante.cpf)" alt="">
+        </div>
+    </div>
+
     <div class="actions">
         <a href="" data-bs-toggle="modal" data-bs-target="#ajudante">
             <button class="add-ajud" style="margin: 0 auto; margin-bottom: 1.5rem;text-decoration: none;">+ Adicionar ajudante</button>
@@ -25,7 +23,7 @@
     </div>
     <div class="btns-group">
         <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-motorista']">Anterior</a>
-        <a href="#" class="btn btn-next" [routerLink]="['/cadastro-motorista']">Avançar</a>
+        <a href="#" class="btn btn-next" (click)="cadastro()">Aprovar</a>
     </div>
 </form>
 
@@ -35,6 +33,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title">Cadastro ajudante</h1>
+                
                 <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
             </div>
 
@@ -52,9 +51,13 @@
                             placeholder="Data de Nascimento" />
                     </div>
                 </form>
+
+                <div class="erroDiv" id="erroDiv">
+                    <p class="erro" id="erro">teste</p>
+                </div>
                 <div class="btns-group" style="margin-top: 2rem;">
                     <a data-bs-dismiss="modal" class="btn btn-prev">Cancelar</a>
-                    <a data-bs-dismiss="modal" class="btn btn-next">Aprovar</a>
+                    <a class="btn btn-next" data-bs-dismiss="modal" (click)="verificaCampos()">Cadastrar</a>
                 </div>
             </div>
         </div>

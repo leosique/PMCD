@@ -8,7 +8,6 @@ export interface Transportadora{
   senha: string
 }
 
-
 @Component({
   selector: 'app-sucesso',
   templateUrl: './sucesso.component.html',

@@ -10,15 +10,19 @@ import { Router } from '@angular/router';
 export class TopBarComponent implements OnInit {
 
   constructor(private router: Router) { }
+  
+  adm:boolean = false
 
   ngOnInit(): void {
+
+    this.verificarAdm()
   }
 
   verificarAdm() {
 
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/Ip/VerificarAdm/',
+      url: 'https://localhost:7274/Ip/VerificaIp',
       headers: {
         'Content-Type': 'application/json'
       }
@@ -28,9 +32,14 @@ export class TopBarComponent implements OnInit {
 
     axios(config)
       .then(function (response) {
-     
-        instance.router.navigate(['/sucesso']);
 
+        instance.adm = response.data["adm"]
+        if(response.data["erro"] != undefined){
+
+          instance.router.navigate(['/erro404']);
+        }
+        
+        
       })
       .catch(function (error) {
       })

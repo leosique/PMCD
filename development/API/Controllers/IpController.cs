@@ -160,7 +160,7 @@ public class IpController : ControllerBase
     }
 
     //* ------------------------------------------------ Verifica pelo Ip se é adm ou nao
-    [HttpDelete]
+    [HttpGet]
     [Route("VerificaIp")]
     public Object VerificaIp()
     {  

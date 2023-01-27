@@ -11,6 +11,7 @@ import { PermissoesComponent } from './permissoes/permissoes.component';
 import { CadastroVeiculoComponent } from './cadastro-veiculo/cadastro-veiculo.component';
 import { CadastroMotoristaComponent } from './cadastro-motorista/cadastro-motorista.component';
 import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante.component';
+import { Error404Component } from './error404/error404.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CadastroAjudanteComponent } from './cadastro-ajudante/cadastro-ajudante
     CadastroVeiculoComponent,
     CadastroMotoristaComponent,
     CadastroAjudanteComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,

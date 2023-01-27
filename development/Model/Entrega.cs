@@ -8,6 +8,8 @@ public partial class Entrega
 {
     public int Id { get; set; }
     public string PlacaCarro { get; set; }
+    public string? ModeloCarro { get; set; }
+    public string? AnoCarro { get; set; }
     public CodigoInterno CodigoInterno { get; set; }
     public int PesoEntrada { get; set; }
     public int PesoSaida { get; set; }
@@ -94,6 +96,31 @@ public partial class Entrega
             if(entregas != null)
                 return entregas;
             throw new ArgumentException("Não foi possível encontrar nenhuma entrega aprovada.");
+        }
+    }
+
+    public static List<object> BuscarEntregaPendentePorTransportadora(string cnpj){
+        using(var context = new Context()){
+           Console.WriteLine("AAaaaAA");
+            var entregas = context.Entregas.Join(context.Transportadoras, e => e.IdTransportadora, i => i.Id, (e, i) => new {
+                Id = e.Id,
+                NotaFiscal = e.NotaFiscal,
+                DataEntrega = e.DataEntrega,
+                Cnpj = i.Cnpj,
+                Liberado = e.Liberado
+            }).Where(e => e.Cnpj == cnpj)
+            .Where(e => e.Liberado == true)
+            .ToList();
+
+            if(entregas == null || entregas.Count <= 0)
+                throw new ArgumentException("Nenhuma entrega foi encontrada.");
+
+            List<Object> a = new List<Object>();
+            foreach(var i in entregas){
+                a.Add(i);
+            }
+            
+            return a;
         }
     }
 
