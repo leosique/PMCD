@@ -57,8 +57,11 @@ export class EntradasAprovadasComponent implements OnInit {
     this.list_entregas_aprovadas.forEach(element => {
       if(element.entrega.id == entregaId){
         this.detalhes_entrega = element.entrega
-        this.lista_detalhes_entregador = element.entregadores
-        this.detalhes_entregador = this.lista_detalhes_entregador[0]
+        element.entregadores.forEach(entregador => {
+          if(entregador.motorista) this.detalhes_entregador = entregador.entregador
+          else this.lista_detalhes_entregador.push(entregador.entregador)
+        });
+       
       }
     });  
   }

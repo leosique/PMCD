@@ -61,7 +61,11 @@ public class EntregaEntregadorController : ControllerBase
             .Select(g => new
             {
                 Entrega = g.Key,
-                Entregadores = g.Select(e => e.Entregador)                
+                Entregadores = g.Select(e => new
+                {
+                    Motorista = e.Motorista,
+                    Entregador = e.Entregador
+                })                
             });
 
         return Ok(output);

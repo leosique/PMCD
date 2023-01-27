@@ -51,41 +51,6 @@ export class CadastroAjudanteComponent {
       console.log(this.listaAjudantes);
       
     }
-    
-  }
-
-  cadastro() {
-    let cnpj = document.getElementById("cpf") as HTMLInputElement;
-    let nome = document.getElementById("nome") as HTMLInputElement;
-    let nascimento = document.getElementById("nascimento") as HTMLInputElement;
-
-    var data = JSON.stringify({
-      "cpf": cnpj.value,
-      "nome": nome.value,
-      "nascimento": nascimento.value,
-    });
-
-    var config = {
-      method: 'post',
-      url: 'https://localhost:7274/Entrega/Editar',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: data
-    };
-
-    let instance = this;
-
-    axios(config)
-      .then(function (response) {
-     
-        instance.router.navigate(['/sucesso']);
-        localStorage.setItem("cnpj", cnpj.value);
-       
-      })
-      .catch(function (error) {
-      })
-
   }
 
   deletarAjudante(cpf:string){
@@ -99,6 +64,97 @@ export class CadastroAjudanteComponent {
     this.listaAjudantes.splice(i,1)
   }
   
+  cadastroAjudantes(){
 
+    this.listaAjudantes.forEach((ajudante, index) => {
+      
+      this.cadastroAjudante(index)
+    });
+  }
+
+  cadastroAjudante(index:number) {
+    let ajudante = this.listaAjudantes[index]
+
+    var data = JSON.stringify({
+      "nome": ajudante.nome,
+      "cpf": ajudante.cpf,
+      "dataNascimento": ajudante.dataNascimento,
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7274/Entregador/Salvar',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    let instance = this;
+
+    axios(config)
+      .then(function (response) {
+     
+        instance.cadastroEntregaEntregador(response.data["id"])
+       
+      })
+      .catch(function (error) {
+      })
+
+  }
+
+  cadastroEntregaEntregador(idEntregador:number){
+    let idEntrega = localStorage.getItem("id")
+
+    var data = JSON.stringify({
+      "idEntrega": idEntrega,
+      "idEntregador": idEntregador,
+      "motorista": false
+          
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7274/EntregaEntregador/Salvar',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    let instance = this;
+
+    axios(config)
+      .then(function (response) {
+
+        instance.aprova();
+       
+      })
+      .catch(function (error) {
+      })
+  }
+
+  aprova(){
+    let idEntrega = localStorage.getItem("id")
+
+    var config = {
+      method: 'put',
+      url: 'https://localhost:7274/Entrega/AprovaEntrega/' + idEntrega,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    let instance = this;
+
+    axios(config)
+      .then(function (response) {
+
+        instance.router.navigate(['/entradas-pendentes']);
+       
+      })
+      .catch(function (error) {
+      })
+  }
  
 }

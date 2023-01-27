@@ -19,7 +19,17 @@
             <ng-container>
               <ng-container>
                 <td>{{ aprovada.entrega.notaFiscal }}</td>
-                <td>{{ aprovada.entregadores[0].nome }}</td>
+
+                <td>
+                  <ng-container
+                    *ngFor="let entregador of aprovada.entregadores"
+                  >
+                    <p *ngIf="entregador.motorista">
+                      {{ entregador.entregador.nome }}
+                    </p>
+                  </ng-container>
+                </td>
+
                 <td>{{ aprovada.entrega.placaCarro }}</td>
                 <td>
                   <div class="actions">
@@ -105,20 +115,20 @@
               </h5>
             </div>
           </form>
-          <div *ngFor="let ajudante of lista_detalhes_entregador, index as i">
+          <div *ngFor="let ajudante of lista_detalhes_entregador; index as i">
             <div class="modal-header">
-                <h3 class="modal-title codigo">Ajudante {{i}}</h3>
+              <h3 class="modal-title codigo">Ajudante {{ i+1 }}</h3>
+            </div>
+            <form class="row g-3">
+              <div class="col-12">
+                <label for="inputAddress2" class="form-label">Nome</label>
+                <h5 class="form-control">{{ ajudante.nome }}</h5>
               </div>
-              <form class="row g-3">
-                <div class="col-12">
-                  <label for="inputAddress2" class="form-label">Nome</label>
-                  <h5 class="form-control">{{ ajudante.nome }}</h5>
-                </div>
-                <div class="col-12">
-                  <label for="inputAddress2" class="form-label">CPF</label>
-                  <h5 class="form-control">{{ ajudante.cpf }}</h5>
-                </div>
-              </form>
+              <div class="col-12">
+                <label for="inputAddress2" class="form-label">CPF</label>
+                <h5 class="form-control">{{ ajudante.cpf }}</h5>
+              </div>
+            </form>
           </div>
         </div>
       </div>
