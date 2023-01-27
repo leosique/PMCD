@@ -86,8 +86,6 @@ public class EntregaController : ControllerBase
             );
         }
         return pendentes;
-
-
     }
 
     //* ------------------------------------------------ Buscar por id
@@ -149,6 +147,28 @@ public class EntregaController : ControllerBase
         }
     }
 
+    //* ------------------------------------------------ Salvar
+    [HttpPost]
+    [Route("SalvarNotaData/{NotaFiscal}/{DataEntrega}")]
+    public Object SalvarNotaData(string NotaFiscal, DateTime DataEntrega){
+        try{
+            Entrega entrega = new Entrega(NotaFiscal, DataEntrega);
+            entrega.Salvar();
+            return new
+            {
+                Resposta = "Entrega salvo com sucesso",
+
+            };
+        }
+        catch(Exception e){
+            return new
+            {
+                Resposta = "Erro ao salvar entrega",
+                Erro = e.Message
+            };
+        }
+    }
+    
     //* ------------------------------------------------ Editar
     [HttpPut]
     [Route("Editar")]
