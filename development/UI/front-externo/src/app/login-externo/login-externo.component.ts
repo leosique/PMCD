@@ -129,7 +129,7 @@ export class LoginExternoComponent implements OnInit {
           localStorage.setItem('authToken', token);
           localStorage.setItem('cnpj', cnpj.value);
           
-          instance.router.navigate(['lista-fretes']);
+          instance.salvarId()
         }
         
 
@@ -140,6 +140,33 @@ export class LoginExternoComponent implements OnInit {
     
 
    
+  }
+
+  salvarId(){
+
+    let cnpj = localStorage.getItem("cnpj")
+
+    var config = {
+      method: 'get',
+      url: 'https://localhost:7274/Transportadora/BuscarCNPJ/' + cnpj,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    let instance = this;
+    localStorage.removeItem('authToken');
+    axios(config)
+      .then(function (response) {
+      
+          localStorage.setItem('id', response.data["id"]);
+        
+          instance.router.navigate(['/lista-fretes']);
+
+      })
+      .catch(function (error) {
+      })
+
   }
   
 

@@ -141,6 +141,11 @@ public partial class Transportadora
         Random r = new Random();
         r.NextBytes(senha);
         string novaSenha = Convert.ToBase64String(senha);
+        
+        if(novaSenha.Contains("/") || novaSenha.Contains("\\") || novaSenha.Contains("<") || novaSenha.Contains(">") || novaSenha.Contains("{") || novaSenha.Contains("}")){
+            novaSenha = novaSenha.Replace("/", "m");
+        }
+
         this.Senha = novaSenha;
         Salvar();
         

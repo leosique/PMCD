@@ -106,7 +106,9 @@ export class PrimeiroAcessoComponent implements OnInit {
     axios(config)
       .then(function (response) {
         if(response.data["erro"] === undefined){
-          instance.router.navigate(['lista-frete']);
+          localStorage.setItem('cnpj', cnpj.value);
+          instance.salvarId()
+          instance.router.navigate(['/lista-fretes']);
         }else{
       
           if (erro != null) {
@@ -122,4 +124,32 @@ export class PrimeiroAcessoComponent implements OnInit {
       })
 
   }
+
+  salvarId(){
+
+    let cnpj = localStorage.getItem("cnpj")
+
+    var config = {
+      method: 'get',
+      url: 'https://localhost:7274/Transportadora/BuscarCNPJ/' + cnpj,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    let instance = this;
+    localStorage.removeItem('authToken');
+    axios(config)
+      .then(function (response) {
+      
+          localStorage.setItem('id', response.data["id"]);
+        
+          instance.router.navigate(['/lista-fretes']);
+
+      })
+      .catch(function (error) {
+      })
+
+  }
+
 }

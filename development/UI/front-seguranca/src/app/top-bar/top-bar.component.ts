@@ -15,7 +15,7 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.verificarAdm()
+    //this.verificarAdm()
   }
 
   verificarAdm() {

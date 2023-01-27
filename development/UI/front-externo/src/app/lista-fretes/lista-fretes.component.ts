@@ -38,6 +38,7 @@ export class ListaFretesComponent implements OnInit {
         instance.entregas = response.data["entregasPendentes"]
         console.log(instance.entregas);
         
+        
 
       })
       .catch(function (error) {
