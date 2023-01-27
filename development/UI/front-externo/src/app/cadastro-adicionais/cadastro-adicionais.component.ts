@@ -21,18 +21,20 @@ export class CadastroAdicionaisComponent implements OnInit {
   registerEntrega(){
     var notaFiscal = (document.getElementById('nota') as HTMLInputElement).value;
     var dataEntrega = (document.getElementById('data') as HTMLInputElement).value;
-    // console.log(notaFiscal);
-    // console.log(dataEntrega);
+    let id = localStorage.getItem("id")
+ 
+    console.log(dataEntrega);
     
     
     var data = JSON.stringify({
       notaFiscal: notaFiscal,
       dataEntrega: dataEntrega,
+      idTransportadora: id
     });
 
     var config = {
       method: 'post',
-      url: 'https://localhost:7274/Entrega/SalvarNotaData'+ notaFiscal +dataEntrega,
+      url: 'https://localhost:7274/Entrega/SalvarNotaData',
       headers: { 
         'Content-Type': 'application/json'
       },
