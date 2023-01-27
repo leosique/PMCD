@@ -29,7 +29,7 @@ public partial class EntregaEntregador
     {
         using(var context = new Context())
         {
-            List<EntregaEntregador> entregas = context.EntregasEntregadores
+            var entregas = context.EntregasEntregadores
                 .Join(context.Entregas, e => e.IdEntrega, i => i.Id, (e, i) => new EntregaEntregador
                 {
                     Id = e.Id,
@@ -44,8 +44,10 @@ public partial class EntregaEntregador
                     Entrega = e.Entrega,
                     Entregador = i,
                 })
-                .Where(e => e.Entrega.Liberado == true)
+                .Where(e => e.Entrega.Liberado == true)                
                 .ToList();
+
+
 
             if(entregas != null)
                 return entregas;
@@ -71,7 +73,7 @@ public partial class EntregaEntregador
                     Entrega = e.Entrega,
                     Entregador = i,
                 })
-                .Where(e => e.Entrega.Liberado == liberado)
+                .Where(e => e.Entrega.Liberado == liberado)                
                 .ToList();
 
             return entregas;
