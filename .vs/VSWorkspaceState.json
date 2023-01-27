@@ -3,9 +3,8 @@
     "",
     "\\development",
     "\\development\\API",
-    "\\development\\API\\Controllers",
     "\\development\\Model"
   ],
-  "SelectedNode": "\\development\\API\\Controllers\\EntregaEntregadorController.cs",
+  "SelectedNode": "\\development\\Model\\Context.cs",
   "PreviewInSolutionExplorer": false
 }
