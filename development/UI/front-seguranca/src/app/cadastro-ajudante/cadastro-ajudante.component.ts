@@ -18,15 +18,7 @@ export class CadastroAjudanteComponent {
   listaAjudantes: Array<Ajudante> = []
 
   ngOnInit(): void {
-      this.listaAjudantes.push({
-        nome:"Allan Kley",
-        cpf:"dawd",
-        dataNascimento:"11;09;2000"
-      },{
-        nome:"Allan Kley 2",
-        cpf:"dawdafwawf",
-        dataNascimento:"11;09;2000"
-      })
+    
   }
 
   verificaCampos(){
