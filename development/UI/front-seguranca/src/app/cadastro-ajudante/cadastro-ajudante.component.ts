@@ -53,41 +53,6 @@ export class CadastroAjudanteComponent {
     }
   }
 
-  
-  cadastro() {
-    let cnpj = document.getElementById("cpf") as HTMLInputElement;
-    let nome = document.getElementById("nome") as HTMLInputElement;
-    let nascimento = document.getElementById("nascimento") as HTMLInputElement;
-
-    var data = JSON.stringify({
-      "cpf": cnpj.value,
-      "nome": nome.value,
-      "nascimento": nascimento.value,
-    });
-
-    var config = {
-      method: 'post',
-      url: 'https://localhost:7274/Entrega/Editar',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: data
-    };
-
-    let instance = this;
-
-    axios(config)
-      .then(function (response) {
-     
-        instance.router.navigate(['/sucesso']);
-        localStorage.setItem("cnpj", cnpj.value);
-       
-      })
-      .catch(function (error) {
-      })
-
-  }
-
   deletarAjudante(cpf:string){
     let i = 0
     this.listaAjudantes.forEach((ajudante, index) => {
@@ -162,12 +127,34 @@ export class CadastroAjudanteComponent {
     axios(config)
       .then(function (response) {
 
-        //instance.router.navigate(['/cadastro-ajudante']);
+        instance.aprova();
        
       })
       .catch(function (error) {
       })
   }
 
+  aprova(){
+    let idEntrega = localStorage.getItem("id")
+
+    var config = {
+      method: 'put',
+      url: 'https://localhost:7274/Entrega/AprovaEntrega/' + idEntrega,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    let instance = this;
+
+    axios(config)
+      .then(function (response) {
+
+        instance.router.navigate(['/entradas-pendentes']);
+       
+      })
+      .catch(function (error) {
+      })
+  }
  
 }
