@@ -54,6 +54,7 @@ export class EntradasAprovadasComponent implements OnInit {
   }
 
   MostraDetalhes(entregaId : number){
+    this.lista_detalhes_entregador = []
     this.list_entregas_aprovadas.forEach(element => {
       if(element.entrega.id == entregaId){
         this.detalhes_entrega = element.entrega
