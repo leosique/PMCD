@@ -192,3 +192,37 @@ select {
   text-decoration: none;
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgb(76, 133, 219);
 }
+
+.erroDiv{
+  display: flex;
+  align-items: center;
+  height: 2em;
+  display: none;
+}
+
+.erro{
+  width: 90%;
+  color: var(--Bosch-Red);
+}
+
+.ajudantes{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+.ajudanteInfo{
+  padding: 1.5em;
+  border: 2px solid var(--Bosch-Gray-70);
+  border-radius: .6em;
+  height: 2em;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ajudanteInfo img{
+  width: 1.5em;
+  
+}

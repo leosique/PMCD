@@ -8,6 +8,14 @@
         <div class="progress-step progress-step-active" data-title="Adicionais"></div>
     </div>
     <div class="title-group">Informações do ajudante</div>
+
+    <div class="ajudantes">
+        <div class="ajudanteInfo" *ngFor="let ajudante of listaAjudantes">
+            <p>{{ajudante.nome}}</p>
+            <img src="../../assets/icons/Trash.svg" (click)="deletarAjudante(ajudante.cpf)" alt="">
+        </div>
+    </div>
+
     <div class="actions">
         <a href="" data-bs-toggle="modal" data-bs-target="#ajudante">
             <button class="add-ajud" style="margin: 0 auto; margin-bottom: 1.5rem;text-decoration: none;">+ Adicionar ajudante</button>
@@ -15,7 +23,7 @@
     </div>
     <div class="btns-group">
         <a href="#" class="btn btn-prev" [routerLink]="['/cadastro-motorista']">Anterior</a>
-        <a href="#" class="btn btn-next" >Aprovar</a>
+        <a href="#" class="btn btn-next" (click)="cadastro()">Aprovar</a>
     </div>
 </form>
 
@@ -43,9 +51,13 @@
                             placeholder="Data de Nascimento" />
                     </div>
                 </form>
+
+                <div class="erroDiv" id="erroDiv">
+                    <p class="erro" id="erro">teste</p>
+                </div>
                 <div class="btns-group" style="margin-top: 2rem;">
                     <a data-bs-dismiss="modal" class="btn btn-prev">Cancelar</a>
-                    <a class="btn btn-next" (click)="verificaCampos()">Cadastrar</a>
+                    <a class="btn btn-next" data-bs-dismiss="modal" (click)="verificaCampos()">Cadastrar</a>
                 </div>
             </div>
         </div>
