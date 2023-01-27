@@ -241,4 +241,19 @@ public partial class Entrega
             context.SaveChanges();
         }
     }
+
+    public static void EditarPlacaModeloAno(int id, string placa, string modelo, string ano){
+        using(var context = new Context()){
+            var entrega = context.Entregas.FirstOrDefault(e => e.Id == id);
+
+            if(entrega == null)
+                throw new ArgumentException("Não foi possível encontrar a entrega.");
+
+            entrega.PlacaCarro = placa;
+            entrega.ModeloCarro = modelo;
+            entrega.AnoCarro = ano;
+
+            context.SaveChanges();
+        }
+    }
 }
