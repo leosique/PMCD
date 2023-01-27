@@ -1,62 +1,84 @@
 <app-top-bar></app-top-bar>
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h4>Entradas Aprovadas</h4>
-           
-        </div>
-        <div class="card-body">
-           
-
-
-            <table id="datatable" class="table  table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col" class="no-sort">Código Nota Fiscal</th>
-                        <th scope="col">Motorista</th>
-                        <th scope="col" class="hidden">Placa Veículo</th>
-                        <th scope="col" >Vizualizar</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr *ngFor="let aprovada of list_entregas_aprovadas">
-                        <ng-container >
-                            <ng-container >
-
-                        <td>{{aprovada.entrega.notaFiscal}}</td>
-                        <td >{{aprovada.entregador.nome}}</td>
-                        <td >{{aprovada.entrega.placaCarro}}</td>
-                        <td>
-                            <div class="actions">
-                                <a  data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(aprovada.entrega.id,aprovada.entregador.id)">
-                                    <img src="../../assets/icons/plus-circle-fill.svg" class="img-input" alt="" srcset="">
-                                </a>
-                            </div>
-                        </td>
-                    </ng-container>
-                    </ng-container>
-                    </tr>
-                </tbody>
-            </table>
-
-           
-
-        </div>
+  <div class="card">
+    <div class="card-header">
+      <h4>Entradas Aprovadas</h4>
     </div>
+    <div class="card-body">
+      <table id="datatable" class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="no-sort">Código Nota Fiscal</th>
+            <th scope="col">Motorista</th>
+            <th scope="col" class="hidden">Placa Veículo</th>
+            <th scope="col">Vizualizar</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let aprovada of list_entregas_aprovadas">
+            <ng-container>
+              <ng-container>
+                <td>{{ aprovada.entrega.notaFiscal }}</td>
 
-    <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+                <td>
+                  <ng-container
+                    *ngFor="let entregador of aprovada.entregadores"
+                  >
+                    <p *ngIf="entregador.motorista">
+                      {{ entregador.entregador.nome }}
+                    </p>
+                  </ng-container>
+                </td>
 
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" >Código da nota fiscal: </h5>
-                    <h3 class="modal-title codigo" >{{detalhes_entrega.notaFiscal}}</h3>
-                    <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
-                </div>
-                
-                <div class="modal-body">
-                    <form class="row g-3">
-                        <!-- <div class="col-md-8">
+                <td>{{ aprovada.entrega.placaCarro }}</td>
+                <td>
+                  <div class="actions">
+                    <!-- <a  data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(aprovada.entrega.id,aprovada.entregadores[0].id)"> -->
+                    <a
+                      data-bs-toggle="modal"
+                      data-bs-target="#Visualizar"
+                      (click)="MostraDetalhes(aprovada.entrega.id)"
+                    >
+                      <img
+                        src="../../assets/icons/plus-circle-fill.svg"
+                        class="img-input"
+                        alt=""
+                        srcset=""
+                      />
+                    </a>
+                  </div>
+                </td>
+              </ng-container>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="Visualizar"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Código da nota fiscal:</h5>
+          <h3 class="modal-title codigo">{{ detalhes_entrega.notaFiscal }}</h3>
+          <button
+            type="button"
+            data-bs-dismiss="modal"
+            class="btn-close"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <form class="row g-3">
+            <!-- <div class="col-md-8">
                           <label for="inputEmail4" class="form-label">Modelo</label>
                           <h5 class="form-control">lalalala</h5>
                         </div>
@@ -64,48 +86,52 @@
                           <label for="inputPassword4" class="form-label">Ano</label>
                           <h5 class="form-control">lalalala</h5>
                         </div> -->
-                        <div class="col-12">
-                          <label for="inputAddress" class="form-label">Placa</label>
-                          <h5 class="form-control">{{detalhes_entrega.placaCarro}}</h5>
-                        </div>
-                        <div class="col-12">
-                          <label for="inputAddress2" class="form-label">CPF</label>
-                          <h5 class="form-control">{{detalhes_entregador.cpf}}</h5>
-                        </div>
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Nome</label>
-                            <h5 class="form-control">{{detalhes_entregador.nome}}</h5>
-                        </div>
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">RG</label>
-                            <h5 class="form-control">{{detalhes_entregador.rg}}</h5>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputEmail4" class="form-label">CNH</label>
-                            <h5 class="form-control">{{detalhes_entregador.cnh}}</h5>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputPassword4" class="form-label">Data de Nascimento</label>
-                            <h5 class="form-control">{{detalhes_entregador.dataNascimento | date : "dd/MM/yyyy" }}</h5>
-                        </div> 
-                      </form>
-                      <div ></div>
-                      <div class="modal-header">
-                        <h3 class="modal-title codigo" > Ajudante</h3>
-                    </div>
-                      <form class="row g-3">
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">CPF</label>
-                            <h5 class="form-control">lalalala</h5>
-                        </div>
-                        <div class="col-12">
-                            <label for="inputAddress2" class="form-label">Nome</label>
-                            <h5 class="form-control">lalalala</h5>
-                        </div>
-                      </form>
-
-                    </div>
-                </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Placa</label>
+              <h5 class="form-control">{{ detalhes_entrega.placaCarro }}</h5>
             </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">CPF</label>
+              <h5 class="form-control">{{ detalhes_entregador.cpf }}</h5>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Nome</label>
+              <h5 class="form-control">{{ detalhes_entregador.nome }}</h5>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">RG</label>
+              <h5 class="form-control">{{ detalhes_entregador.rg }}</h5>
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">CNH</label>
+              <h5 class="form-control">{{ detalhes_entregador.cnh }}</h5>
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label"
+                >Data de Nascimento</label
+              >
+              <h5 class="form-control">
+                {{ detalhes_entregador.dataNascimento | date : "dd/MM/yyyy" }}
+              </h5>
+            </div>
+          </form>
+          <div *ngFor="let ajudante of lista_detalhes_entregador; index as i">
+            <div class="modal-header">
+              <h3 class="modal-title codigo">Ajudante {{ i+1 }}</h3>
+            </div>
+            <form class="row g-3">
+              <div class="col-12">
+                <label for="inputAddress2" class="form-label">Nome</label>
+                <h5 class="form-control">{{ ajudante.nome }}</h5>
+              </div>
+              <div class="col-12">
+                <label for="inputAddress2" class="form-label">CPF</label>
+                <h5 class="form-control">{{ ajudante.cpf }}</h5>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>

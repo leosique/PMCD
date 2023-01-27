@@ -112,7 +112,6 @@ public class TransportadoraController : ControllerBase
             };
         }
     }
-
     //* ------------------------------------------------ Mudar senha ao primeiro acesso
     [HttpPut]
     [Route("EditarPrimeiroAcesso/{senhaNova}")]
