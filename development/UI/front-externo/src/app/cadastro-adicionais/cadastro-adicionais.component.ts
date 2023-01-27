@@ -36,7 +36,7 @@ export class CadastroAdicionaisComponent implements OnInit {
     
     var config = {
       method: 'post',
-      url: 'http://localhost:5265/entrega/salvar',
+      url: 'http://localhost:7274/entrega/salvar',
       headers: { 
         'Content-Type': 'application/json'
       },
