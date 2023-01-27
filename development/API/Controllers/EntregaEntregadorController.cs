@@ -56,12 +56,13 @@ public class EntregaEntregadorController : ControllerBase
 
         List<EntregaEntregador> entregas = Model.EntregaEntregador.BuscarAprovadas();
 
-        var output = entregas.Select(e => new
-        {
-            Id = e.Id,
-            Entrega = e.Entrega,
-            Entregador = e.Entregador
-        });
+        var output = entregas
+            .GroupBy(e => e.Entrega)
+            .Select(g => new
+            {
+                Entrega = g.Key,
+                Entregadores = g.Select(e => e.Entregador)
+            });
 
         return Ok(output);
     }
