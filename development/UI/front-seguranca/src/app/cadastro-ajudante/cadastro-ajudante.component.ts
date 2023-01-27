@@ -98,6 +98,7 @@ export class CadastroAjudanteComponent {
 
     this.listaAjudantes.splice(i,1)
   }
+  
 
  
 }
