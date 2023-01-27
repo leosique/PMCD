@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./entradas-pendentes.component.css']
 })
 export class EntradasPendentesComponent implements OnInit {
-  list_entregas_pendentes : Array<EntregaMotorista> = []
+  list_entregas_pendentes : Array<Entrega> = []
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class EntradasPendentesComponent implements OnInit {
   GetEntrgasPendentes(){
     var config = {
       method: 'get',
-      url: 'https://localhost:7274/EntregaEntregador/Pendentes',
+      url: 'https://localhost:7274/Entrega/Pendentes',
       headers: {},
     };
     var instance = this;

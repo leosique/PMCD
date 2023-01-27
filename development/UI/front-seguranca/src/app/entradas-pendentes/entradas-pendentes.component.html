@@ -23,11 +23,11 @@
                         <ng-container >
                             <ng-container >
 
-                        <td>{{pendente.entrega.notaFiscal}}</td>
-                        <td>{{pendente.entrega.dataEntrega | date:"dd/MM/yyyy"}}</td>
+                        <td>{{pendente.notaFiscal}}</td>
+                        <td>{{pendente.dataEntrega | date:"dd/MM/yyyy"}}</td>
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="aprovar(pendente.entrega.id)">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="aprovar(pendente.id)">
                                     <img src="../../assets/icons/check-circle-fill.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>

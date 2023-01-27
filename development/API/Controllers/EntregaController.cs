@@ -66,10 +66,7 @@ public class EntregaController : ControllerBase
     public IActionResult Pendentes()
     {
         List<Entrega> entregas = Model.Entrega.BuscarPendentes(false);
-        var output = entregas.Select(e => new
-        {
-            Entrega = e,
-        });
+        var output = entregas;
 
 
         return Ok(output);
