@@ -3,49 +3,18 @@
     <div class="card">
         <div class="card-header">
             <h4>Entradas Pendentes</h4>
-            <div class="ShowCount">
-                <label for="showSelector">Pendentes por página:</label>
-                <input name="showSelector" id="showSelector" type="number" value="1"/>
-            </div> 
         </div>
         <div class="card-body">
-            <div class="d-flex flex-row bd-highlight justify-content-between mb-3">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/barcode.svg" class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Código Nota Fiscal" id="ipPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/address-consumer-data.svg"  class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Motorista" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                            <img src="../../assets/icons/car-licence-plate.svg"  class="img-input" alt="" srcset="">
-                        </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Placa Veículo" id="descPesquisa"
-                        aria-describedby="basic-addon1">
-                </div>
-            </div>
+     
+              
 
 
             <table id="datatable" class="table  table-hover table-bordered">
                 <thead>
                     <tr>
                         <th scope="col" class="no-sort">Código Nota Fiscal</th>
-                        <th scope="col">Motorista</th>
-                        <th scope="col" class="hidden">Placa Veículo</th>
+                        <th scope="col">Data entrega</th>
+                  
                         <th scope="col" >Aprovar</th>
                     </tr>
                 </thead>
@@ -55,11 +24,10 @@
                             <ng-container >
 
                         <td>{{pendente.entrega.notaFiscal}}</td>
-                        <td>{{pendente.entregador.nome}}</td>
-                        <td>{{pendente.entrega.placaCarro}}</td>
+                        <td>{{pendente.entrega.dataEntrega | date:"dd/MM/yyyy"}}</td>
                         <td>
                             <div class="actions">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="detalhesEntrada(pendente.entrega.id,pendente.entregador.id)">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#Visualizar"  (click)="aprovar(pendente.entrega.id)">
                                     <img src="../../assets/icons/check-circle-fill.svg" class="img-input" alt="" srcset="">
                                 </a>
                             </div>
@@ -70,33 +38,11 @@
                 </tbody>
             </table>
 
-            <div class="registros">
-                 Mostrando de 1 até 1 de
-                1 registros 
-                <div class="pageControl">
-
-                    <div class="buttons">
-                        <div  id="AntBtn" class="pageButtons">
-                        <img src="../../assets/icons/arrow-left-frame.svg" alt="" />
-                        </div>
             
-                        <div>
-                        <a class="btn btn-primary pages" >
-                            1
-                        </a>
-                        </div>
-                        
-                        <div  id="ProxBtn" class="pageButtons" >
-                        <img src="../../assets/icons/arrow-right-frame.svg" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="Visualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
 
             <div class="modal-content">
@@ -108,14 +54,14 @@
                 
                 <div class="modal-body">
                     <form class="row g-3">
-                        <!-- <div class="col-md-8">
+                        <div class="col-md-8">
                           <label for="inputEmail4" class="form-label">Modelo</label>
                           <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo" />
                         </div>
                         <div class="col-md-4">
                           <label for="inputPassword4" class="form-label">Ano</label>
                           <input type="text" name="ano" id="ano" class="form-control" placeholder="Ano" />
-                        </div> -->
+                        </div> 
                         <div class="col-12">
                           <label for="inputAddress" class="form-label">Placa</label>
                           <input type="text" name="placa" id="placa" class="form-control" placeholder="Placa" value="{{detalhes_entrega.placaCarro}}"/>
@@ -163,4 +109,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->

@@ -46,7 +46,7 @@
   </div>
 
   <a class="button-add" href="" data-bs-toggle="modal" data-bs-target="#AddModal">
-    <img src="../../assets/icons/plus.svg" class="img-input" alt="" srcset="">
+    <img src="../../assets/icons/plus-circle-fill.svg" class="img-input" alt="" srcset="">
   </a>
 </div>
 
@@ -61,12 +61,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Inserir IP</p>
-        <input class="inputIP" type="text">
+        <p>IP</p>
+        <input class="inputIP" id="addIP" type="text">
+        <p>Permissão</p>
+        <select name="" id="addPerm" class="">
+          <option value="1">ADM</option>
+          <option value="0">Regular</option>
+        </select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Adicionar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="AddIP()" >Adicionar</button>
       </div>
     </div>
   </div>

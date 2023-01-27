@@ -65,6 +65,31 @@ export class PermissoesComponent implements OnInit {
         console.log(instance.arrayIP)
       });
   }
+  AddIP(){
+    let ip = (document.getElementById("addIP") as HTMLInputElement).value;
+    let permission = Number((document.getElementById("addPerm") as HTMLInputElement).value)
+    
+
+    var data = JSON.stringify({
+      enderecoIp :ip ,
+      adm : permission == 1 ? true : false
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7274/Ip/Salvar',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    let instance = this;
+    axios(config)
+      .then(function(response:any) {
+        console.log(response.data)
+        window.location.reload()
+      });}
 
 
 

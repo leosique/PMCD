@@ -98,7 +98,7 @@ input::placeholder{
   margin: 0 auto;
   border: none;
   align-self: flex-start;
-  margin-top: 2rem;
+  margin-top: 10px;
 }
 
 .form-step {
@@ -122,7 +122,7 @@ input::placeholder{
     color:rgb(88, 88, 88);
     text-transform: uppercase;
     margin-bottom: 3rem;
-    margin-top: 6rem;
+    margin-top: 1rem;
 }
 @keyframes animate {
   from {
@@ -153,6 +153,7 @@ input::placeholder{
   cursor: pointer;
   transition: 0.3s;
   outline: none;
+
 }
 .btn:hover {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgb(76, 133, 219);

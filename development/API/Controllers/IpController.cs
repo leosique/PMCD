@@ -158,4 +158,26 @@ public class IpController : ControllerBase
             };
         }
     }
+
+    //* ------------------------------------------------ Verifica pelo Ip se é adm ou nao
+    [HttpGet]
+    [Route("VerificaIp")]
+    public Object VerificaIp()
+    {  
+        try{
+            //bool adm = Model.Ip.VerificaIp();
+            bool adm = Model.Ip.VerificaIp();
+
+
+            return new{
+                Resposta = "Ip encontrado.",
+                adm = adm
+            };
+        }catch(Exception e){
+            return new{
+                Resposta = "Erro ao encontrar ip.",
+                Erro = e.Message
+            };
+        }
+    }
 }
