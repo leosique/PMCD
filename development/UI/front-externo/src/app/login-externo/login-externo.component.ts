@@ -85,14 +85,6 @@ export class LoginExternoComponent implements OnInit {
       })
       .catch(function (error) {
       })
-    
-
-
-
-
-
-
-    
   }
 
   login(){

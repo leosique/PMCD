@@ -20,23 +20,29 @@ export class CadastroAdicionaisComponent implements OnInit {
   registerEntrega(){
     var notaFiscal = (document.getElementById('nota') as HTMLInputElement).value;
     var dataEntrega = (document.getElementById('data') as HTMLInputElement).value;
-
+    // console.log(notaFiscal);
+    // console.log(dataEntrega);
+    
+    
     var data = JSON.stringify({
-      "notaFiscal": notaFiscal,
-      "dataEntrega": dataEntrega,
-      "placaCarro": " ",
-      "codigoInterno": 0,
-      "pesoEntrada": 0,
-      "pesoSaida": 0,
-      "liberado": false,
-      "idTransponder": 0,
-      "idTransportadora": 0,
-      "idResponsavelBosch": 0
+      notaFiscal: notaFiscal,
+      dataEntrega: dataEntrega,
+      // placaCarro: " ",
+      // codigoInterno: 0,
+      // pesoEntrada: 0,
+      // pesoSaida: 0,
+      // liberado: false,
+      // idTransponder: 0,
+      // idTransportadora: 0,
+      // idResponsavelBosch: 0
     });
     
+
+
+
     var config = {
       method: 'post',
-      url: 'http://localhost:7274/entrega/salvar',
+      url: 'https://localhost:7274/Entrega/Salvar',
       headers: { 
         'Content-Type': 'application/json'
       },

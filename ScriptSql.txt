@@ -112,8 +112,14 @@ CREATE TABLE "Ip" (
 
 INSERT INTO Ip(enderecoIp,adm) VALUES('111.111.111.111',1);
 INSERT INTO Ip(enderecoIp,adm) VALUES('1.1.1.1',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('172.25.144.1',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('10.234.199.161',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('172.28.208.1',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('172.24.208.1',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('192.168.32.1',1);
+INSERT INTO Ip(enderecoIp,adm) VALUES('10.234.196.114',1);
 INSERT INTO Ip(enderecoIp,adm) VALUES('0.0.0.0',0);
 INSERT INTO Ip(enderecoIp,adm) VALUES('1.2.3.4',0);
 INSERT INTO Ip(enderecoIp,adm) VALUES('256.256.256.256',0);
 INSERT INTO Ip(enderecoIp,adm) VALUES('222.222.222.222',0);
-INSERT INTO Ip(enderecoIp,adm) VALUES('0.111.0.0',0);
+INSERT INTO Ip(enderecoIp,adm) VALUES('192.168.15.101',1);
