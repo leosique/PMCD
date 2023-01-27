@@ -193,3 +193,17 @@ select {
   text-decoration: none;
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px rgb(76, 133, 219);
 }
+
+
+.erroDiv{
+  display: flex;
+  align-items: center;
+  height: 3em;
+  display: none;
+}
+
+.erro{
+  width: 90%;
+  color: var(--Bosch-Red);
+  
+}
