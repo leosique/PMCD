@@ -107,6 +107,7 @@
   font-size: 1.2em;
   border-radius: 5px;
   transition: opacity 100ms ease-in-out;
+  margin-bottom: -8px;
 } 
 .button-login:hover,
 .button-login:focus{
@@ -135,16 +136,8 @@
   display: none;
 }
 
-.btn{
-  display: block;
-  text-decoration: none;
-  color: #0000;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
+.link{
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  transition: 0.3s;
-}
-.btn:hover {
-  box-shadow: 0 0 0 2px #000, 0 0 0 3px rgb(76, 133, 219);
 }

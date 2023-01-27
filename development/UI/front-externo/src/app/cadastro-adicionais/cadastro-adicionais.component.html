@@ -15,10 +15,13 @@
     </div>
     <div class="input-group">
         <label for="entrega" style="color: #666;">Data prevista para entrega</label>
-        <input type="date" name="entrega" id="entrega" style="border-radius: 0.5rem;"
+        <input type="date" name="entrega" id="data" style="border-radius: 0.5rem;"
             placeholder="Data prevista para entrega" />
     </div>
-    <a href="#" class="btn btn-next">Salvar</a>
+    <div class="erroDiv" id="erroDiv">
+        <p class="erro" id="erro">teste</p>
+    </div>
+    <a class="btn btn-next" (click)="registerEntrega()">Salvar</a>
    
 </form>
 
