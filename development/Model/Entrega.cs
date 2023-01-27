@@ -7,15 +7,15 @@ namespace Model;
 public partial class Entrega
 {
     public int Id { get; set; }
-    public string PlacaCarro { get; set; }
+    public string? PlacaCarro { get; set; }
     public string? ModeloCarro { get; set; }
     public string? AnoCarro { get; set; }
-    public CodigoInterno CodigoInterno { get; set; }
-    public int PesoEntrada { get; set; }
-    public int PesoSaida { get; set; }
+    public CodigoInterno? CodigoInterno { get; set; }
+    public int? PesoEntrada { get; set; }
+    public int? PesoSaida { get; set; }
     public DateTime? DataEntrega {get; set; }
     public Boolean? Liberado {get; set; }
-    public string NotaFiscal {get;set; }
+    public string? NotaFiscal {get;set; }
     public int? IdTransponder {get; set; }
     public int? IdTransportadora {get; set; }
     public int? IdResponsavelBosch {get; set; }
@@ -81,6 +81,7 @@ public partial class Entrega
     {
         using(var context = new Context())
         {
+            
             Entrega entrega = context.Entregas.FirstOrDefault(e => e.Id == Id);
 
             if(entrega != null)
@@ -142,6 +143,7 @@ public partial class Entrega
     {
         using(var context = new Context())
         {
+            Console.WriteLine("id: ", this.Id);
             var entrega = context.Entregas.FirstOrDefault(e => e.Id == this.Id);
 
             if(entrega == null)

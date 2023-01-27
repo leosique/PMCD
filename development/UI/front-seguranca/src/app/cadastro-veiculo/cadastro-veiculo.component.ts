@@ -16,7 +16,10 @@ export interface Veiculo{
 })
 export class CadastroVeiculoComponent {
   constructor(private router: Router) {}
+  
   veiculo: Veiculo ={placaCarro:"", modeloCarro:"", anoCarro:""}
+
+
   ngOnInit(): void {
         
   }
