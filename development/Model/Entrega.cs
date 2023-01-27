@@ -53,6 +53,15 @@ public partial class Entrega
         this.IdResponsavelBosch = entregaDTO.IdResponsavelBosch;
     }
 
+    public Entrega(RegistrarEntregaDTO registrarEntregaDTO)
+    {
+        this.Id = registrarEntregaDTO.Id;
+        this.DataEntrega = Convert.ToDateTime(registrarEntregaDTO.DataEntrega);
+        this.Liberado = false;
+        this.IdTransportadora = registrarEntregaDTO.IdTransportadora;
+        this.NotaFiscal = registrarEntregaDTO.NotaFiscal;
+    }
+
     public void Salvar()
     {
         using(var context = new Context())

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Cors;
 using System.Linq;
 using Model;
 using DTO;
+using System.Globalization;
 
 namespace Controllers;
 
@@ -135,11 +136,12 @@ public class EntregaController : ControllerBase
 
     //* ------------------------------------------------ Salvar
     [HttpPost]
-    [Route("SalvarNotaData/{NotaFiscal}/{DataEntrega}")]
-    public Object SalvarNotaData(string NotaFiscal, DateTime DataEntrega){
+    [Route("SalvarNotaData/")]
+    public Object SalvarNotaData([FromBody] RegistrarEntregaDTO registrarEntregaDTO){
         try{
-            Entrega entrega = new Entrega(NotaFiscal, DataEntrega);
+            Entrega entrega = new Entrega(registrarEntregaDTO);
             entrega.Salvar();
+
             return new
             {
                 Resposta = "Entrega salvo com sucesso",
