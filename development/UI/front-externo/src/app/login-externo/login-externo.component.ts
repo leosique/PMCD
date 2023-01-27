@@ -124,10 +124,12 @@ export class LoginExternoComponent implements OnInit {
           }
           
         }else{
-
-          localStorage.setItem('authToken', token);
+          console.log("teste");
           
-          instance.router.navigate(['cadastro-veiculo']);
+          localStorage.setItem('authToken', token);
+          localStorage.setItem('cnpj', cnpj.value);
+          
+          instance.router.navigate(['cadastro-adicionais']);
         }
         
 
