@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { Entrega } from 'src/interfaces/entrega';
 
 export interface DialogData{
   ajudante: string;
@@ -20,23 +21,18 @@ export class CadastroAdicionaisComponent implements OnInit {
   registerEntrega(){
     var notaFiscal = (document.getElementById('nota') as HTMLInputElement).value;
     var dataEntrega = (document.getElementById('data') as HTMLInputElement).value;
-
-    var data = JSON.stringify({
-      "notaFiscal": notaFiscal,
-      "dataEntrega": dataEntrega,
-      "placaCarro": " ",
-      "codigoInterno": 0,
-      "pesoEntrada": 0,
-      "pesoSaida": 0,
-      "liberado": false,
-      "idTransponder": 0,
-      "idTransportadora": 0,
-      "idResponsavelBosch": 0
-    });
+    // console.log(notaFiscal);
+    // console.log(dataEntrega);
     
+    
+    var data = JSON.stringify({
+      notaFiscal: notaFiscal,
+      dataEntrega: dataEntrega,
+    });
+
     var config = {
       method: 'post',
-      url: 'http://localhost:5265/entrega/salvar',
+      url: 'https://localhost:7274/Entrega/SalvarNotaData'+ notaFiscal +dataEntrega,
       headers: { 
         'Content-Type': 'application/json'
       },

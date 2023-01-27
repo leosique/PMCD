@@ -226,3 +226,6 @@ select {
   width: 1.5em;
   
 }
+.actions a {
+  text-decoration: none;
+}

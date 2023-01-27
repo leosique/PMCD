@@ -1,7 +1,7 @@
 import { Entrega } from './entrega';
-import { Entregador } from './entregador';
+import { MotoristaAjudante } from './motoristaAjudante';
 export interface EntregaMotorista{
     id : number,
     entrega : Entrega,
-    entregador: Entregador,
+    entregadores: Array<MotoristaAjudante>,
 }
