@@ -3,6 +3,14 @@ import { Component } from '@angular/core';
 import { RouterLink,Router } from '@angular/router';
 import axios from 'axios';
 
+export interface Motorista{
+  "nome": string,
+  "cpf": string,
+  "cnh": string,
+  "rg": string,
+  "dataNascimento": string
+}
+
 @Component({
   selector: 'app-cadastro-motorista',
   templateUrl: './cadastro-motorista.component.html',
@@ -10,6 +18,8 @@ import axios from 'axios';
 })
 export class CadastroMotoristaComponent {
   constructor(private router: Router) {}
+
+  motorista: Motorista = {nome:"", cpf:"", cnh:"", rg:"", dataNascimento:""}
 
   ngOnInit(): void {
    
@@ -30,12 +40,80 @@ export class CadastroMotoristaComponent {
       erro.textContent = "Todos os campos devem ser preenchidos";
     }
     else{
-        localStorage.setItem("nome", nome);
-        localStorage.setItem("cpf", cpf);
-        localStorage.setItem("rg", rg);
-        localStorage.setItem("cnh", cnh);
-        localStorage.setItem("nascimento", nascimento);
-        this.router.navigate(['/cadastro-ajudante']);
+      this.motorista.nome = nome;
+      this.motorista.cpf = cpf;
+      this.motorista.rg = rg;
+      this.motorista.cnh = cnh;
+      this.motorista.dataNascimento = nascimento;
+
+      this.cadastro();
+        
     }
+  }
+
+  cadastro() {
+
+    var data = JSON.stringify({
+      "nome": this.motorista.nome,
+      "cpf": this.motorista.cpf,
+      "cnh": this.motorista.cnh,
+      "rg": this.motorista.rg,
+      "dataNascimento": this.motorista.dataNascimento,
+      
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7274/Entregador/Salvar',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    let instance = this;
+
+    axios(config)
+      .then(function (response) {
+     
+
+
+        instance.cadastroEntregaEntregador(response.data["id"])
+       
+      })
+      .catch(function (error) {
+      })
+
+  }
+
+  cadastroEntregaEntregador(idEntregador:number){
+    let idEntrega = localStorage.getItem("id")
+
+    var data = JSON.stringify({
+      "idEntrega": idEntrega,
+      "idEntregador": idEntregador,
+      "motorista": true
+          
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7274/EntregaEntregador/Salvar',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    let instance = this;
+
+    axios(config)
+      .then(function (response) {
+
+        instance.router.navigate(['/cadastro-ajudante']);
+       
+      })
+      .catch(function (error) {
+      })
   }
 }

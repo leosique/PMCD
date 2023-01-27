@@ -177,6 +177,7 @@ public class EntregaController : ControllerBase
         try
         {
             Entrega entrega = new Model.Entrega(entregaDTO);
+            
             entrega.Editar();
             return new
             {
