@@ -132,11 +132,13 @@ public partial class Entrega
         }
     }
 
-    public static List<Entrega> BuscarPendentes()
+    public static List<Entrega> BuscarPendentes(bool liberado)
     {
         using(var context = new Context())
         {
-            List<Entrega> entregas = context.Entregas.Where(e => e.Liberado == false).ToList();
+            List<Entrega> entregas = context.Entregas
+                .Where(e => e.Liberado == liberado)
+                .ToList();
 
             if(entregas != null)
                 return entregas;

@@ -62,30 +62,16 @@ public class EntregaController : ControllerBase
 
     [HttpGet]
     [Route("Pendentes")]
-    public List<Object> Pendentes()
+    public IActionResult Pendentes()
     {
-        List<Entrega> entregas = Model.Entrega.BuscarPendentes();
-        var pendentes = new List<Object>();
-        foreach (Entrega entrega in entregas)
+        List<Entrega> entregas = Model.Entrega.BuscarPendentes(false);
+        var output = entregas.Select(e => new
         {
-            pendentes.Add(
-               new
-               {
-                   Id = entrega.Id,
-                   PlacaCarro = entrega.PlacaCarro,
-                   CodigoInterno = ((CodigoInterno)entrega.CodigoInterno).ToString(),
-                   PesoEntrada = entrega.PesoEntrada,
-                   PesoSaida = entrega.PesoSaida,
-                   DataEntrega = entrega.DataEntrega,
-                   Liberado = entrega.Liberado,
-                   NotaFiscal = entrega.NotaFiscal,
-                   IdTransponder = entrega.IdTransponder,
-                   IdTransportadora = entrega.IdTransportadora,
-                   IdResponsavelBosch = entrega.IdResponsavelBosch,
-               }
-            );
-        }
-        return pendentes;
+            Entrega = e,
+        });
+
+
+        return Ok(output);
     }
 
     //* ------------------------------------------------ Buscar por id
